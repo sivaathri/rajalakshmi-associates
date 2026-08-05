@@ -16,7 +16,10 @@ import {
   Landmark,
   FileCheck,
   Percent,
-  Headphones
+  Headphones,
+  FileText,
+  Search,
+  BadgeCheck
 } from 'lucide-react';
 
 export const HomePage = ({ onOpenConsultation = () => {} }) => {
@@ -290,27 +293,146 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
 
           </div>
 
-          {/* Right Column: Handshake Image with Floating Card */}
-          <div className="relative lg:pl-4 pb-8 lg:pb-0">
+          {/* Right Column: Handshake Image with Floating Card Badge */}
+          <div className="relative lg:pl-4 pb-8 sm:pb-10 lg:pb-0 pr-2 sm:pr-6">
+            
+            {/* Main Image Container */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100">
               <img 
                 src={aboutHandshakeImg} 
                 alt="Your Trusted Loan Partner - Handshake" 
-                className="w-full h-[320px] sm:h-[400px] lg:h-[420px] object-cover object-center transform hover:scale-102 transition-transform duration-500"
+                className="w-full h-[320px] sm:h-[380px] lg:h-[420px] object-cover object-center transform hover:scale-102 transition-transform duration-500"
               />
             </div>
 
-            {/* Floating Contact / Financial Success Badge */}
-            <div className="absolute -bottom-4 right-2 sm:right-6 bg-[#FFFDF9] border border-rose-100/80 rounded-2xl p-5 shadow-2xl flex flex-col items-center text-center max-w-[190px] sm:max-w-[210px] z-20">
-              <div className="w-12 h-12 rounded-full bg-rose-50 border border-rose-100 text-[#700619] flex items-center justify-center mb-2">
-                <Headphones className="w-6 h-6 stroke-[2]" />
-              </div>
-              <p className="text-xs text-slate-600 font-medium">We are here</p>
-              <p className="text-xs text-slate-600 font-medium">for your</p>
-              <h4 className="font-serif-brand font-bold text-base sm:text-lg text-[#700619] leading-tight mt-1">
-                Financial<br />Success
+            {/* Floating Contact / Financial Success Badge (Overlapping Bottom-Right) */}
+            <div className="absolute -bottom-4 right-0 sm:-right-2 bg-[#FFFDF7] border border-rose-100/90 rounded-2xl px-4 py-4.5 sm:px-4.5 sm:py-5 shadow-2xl flex flex-col items-center justify-center text-center w-[140px] sm:w-[160px] z-20">
+              
+              {/* 2 Support Agents Icon */}
+              <svg className="w-8 h-8 text-[#700619] mb-2" viewBox="0 0 32 32" fill="currentColor">
+                {/* Headset Arc */}
+                <path d="M 7 13 C 7 7.5 11 4 16 4 C 21 4 25 7.5 25 13" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                {/* Earpieces */}
+                <rect x="5" y="11" width="3" height="5" rx="1.5" fill="currentColor" />
+                <rect x="24" y="11" width="3" height="5" rx="1.5" fill="currentColor" />
+                {/* Person 1 */}
+                <circle cx="12" cy="11" r="2.8" fill="currentColor" />
+                <path d="M 8.5 18 C 8.5 15.5 10 14.2 12 14.2 C 14 14.2 15.5 15.5 15.5 18 Z" fill="currentColor" />
+                {/* Person 2 */}
+                <circle cx="20" cy="11" r="2.8" fill="currentColor" />
+                <path d="M 16.5 18 C 16.5 15.5 18 14.2 20 14.2 C 22 14.2 23.5 15.5 23.5 18 Z" fill="currentColor" />
+              </svg>
+
+              <p className="text-[11px] sm:text-xs text-slate-600 font-medium leading-snug">We are here</p>
+              <p className="text-[11px] sm:text-xs text-slate-600 font-medium leading-snug mb-0.5">for your</p>
+
+              <h4 className="font-serif-brand font-bold text-base sm:text-lg text-[#700619] leading-tight">
+                Financial
+              </h4>
+              <h4 className="font-serif-brand font-bold text-base sm:text-lg text-[#700619] leading-tight">
+                Success
               </h4>
             </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3. OUR PROCESS SECTION */}
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+        <div className="bg-[#FFFDF9] border border-rose-100/70 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs text-center">
+          
+          {/* Header */}
+          <div className="space-y-2 mb-10 sm:mb-14">
+            <div className="flex items-center justify-center gap-3">
+              <span className="w-8 h-[1.5px] bg-[#EBB638] inline-block rounded-full"></span>
+              <span className="text-xs sm:text-sm font-bold text-[#700619] uppercase tracking-normal">
+                OUR PROCESS
+              </span>
+              <span className="w-8 h-[1.5px] bg-[#EBB638] inline-block rounded-full"></span>
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif-brand font-bold text-slate-900">
+              Simple Steps to Your Financial Success
+            </h2>
+          </div>
+
+          {/* 5 Steps Process Flow */}
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
+            
+            {/* Connecting Dashed Line (Desktop) */}
+            <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-[1.5px] border-t-2 border-dashed border-slate-300 z-0"></div>
+
+            {/* Step 1: Consultation */}
+            <div className="relative z-10 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#700619] flex items-center justify-center text-white shadow-lg mb-4 group-hover:scale-105 transition-transform duration-300">
+                <Users className="w-8 h-8 stroke-[1.8]" />
+              </div>
+              <span className="text-xs sm:text-sm font-bold text-slate-500 mb-1">01</span>
+              <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-1.5">Consultation</h3>
+              <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed max-w-[180px]">
+                Share your needs with our experts.
+              </p>
+            </div>
+
+            {/* Step 2: Documentation */}
+            <div className="relative z-10 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#700619] flex items-center justify-center text-white shadow-lg mb-4 group-hover:scale-105 transition-transform duration-300">
+                <FileText className="w-8 h-8 stroke-[1.8]" />
+              </div>
+              <span className="text-xs sm:text-sm font-bold text-slate-500 mb-1">02</span>
+              <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-1.5">Documentation</h3>
+              <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed max-w-[180px]">
+                Submit the required documents.
+              </p>
+            </div>
+
+            {/* Step 3: Verification */}
+            <div className="relative z-10 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#700619] flex items-center justify-center text-white shadow-lg mb-4 group-hover:scale-105 transition-transform duration-300">
+                <Search className="w-8 h-8 stroke-[1.8]" />
+              </div>
+              <span className="text-xs sm:text-sm font-bold text-slate-500 mb-1">03</span>
+              <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-1.5">Verification</h3>
+              <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed max-w-[180px]">
+                Quick verification and assessment.
+              </p>
+            </div>
+
+            {/* Step 4: Approval */}
+            <div className="relative z-10 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#700619] flex items-center justify-center text-white shadow-lg mb-4 group-hover:scale-105 transition-transform duration-300">
+                <BadgeCheck className="w-8 h-8 stroke-[1.8]" />
+              </div>
+              <span className="text-xs sm:text-sm font-bold text-slate-500 mb-1">04</span>
+              <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-1.5">Approval</h3>
+              <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed max-w-[180px]">
+                Get fast approval with best offers.
+              </p>
+            </div>
+
+            {/* Step 5: Disbursement */}
+            <div className="relative z-10 flex flex-col items-center text-center group">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#700619] flex items-center justify-center text-white shadow-lg mb-4 group-hover:scale-105 transition-transform duration-300">
+                <svg className="w-9 h-9 text-white" viewBox="0 0 32 32" fill="currentColor">
+                  <rect x="3" y="15" width="2.8" height="9" rx="0.6" fill="currentColor" />
+                  <circle cx="4.4" cy="22" r="0.5" fill="#700619" />
+                  <path d="M6.8 15h5.5c1.8 0 3.2 0.8 4.2 2.2l3.8 1.9c1.2 0.6 1.4 2.2 0.4 3.1l-2.8 2.2c-1 0.8-2.2 1.1-3.4 1.1H6.8V15z" fill="currentColor" />
+                  <rect x="18" y="2.5" width="3" height="1.8" rx="0.6" fill="currentColor" />
+                  <circle cx="19.5" cy="10" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                  <circle cx="19.5" cy="10" r="4.8" fill="currentColor" />
+                  <text x="19.5" y="12.2" fontSize="6.2" fontWeight="bold" fontFamily="sans-serif" fill="#700619" textAnchor="middle">₹</text>
+                  <rect x="18" y="16.5" width="3" height="1.5" rx="0.4" fill="currentColor" />
+                </svg>
+              </div>
+              <span className="text-xs sm:text-sm font-bold text-slate-500 mb-1">05</span>
+              <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-1.5">Disbursement</h3>
+              <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed max-w-[180px]">
+                Loan disbursed quickly into your account.
+              </p>
+            </div>
+
           </div>
 
         </div>
