@@ -47,7 +47,7 @@ export const Header = ({
           {/* Left: Location */}
           <div className="flex items-center gap-1 sm:gap-2 font-medium tracking-wide shrink-0">
             <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-rose-200 shrink-0" />
-            <span className="truncate max-w-[130px] xs:max-w-none">Puducherry &amp; Tamil Nadu</span>
+            <span className="truncate max-w-[130px] xs:max-w-none">Puducherry</span>
           </div>
 
           {/* Center: Tamil Regional Tagline */}
