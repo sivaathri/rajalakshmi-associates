@@ -40,7 +40,7 @@ export const ContactUsPage = () => {
         {/* Dark crimson gradient overlay fading from left to right */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#42000A] via-[#42000A]/90 to-transparent z-10"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-20 w-full">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16 relative z-20 w-full">
           <div className="max-w-2xl text-left space-y-4">
             
             {/* Category label with line */}
@@ -69,8 +69,8 @@ export const ContactUsPage = () => {
       </section>
 
       {/* 2. MIDDLE CONTENT GRID (GET IN TOUCH | SEND MESSAGE | RECEPTION & CALL CARD) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           
           {/* CARD 1: GET IN TOUCH (3.5 COLS) */}
           <div className="lg:col-span-4 bg-white rounded-2xl p-7 sm:p-8 shadow-md border border-slate-100/80 space-y-6 text-left">
@@ -294,7 +294,7 @@ export const ContactUsPage = () => {
       </section>
 
       {/* 3. BOTTOM EMBEDDED LOCATION MAP GRAPHIC */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-2">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mt-2">
         <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 relative bg-[#E5E3DF] h-64 sm:h-72">
           {/* Stylized Google Map Background simulation */}
           <div className="absolute inset-0 bg-[radial-gradient(#c2c0b8_1px,transparent_1px)] [background-size:12px_12px] opacity-60"></div>

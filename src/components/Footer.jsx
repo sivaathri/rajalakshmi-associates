@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 export const Footer = ({ onOpenConsultation = () => {} }) => {
   return (
     <footer className="bg-gradient-to-r from-[#4E010F] via-[#670216] to-[#4E010F] text-white pt-12 pb-5 border-t border-[#850D24] select-none">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
         
         {/* MAIN 4-COLUMN GRID WITH VERTICAL DIVIDERS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10">
