@@ -311,7 +311,7 @@ export const ContactUsPage = () => {
           ></iframe>
 
           {/* Floating Location Overlay Badge */}
-          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-xl border border-slate-200 flex items-center gap-3 z-10">
+          <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-xl border border-slate-200 flex items-center gap-3 z-10 pointer-events-none">
             <div className="w-9 h-9 rounded-full bg-[#6D0014] text-white flex items-center justify-center shrink-0">
               <MapPin className="w-5 h-5 text-[#EBB638] fill-[#EBB638]" />
             </div>
