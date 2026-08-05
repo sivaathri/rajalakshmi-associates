@@ -19,10 +19,46 @@ import {
   Headphones,
   FileText,
   Search,
-  BadgeCheck
+  BadgeCheck,
+  Star,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 export const HomePage = ({ onOpenConsultation = () => {} }) => {
+  const testimonials = [
+    {
+      id: 1,
+      quote: "Rajalakshimi Associates made my home loan process so smooth and hassle-free. Their dedication and support are truly commendable.",
+      name: "Karthik S.",
+      role: "Home Loan Customer",
+      rating: 5
+    },
+    {
+      id: 2,
+      quote: "Excellent service and quick response from the team. They guided me at every step and got me the best loan offer.",
+      name: "Priya M.",
+      role: "Business Loan Customer",
+      rating: 5
+    },
+    {
+      id: 3,
+      quote: "Very professional and transparent approach. I highly recommend Rajalakshimi Associates for anyone looking for financial solutions.",
+      name: "Ramesh T.",
+      role: "Personal Loan Customer",
+      rating: 5
+    },
+    {
+      id: 4,
+      quote: "Outstanding support from Rajalakshimi Associates. They handled our documentation seamlessly and got the approval in record time.",
+      name: "Anand R.",
+      role: "Commercial Loan Customer",
+      rating: 5
+    }
+  ];
+
+  const [activeSlide, setActiveSlide] = React.useState(0);
+
   return (
     <div className="bg-[#FBF8F5] min-h-screen text-slate-800 font-sans pb-16 select-none">
       
@@ -436,6 +472,100 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
           </div>
 
         </div>
+      </section>
+
+      {/* 4. WHAT OUR CLIENTS SAY SECTION */}
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-10 lg:py-14">
+        
+        {/* Header */}
+        <div className="flex items-center justify-center gap-3 mb-8 sm:mb-12">
+          <span className="w-10 h-[1.5px] bg-[#EBB638] inline-block rounded-full"></span>
+          <span className="text-xs sm:text-sm font-bold text-[#700619] uppercase tracking-normal">
+            WHAT OUR CLIENTS SAY
+          </span>
+          <span className="w-10 h-[1.5px] bg-[#EBB638] inline-block rounded-full"></span>
+        </div>
+
+        {/* Carousel Container with Side Arrows */}
+        <div className="relative flex items-center gap-2 sm:gap-4">
+          
+          {/* Left Arrow Button */}
+          <button 
+            onClick={() => setActiveSlide((prev) => (prev === 0 ? testimonials.length - 3 : prev - 1))}
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#700619] text-[#700619] flex items-center justify-center hover:bg-[#700619] hover:text-white transition-colors cursor-pointer shrink-0 z-10"
+            aria-label="Previous Testimonial"
+          >
+            <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+          </button>
+
+          {/* Cards Grid (3 cards displayed) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 flex-grow">
+            {testimonials.slice(activeSlide, activeSlide + 3).map((item) => (
+              <div 
+                key={item.id}
+                className="bg-[#FFFDF9] border border-rose-100/70 rounded-2xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-all flex flex-col justify-between text-left group"
+              >
+                <div>
+                  {/* Quote Icon */}
+                  <div className="text-slate-800 text-3xl font-serif leading-none mb-3 font-bold select-none">
+                    “
+                  </div>
+                  
+                  {/* Testimonial Quote Text */}
+                  <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed mb-6">
+                    {item.quote}
+                  </p>
+                </div>
+
+                <div>
+                  {/* 5 Rating Stars */}
+                  <div className="flex items-center gap-1 mb-3">
+                    {[...Array(item.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-[#DDA82A] text-[#DDA82A]" />
+                    ))}
+                  </div>
+
+                  {/* Author Name */}
+                  <p className="text-xs sm:text-sm font-semibold text-slate-700">
+                    – {item.name}
+                  </p>
+
+                  {/* Author Role */}
+                  <p className="text-xs text-slate-500 font-medium mt-0.5">
+                    {item.role}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right Arrow Button */}
+          <button 
+            onClick={() => setActiveSlide((prev) => (prev >= testimonials.length - 3 ? 0 : prev + 1))}
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#700619] text-[#700619] flex items-center justify-center hover:bg-[#700619] hover:text-white transition-colors cursor-pointer shrink-0 z-10"
+            aria-label="Next Testimonial"
+          >
+            <ChevronRight className="w-5 h-5 stroke-[2.5]" />
+          </button>
+
+        </div>
+
+        {/* Carousel Pagination Dots */}
+        <div className="flex items-center justify-center gap-2 mt-8">
+          {[0, 1].map((idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveSlide(idx)}
+              className={`transition-all duration-300 rounded-full cursor-pointer ${
+                activeSlide === idx 
+                  ? "w-6 h-2 bg-[#700619]" 
+                  : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+
       </section>
 
     </div>
