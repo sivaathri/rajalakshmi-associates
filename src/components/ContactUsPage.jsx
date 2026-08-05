@@ -69,11 +69,11 @@ export const ContactUsPage = () => {
       </section>
 
       {/* 2. MIDDLE CONTENT GRID (GET IN TOUCH | SEND MESSAGE | RECEPTION & CALL CARD) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* CARD 1: GET IN TOUCH (3.5 COLS) */}
-          <div className="lg:col-span-4 bg-white rounded-2xl p-6 shadow-md border border-slate-100 space-y-6 text-left">
+          <div className="lg:col-span-4 bg-white rounded-2xl p-7 sm:p-8 shadow-md border border-slate-100/80 space-y-6 text-left">
             
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-slate-100 pb-3">
@@ -140,7 +140,7 @@ export const ContactUsPage = () => {
           </div>
 
           {/* CARD 2: SEND US A MESSAGE FORM (4.5 COLS) */}
-          <div className="lg:col-span-5 bg-white rounded-2xl p-6 shadow-md border border-slate-100 space-y-5 text-left">
+          <div className="lg:col-span-5 bg-white rounded-2xl p-7 sm:p-8 shadow-md border border-slate-100/80 space-y-6 text-left">
             
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-slate-100 pb-3">
@@ -167,10 +167,10 @@ export const ContactUsPage = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4.5">
                 
                 {/* Row 1: Name & Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="relative">
                     <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                     <input 
@@ -179,7 +179,7 @@ export const ContactUsPage = () => {
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
+                      className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
                     />
                   </div>
 
@@ -191,13 +191,13 @@ export const ContactUsPage = () => {
                       placeholder="Your Email"
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
+                      className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
                     />
                   </div>
                 </div>
 
                 {/* Row 2: Phone & Subject */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="relative">
                     <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                     <input 
@@ -206,7 +206,7 @@ export const ContactUsPage = () => {
                       placeholder="Your Phone"
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
+                      className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
                     />
                   </div>
 
@@ -218,7 +218,7 @@ export const ContactUsPage = () => {
                       placeholder="Subject"
                       value={formData.subject}
                       onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
+                      className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
                     />
                   </div>
                 </div>
@@ -232,15 +232,15 @@ export const ContactUsPage = () => {
                     placeholder="Your Message"
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="w-full pl-10 pr-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none resize-none"
+                    className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none resize-none"
                   ></textarea>
                 </div>
 
                 {/* Submit Button matching reference image */}
-                <div>
+                <div className="pt-1">
                   <button 
                     type="submit"
-                    className="bg-[#6D0014] hover:bg-[#52000F] text-white px-6 py-2.5 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-md active:scale-95 cursor-pointer"
+                    className="bg-[#6D0014] hover:bg-[#52000F] text-white px-7 py-3 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-md active:scale-95 cursor-pointer"
                   >
                     <span>Send Message</span>
                     <ArrowRight className="w-4 h-4" />
@@ -253,7 +253,7 @@ export const ContactUsPage = () => {
           </div>
 
           {/* RIGHT SIDE STACK (3 COLS: RECEPTION IMAGE + NEED ASSISTANCE CARD) */}
-          <div className="lg:col-span-3 space-y-4">
+          <div className="lg:col-span-3 space-y-6">
             
             {/* Top Reception Image */}
             <div className="rounded-2xl overflow-hidden shadow-md border border-slate-100 h-44">
