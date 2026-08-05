@@ -75,6 +75,7 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
         </div>
       </section>
 
+     
       {/* 2. OUR SERVICES SECTION HEADER */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pt-12 pb-8 text-center space-y-2">
         <div className="flex items-center justify-center gap-4 max-w-3xl mx-auto px-4">
@@ -168,6 +169,57 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
               <span>Learn More</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </div>
+          </div>
+
+        </div>
+      </section>
+ {/* 2. STATS & ACHIEVEMENTS BAR */}
+      <section className="w-full bg-[#6B0416] border-y border-[#8B0820] text-white select-none py-4 sm:py-6">
+        <div className="max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-white/20">
+          
+          {/* Stat 1 */}
+          <div className="flex flex-col items-center justify-center text-center p-4 sm:p-5 space-y-2">
+            <Award className="w-10 h-10 text-[#EBB638] stroke-[1.5]" />
+            <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">8.5+</span>
+            <span className="text-[11px] sm:text-xs font-extrabold text-white tracking-wider uppercase leading-tight">
+              YEARS OF<br />EXCELLENCE
+            </span>
+          </div>
+
+          {/* Stat 2 */}
+          <div className="flex flex-col items-center justify-center text-center p-4 sm:p-5 space-y-2">
+            <Users className="w-10 h-10 text-[#EBB638] stroke-[1.5]" />
+            <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">30+</span>
+            <span className="text-[11px] sm:text-xs font-extrabold text-white tracking-wider uppercase leading-tight">
+              PROFESSIONAL<br />EMPLOYEES
+            </span>
+          </div>
+
+          {/* Stat 3 */}
+          <div className="flex flex-col items-center justify-center text-center p-4 sm:p-5 space-y-2">
+            <Building className="w-10 h-10 text-[#EBB638] stroke-[1.5]" />
+            <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">2</span>
+            <span className="text-[11px] sm:text-xs font-extrabold text-white tracking-wider uppercase leading-tight">
+              BRANCH<br />OFFICES
+            </span>
+          </div>
+
+          {/* Stat 4 */}
+          <div className="flex flex-col items-center justify-center text-center p-4 sm:p-5 space-y-2">
+            <Target className="w-10 h-10 text-[#EBB638] stroke-[1.5]" />
+            <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">90%</span>
+            <span className="text-[11px] sm:text-xs font-extrabold text-white tracking-wider uppercase leading-tight">
+              LOAN SUCCESS<br />RATIO
+            </span>
+          </div>
+
+          {/* Stat 5 */}
+          <div className="flex flex-col items-center justify-center text-center p-4 sm:p-5 space-y-2 col-span-2 md:col-span-1">
+            <Handshake className="w-10 h-10 text-[#EBB638] stroke-[1.5]" />
+            <span className="text-xl sm:text-2xl font-serif-brand font-bold text-white tracking-wider uppercase">THOUSANDS</span>
+            <span className="text-[11px] sm:text-xs font-extrabold text-white tracking-wider uppercase leading-tight">
+              OF HAPPY<br />CUSTOMERS
+            </span>
           </div>
 
         </div>
