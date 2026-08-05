@@ -1,5 +1,6 @@
 import React from 'react';
 import homeBg from '../assets/homebg.png';
+import aboutHandshakeImg from '../assets/about_handshake.png';
 import loanImg from '../assets/loan.png';
 import insuranceImg from '../assets/insurance.png';
 import propertiesImg from '../assets/properties.png';
@@ -14,7 +15,8 @@ import {
   ShieldCheck,
   Landmark,
   FileCheck,
-  Percent
+  Percent,
+  Headphones
 } from 'lucide-react';
 
 export const HomePage = ({ onOpenConsultation = () => {} }) => {
@@ -75,6 +77,7 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
         </div>
       </section>
 
+      
      
       {/* 2. OUR SERVICES SECTION HEADER */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pt-12 pb-8 text-center space-y-2">
@@ -220,6 +223,94 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
             <span className="text-[11px] sm:text-xs font-extrabold text-white tracking-wider uppercase leading-tight">
               OF HAPPY<br />CUSTOMERS
             </span>
+          </div>
+
+        </div>
+        
+      </section>
+{/* 2. ABOUT US SECTION */}
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Text & Features */}
+          <div className="space-y-5 text-left">
+            
+            {/* Tagline */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs sm:text-sm font-bold text-[#700619] uppercase tracking-normal">
+                ABOUT US
+              </span>
+              <span className="w-10 h-[2px] bg-[#EBB638] inline-block rounded-full"></span>
+            </div>
+
+            {/* Headline with Gold Accent Line */}
+            <div className="space-y-3">
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-serif-brand font-bold text-slate-900 leading-tight">
+                Your Trusted Loan Partner
+              </h2>
+              <div className="w-16 h-[2px] bg-[#EBB638] rounded-full"></div>
+            </div>
+
+            {/* Subtitle */}
+            <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed max-w-xl">
+              We are committed to delivering ethical, transparent and result-oriented financial solutions.
+            </p>
+
+            {/* Feature Checklist */}
+            <div className="space-y-3 pt-1">
+              {[
+                "Ethical & Transparent Practices",
+                "Expert Financial Guidance",
+                "Fast Processing & Quick Approvals",
+                "Strong Network with Banks & Financial Institutions"
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#700619] text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span className="text-xs sm:text-sm font-semibold text-slate-700">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <div className="pt-2">
+              <button 
+                onClick={onOpenConsultation}
+                className="bg-[#700619] hover:bg-[#500412] text-white px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-2.5 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer uppercase tracking-wider"
+              >
+                <span>KNOW MORE ABOUT US</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+
+          </div>
+
+          {/* Right Column: Handshake Image with Floating Card */}
+          <div className="relative lg:pl-4 pb-8 lg:pb-0">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+              <img 
+                src={aboutHandshakeImg} 
+                alt="Your Trusted Loan Partner - Handshake" 
+                className="w-full h-[320px] sm:h-[400px] lg:h-[420px] object-cover object-center transform hover:scale-102 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Floating Contact / Financial Success Badge */}
+            <div className="absolute -bottom-4 right-2 sm:right-6 bg-[#FFFDF9] border border-rose-100/80 rounded-2xl p-5 shadow-2xl flex flex-col items-center text-center max-w-[190px] sm:max-w-[210px] z-20">
+              <div className="w-12 h-12 rounded-full bg-rose-50 border border-rose-100 text-[#700619] flex items-center justify-center mb-2">
+                <Headphones className="w-6 h-6 stroke-[2]" />
+              </div>
+              <p className="text-xs text-slate-600 font-medium">We are here</p>
+              <p className="text-xs text-slate-600 font-medium">for your</p>
+              <h4 className="font-serif-brand font-bold text-base sm:text-lg text-[#700619] leading-tight mt-1">
+                Financial<br />Success
+              </h4>
+            </div>
           </div>
 
         </div>
