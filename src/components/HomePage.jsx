@@ -59,6 +59,24 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
   ];
 
   const [activeSlide, setActiveSlide] = React.useState(0);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const maxSlideIndex = isMobile ? testimonials.length - 1 : testimonials.length - 3;
+
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev >= maxSlideIndex ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setActiveSlide((prev) => (prev === 0 ? maxSlideIndex : prev - 1));
+  };
 
   return (
     <div className="bg-[#FBF8F5] min-h-screen text-slate-800 font-sans pb-2 select-none">
@@ -480,11 +498,11 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
         
         {/* Header */}
         <div className="flex items-center justify-center gap-3 mb-8 sm:mb-12">
-          <span className="w-10 h-[1.5px] bg-[#f9f0e7] inline-block rounded-full"></span>
+          <span className="w-10 h-[1.5px] bg-[#EBB638] inline-block rounded-full"></span>
           <span className="text-xs sm:text-sm font-bold text-[#700619] uppercase tracking-normal">
             WHAT OUR CLIENTS SAY
           </span>
-          <span className="w-10 h-[1.5px] bg-[#f9f0e7] inline-block rounded-full"></span>
+          <span className="w-10 h-[1.5px] bg-[#EBB638] inline-block rounded-full"></span>
         </div>
 
         {/* Carousel Container with Side Arrows */}
@@ -492,58 +510,67 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
           
           {/* Left Arrow Button */}
           <button 
-            onClick={() => setActiveSlide((prev) => (prev === 0 ? testimonials.length - 3 : prev - 1))}
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#700619] text-[#700619] flex items-center justify-center hover:bg-[#700619] hover:text-white transition-colors cursor-pointer shrink-0 z-10"
+            onClick={prevSlide}
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#700619] text-[#700619] flex items-center justify-center hover:bg-[#700619] hover:text-white transition-colors cursor-pointer shrink-0 z-20 shadow-xs"
             aria-label="Previous Testimonial"
           >
             <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
           </button>
 
-          {/* Cards Grid (3 cards displayed) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 flex-grow">
-            {testimonials.slice(activeSlide, activeSlide + 3).map((item) => (
-              <div 
-                key={item.id}
-                className="bg-[#FFFDF9] border border-rose-100/70 rounded-2xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-all flex flex-col justify-between text-left group"
-              >
-                <div>
-                  {/* Quote Icon */}
-                  <div className="text-slate-800 text-3xl font-serif leading-none mb-3 font-bold select-none">
-                    “
+          {/* Sliding Track Viewport */}
+          <div className="overflow-hidden w-full py-2">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${activeSlide * (isMobile ? 100 : 33.3333)}%)`
+              }}
+            >
+              {testimonials.map((item) => (
+                <div 
+                  key={item.id}
+                  className="w-full md:w-1/3 shrink-0 px-2.5 sm:px-3"
+                >
+                  <div className="bg-[#FFFDF9] border border-rose-100/80 rounded-2xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-all flex flex-col justify-between text-left h-full group">
+                    <div>
+                      {/* Quote Icon */}
+                      <div className="text-slate-800 text-3xl font-serif leading-none mb-3 font-bold select-none">
+                        “
+                      </div>
+                      
+                      {/* Testimonial Quote Text */}
+                      <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed mb-6">
+                        {item.quote}
+                      </p>
+                    </div>
+
+                    <div>
+                      {/* 5 Rating Stars */}
+                      <div className="flex items-center gap-1 mb-3">
+                        {[...Array(item.rating)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-[#DDA82A] text-[#DDA82A]" />
+                        ))}
+                      </div>
+
+                      {/* Author Name */}
+                      <p className="text-xs sm:text-sm font-semibold text-slate-700">
+                        – {item.name}
+                      </p>
+
+                      {/* Author Role */}
+                      <p className="text-xs text-slate-500 font-medium mt-0.5">
+                        {item.role}
+                      </p>
+                    </div>
                   </div>
-                  
-                  {/* Testimonial Quote Text */}
-                  <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed mb-6">
-                    {item.quote}
-                  </p>
                 </div>
-
-                <div>
-                  {/* 5 Rating Stars */}
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#DDA82A] text-[#DDA82A]" />
-                    ))}
-                  </div>
-
-                  {/* Author Name */}
-                  <p className="text-xs sm:text-sm font-semibold text-slate-700">
-                    – {item.name}
-                  </p>
-
-                  {/* Author Role */}
-                  <p className="text-xs text-slate-500 font-medium mt-0.5">
-                    {item.role}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Right Arrow Button */}
           <button 
-            onClick={() => setActiveSlide((prev) => (prev >= testimonials.length - 3 ? 0 : prev + 1))}
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#700619] text-[#700619] flex items-center justify-center hover:bg-[#700619] hover:text-white transition-colors cursor-pointer shrink-0 z-10"
+            onClick={nextSlide}
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#700619] text-[#700619] flex items-center justify-center hover:bg-[#700619] hover:text-white transition-colors cursor-pointer shrink-0 z-20 shadow-xs"
             aria-label="Next Testimonial"
           >
             <ChevronRight className="w-5 h-5 stroke-[2.5]" />
@@ -553,7 +580,7 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
 
         {/* Carousel Pagination Dots */}
         <div className="flex items-center justify-center gap-2 mt-8">
-          {[0, 1].map((idx) => (
+          {Array.from({ length: maxSlideIndex + 1 }).map((_, idx) => (
             <button
               key={idx}
               onClick={() => setActiveSlide(idx)}
