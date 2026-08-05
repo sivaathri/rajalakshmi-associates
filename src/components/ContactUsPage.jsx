@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import bannerBgImg from '../assets/contact_banner_bg.png';
+import bannerBgImg from '../assets/contactbg.png';
 import officeReceptionImg from '../assets/office_reception.png';
 import { 
   Phone, 
