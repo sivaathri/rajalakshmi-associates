@@ -116,7 +116,7 @@ export const Footer = ({ onOpenConsultation = () => {} }) => {
               
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-white shrink-0" />
-                <a href="tel:+919842300000" className="hover:text-[#EBB638] transition-colors">+91 98423 00000</a>
+                <a href="tel:+919566675322" className="hover:text-[#EBB638] transition-colors">+91 95666 75322</a>
               </div>
 
               <div className="flex items-center gap-3">
@@ -126,9 +126,11 @@ export const Footer = ({ onOpenConsultation = () => {} }) => {
                 </a>
               </div>
 
-              <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-white shrink-0" />
-                <span>Puducherry &amp; Tamil Nadu</span>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-white shrink-0 mt-0.5" />
+                <span className="leading-snug">
+                  1st Floor, No. 151/35, Plot 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry - 605013
+                </span>
               </div>
 
               <div className="flex items-center gap-3">

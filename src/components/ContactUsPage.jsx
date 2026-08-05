@@ -93,7 +93,7 @@ export const ContactUsPage = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 text-xs sm:text-sm">Call Us</h4>
-                  <p className="font-medium text-slate-800 text-xs sm:text-sm mt-0.5">+91 98423 00000</p>
+                  <p className="font-medium text-slate-800 text-xs sm:text-sm mt-0.5">+91 95666 75322</p>
                   <p className="text-[11px] text-slate-500 mt-0.5">Mon - Sat: 9:30 AM - 6:30 PM</p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export const ContactUsPage = () => {
                 <div>
                   <h4 className="font-bold text-slate-900 text-xs sm:text-sm">Visit Us</h4>
                   <p className="text-slate-700 text-xs sm:text-sm leading-relaxed mt-0.5">
-                    No: 123, MG Road, Pondicherry - 605001, Tamil Nadu, India.
+                    1st Floor, No. 151/35, Plot No. 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry - 605013.
                   </p>
                 </div>
               </div>
@@ -297,10 +297,10 @@ export const ContactUsPage = () => {
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mt-6">
         <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative bg-slate-200 h-72 sm:h-80 w-full">
           
-          {/* Interactive Google Maps Iframe for Pondicherry */}
+          {/* Interactive Google Maps Iframe for Gorimedu, Puducherry */}
           <iframe
-            title="Rajalakshmi Associates Puducherry Location Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.664426574246!2d79.827299!3d11.936306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a536173a116b47d%3A0x6a0f7c22ab65a25c!2sMG%20Road%2C%20Puducherry!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            title="Rajalakshmi Associates Gorimedu Puducherry Location Map"
+            src="https://maps.google.com/maps?q=151%2F35%20Plot%2019%20Tindivanam%20Byp%20Rd%20near%20KBS%20Travels%20Gorimedu%20Puducherry%20605013&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -317,7 +317,7 @@ export const ContactUsPage = () => {
             </div>
             <div>
               <div className="text-xs font-extrabold text-[#6D0014]">Rajalakshmi Associates</div>
-              <div className="text-[11px] text-slate-600 font-medium">No: 123, MG Road, Pondicherry - 605001</div>
+              <div className="text-[11px] text-slate-600 font-medium">1st Floor, Gorimedu, Puducherry - 605013</div>
             </div>
           </div>
 
