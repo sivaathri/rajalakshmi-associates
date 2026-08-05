@@ -22,7 +22,8 @@ import {
   BadgeCheck,
   Star,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  PhoneCall
 } from 'lucide-react';
 
 export const HomePage = ({ onOpenConsultation = () => {} }) => {
@@ -566,6 +567,39 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
           ))}
         </div>
 
+      </section>
+
+      {/* 5. NEED FINANCIAL ASSISTANCE CTA BANNER */}
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pb-16 pt-4">
+        <div className="bg-[#FFFDF9] border border-rose-100/80 rounded-2xl p-6 sm:p-8 lg:px-10 lg:py-7 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
+          
+          {/* Left: Phone Circle Badge + Text */}
+          <div className="flex items-center gap-4 sm:gap-5 text-left">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#700619] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#700619]/20">
+              <PhoneCall className="w-7 h-7 sm:w-8 sm:h-8 stroke-[2]" />
+            </div>
+            <div>
+              <h3 className="font-serif-brand font-bold text-xl sm:text-2xl lg:text-3xl text-slate-900 mb-1">
+                Need Financial Assistance?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 font-medium">
+                Our experts are ready to help you with the right solutions.
+              </p>
+            </div>
+          </div>
+
+          {/* Right: CTA Button */}
+          <div className="shrink-0">
+            <button 
+              onClick={onOpenConsultation}
+              className="bg-[#700619] hover:bg-[#500412] text-white px-7 py-3.5 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-2.5 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer uppercase tracking-wider"
+            >
+              <span>CONTACT US TODAY</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+        </div>
       </section>
 
     </div>
