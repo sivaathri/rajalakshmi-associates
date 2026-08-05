@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
+import { HomePage } from './components/HomePage';
 import { ContactUsPage } from './components/ContactUsPage';
 import { Footer } from './components/Footer';
 
 export function App() {
-  const [activeTab, setActiveTab] = useState('Contact Us');
+  const [activeTab, setActiveTab] = useState('Home');
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 font-sans flex flex-col selection:bg-[#700619] selection:text-white">
@@ -15,9 +16,13 @@ export function App() {
         onOpenConsultation={() => setActiveTab('Contact Us')}
       />
 
-      {/* Contact Us Page UI */}
+      {/* Main Content Area - Renders based on activeTab */}
       <main className="flex-grow">
-        <ContactUsPage />
+        {activeTab === 'Contact Us' ? (
+          <ContactUsPage />
+        ) : (
+          <HomePage onOpenConsultation={() => setActiveTab('Contact Us')} />
+        )}
       </main>
 
       {/* Footer UI */}
