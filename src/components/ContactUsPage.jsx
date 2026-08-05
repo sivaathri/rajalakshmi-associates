@@ -297,10 +297,10 @@ export const ContactUsPage = () => {
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mt-6">
         <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative bg-slate-200 h-72 sm:h-80 w-full">
           
-          {/* Interactive Google Maps Iframe for Gorimedu, Puducherry */}
+          {/* Interactive Google Maps Iframe for Gorimedu, Puducherry (Exact GPS: 11.968971, 79.791846) */}
           <iframe
             title="Rajalakshmi Associates Gorimedu Puducherry Location Map"
-            src="https://maps.google.com/maps?q=151%2F35%20Plot%2019%20Tindivanam%20Byp%20Rd%20near%20KBS%20Travels%20Gorimedu%20Puducherry%20605013&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=11.968971,79.791846&z=17&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
