@@ -41,7 +41,7 @@ export const ContactUsPage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#42000A] via-[#42000A]/90 to-transparent z-10"></div>
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16 relative z-20 w-full">
-          <div className="max-w-2xl text-left space-y-4">
+          <div className="max-w-2xl text-left space-y-4 animate-float-up">
             
             {/* Category label with line */}
             <div className="flex items-center gap-3">

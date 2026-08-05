@@ -16,8 +16,8 @@ export function App() {
         onOpenConsultation={() => setActiveTab('Contact Us')}
       />
 
-      {/* Main Content Area - Renders based on activeTab */}
-      <main className="flex-grow">
+      {/* Main Content Area - Smooth keyframe transition on tab change */}
+      <main key={activeTab} className="flex-grow animate-page-entry">
         {activeTab === 'Contact Us' ? (
           <ContactUsPage />
         ) : (

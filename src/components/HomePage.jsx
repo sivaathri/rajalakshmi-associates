@@ -24,7 +24,7 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
       >
        
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-30 w-full">
-          <div className="max-w-2xl text-left space-y-6">
+          <div className="max-w-2xl text-left space-y-6 animate-float-up">
             
             {/* Category Header */}
             <div className="flex items-center gap-2">
