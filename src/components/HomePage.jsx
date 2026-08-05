@@ -61,7 +61,7 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
   const [activeSlide, setActiveSlide] = React.useState(0);
 
   return (
-    <div className="bg-[#FBF8F5] min-h-screen text-slate-800 font-sans pb-16 select-none">
+    <div className="bg-[#FBF8F5] min-h-screen text-slate-800 font-sans pb-2 select-none">
       
       {/* 1. HERO SECTION WITH FULL PANORAMIC COVER BG & DIAGONAL CORNER ACCENTS */}
       <section 
@@ -480,11 +480,11 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
         
         {/* Header */}
         <div className="flex items-center justify-center gap-3 mb-8 sm:mb-12">
-          <span className="w-10 h-[1.5px] bg-[#EBB638] inline-block rounded-full"></span>
+          <span className="w-10 h-[1.5px] bg-[#f9f0e7] inline-block rounded-full"></span>
           <span className="text-xs sm:text-sm font-bold text-[#700619] uppercase tracking-normal">
             WHAT OUR CLIENTS SAY
           </span>
-          <span className="w-10 h-[1.5px] bg-[#EBB638] inline-block rounded-full"></span>
+          <span className="w-10 h-[1.5px] bg-[#f9f0e7] inline-block rounded-full"></span>
         </div>
 
         {/* Carousel Container with Side Arrows */}
@@ -570,8 +570,8 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
       </section>
 
       {/* 5. NEED FINANCIAL ASSISTANCE CTA BANNER */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pb-16 pt-4">
-        <div className="bg-[#FFFDF9] border border-rose-100/80 rounded-2xl p-6 sm:p-8 lg:px-10 lg:py-7 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pb-6 pt-2">
+        <div className="bg-[#f9f0e7] border border-rose-100/80 rounded-2xl p-6 sm:p-8 lg:px-10 lg:py-7 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
           
           {/* Left: Phone Circle Badge + Text */}
           <div className="flex items-center gap-4 sm:gap-5 text-left">
