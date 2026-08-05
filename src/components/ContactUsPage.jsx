@@ -293,22 +293,34 @@ export const ContactUsPage = () => {
         </div>
       </section>
 
-      {/* 3. BOTTOM EMBEDDED LOCATION MAP GRAPHIC */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mt-2">
-        <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200 relative bg-[#E5E3DF] h-64 sm:h-72">
-          {/* Stylized Google Map Background simulation */}
-          <div className="absolute inset-0 bg-[radial-gradient(#c2c0b8_1px,transparent_1px)] [background-size:12px_12px] opacity-60"></div>
+      {/* 3. BOTTOM EMBEDDED REAL GOOGLE MAP */}
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mt-6">
+        <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative bg-slate-200 h-72 sm:h-80 w-full">
           
-          {/* Map pin marker matching reference */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-xl border border-slate-200">
-            <MapPin className="w-6 h-6 text-[#6D0014] fill-[#6D0014]" />
-            <span className="text-xs font-extrabold text-[#6D0014]">Rajalakshmi Associates</span>
+          {/* Interactive Google Maps Iframe for Pondicherry */}
+          <iframe
+            title="Rajalakshmi Associates Puducherry Location Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.664426574246!2d79.827299!3d11.936306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a536173a116b47d%3A0x6a0f7c22ab65a25c!2sMG%20Road%2C%20Puducherry!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full"
+          ></iframe>
+
+          {/* Floating Location Overlay Badge */}
+          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-xl border border-slate-200 flex items-center gap-3 z-10">
+            <div className="w-9 h-9 rounded-full bg-[#6D0014] text-white flex items-center justify-center shrink-0">
+              <MapPin className="w-5 h-5 text-[#EBB638] fill-[#EBB638]" />
+            </div>
+            <div>
+              <div className="text-xs font-extrabold text-[#6D0014]">Rajalakshmi Associates</div>
+              <div className="text-[11px] text-slate-600 font-medium">No: 123, MG Road, Pondicherry - 605001</div>
+            </div>
           </div>
 
-          {/* Map overlay elements */}
-          <div className="absolute bottom-3 left-4 bg-white/90 backdrop-blur-xs px-3 py-1 rounded-md text-[10px] font-bold text-slate-700">
-            📍 MG Road, Pondicherry 605001
-          </div>
         </div>
       </section>
 
