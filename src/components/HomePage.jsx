@@ -1,5 +1,5 @@
 import React from 'react';
-import homeHeroBgImg from '../assets/home_hero_bg.png';
+import homeBg from '../assets/homebg.png';
 import { 
   Award, 
   Users, 
@@ -81,7 +81,7 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
                 
                 {/* Building Image */}
                 <img 
-                  src={homeHeroBgImg} 
+                  src={homeBg} 
                   alt="Rajalakshimi Associates Headquarters" 
                   className="w-full h-full object-cover min-h-[320px] lg:min-h-[380px] transform group-hover:scale-105 transition-transform duration-700"
                 />
