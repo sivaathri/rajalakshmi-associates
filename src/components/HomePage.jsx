@@ -22,15 +22,7 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
         className="relative w-full overflow-hidden bg-cover bg-center bg-no-repeat border-b border-slate-200/60 pt-12 pb-20 lg:py-28 min-h-[460px] flex items-center"
         style={{ backgroundImage: `url(${homeBg})` }}
       >
-        {/* Soft overlay gradient to ensure high readability of text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-50/70 via-amber-50/40 to-transparent z-10 pointer-events-none"></div>
-
-        {/* Top-Left Crimson/Gold Diagonal Ribbon Accent */}
-        <div className="absolute top-0 left-0 w-36 h-36 sm:w-48 sm:h-48 bg-gradient-to-br from-[#700619] via-[#8D0822] to-[#EBB638] transform -translate-x-18 -translate-y-18 rotate-45 z-20 shadow-lg pointer-events-none"></div>
-
-        {/* Bottom-Right Crimson/Gold Diagonal Ribbon Accent */}
-        <div className="absolute bottom-0 right-0 w-44 h-44 sm:w-60 sm:h-60 bg-gradient-to-tl from-[#700619] via-[#8D0822] to-[#EBB638] transform translate-x-22 translate-y-22 rotate-45 z-20 shadow-xl pointer-events-none"></div>
-
+       
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-30 w-full">
           <div className="max-w-2xl text-left space-y-6">
             
