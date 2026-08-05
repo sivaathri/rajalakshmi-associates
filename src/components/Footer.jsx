@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/footer logo.png';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export const Footer = ({ onOpenConsultation = () => {} }) => {
