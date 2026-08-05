@@ -17,136 +17,62 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
   return (
     <div className="bg-[#FBF8F5] min-h-screen text-slate-800 font-sans pb-16 select-none">
       
-      {/* 1. HERO SECTION WITH DIAGONAL CORNER RIBBONS & FLOATING STATS */}
-      <section className="relative w-full overflow-hidden bg-gradient-to-r from-[#FFFBF7] via-[#FFF8F0] to-[#F5ECE2] border-b border-slate-200/60 pt-10 pb-16 lg:py-20">
-        
+      {/* 1. HERO SECTION WITH FULL PANORAMIC COVER BG & DIAGONAL CORNER ACCENTS */}
+      <section 
+        className="relative w-full overflow-hidden bg-cover bg-center bg-no-repeat border-b border-slate-200/60 pt-12 pb-20 lg:py-28 min-h-[460px] flex items-center"
+        style={{ backgroundImage: `url(${homeBg})` }}
+      >
+        {/* Soft overlay gradient to ensure high readability of text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-50/70 via-amber-50/40 to-transparent z-10 pointer-events-none"></div>
+
         {/* Top-Left Crimson/Gold Diagonal Ribbon Accent */}
-        <div className="absolute top-0 left-0 w-32 h-32 sm:w-44 sm:h-44 bg-gradient-to-br from-[#700619] via-[#8D0822] to-[#EBB638] transform -translate-x-16 -translate-y-16 rotate-45 z-10 shadow-lg pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-36 h-36 sm:w-48 sm:h-48 bg-gradient-to-br from-[#700619] via-[#8D0822] to-[#EBB638] transform -translate-x-18 -translate-y-18 rotate-45 z-20 shadow-lg pointer-events-none"></div>
 
         {/* Bottom-Right Crimson/Gold Diagonal Ribbon Accent */}
-        <div className="absolute bottom-0 right-0 w-40 h-40 sm:w-56 sm:h-56 bg-gradient-to-tl from-[#700619] via-[#8D0822] to-[#EBB638] transform translate-x-20 translate-y-20 rotate-45 z-10 shadow-xl pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-44 h-44 sm:w-60 sm:h-60 bg-gradient-to-tl from-[#700619] via-[#8D0822] to-[#EBB638] transform translate-x-22 translate-y-22 rotate-45 z-20 shadow-xl pointer-events-none"></div>
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-30 w-full">
+          <div className="max-w-2xl text-left space-y-6">
             
-            {/* LEFT CONTENT (6.5 COLS) */}
-            <div className="lg:col-span-7 space-y-6 text-left pr-0 lg:pr-4">
-              
-              {/* Category Header */}
-              <div className="flex items-center gap-2">
-                <span className="text-xs sm:text-sm font-extrabold text-[#700619] tracking-[0.18em] uppercase">
-                  YOUR TRUSTED LOAN PARTNER
-                </span>
-              </div>
-
-              {/* Main Headline with Serif Typography & Gold Underline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-serif-brand font-bold text-slate-900 leading-[1.12]">
-                Building Trust. <br />
-                Empowering Growth. <br />
-                <span className="relative inline-block text-[#700619] pb-1">
-                  Creating Financial Success.
-                  {/* Brush stroke underline */}
-                  <span className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#EBB638] via-[#EBB638] to-amber-300 rounded-full"></span>
-                </span>
-              </h1>
-
-              {/* Subtitle */}
-              <p className="text-xs sm:text-sm md:text-base text-slate-600 font-normal leading-relaxed max-w-xl">
-                At Rajalakshimi Associates, we provide ethical, transparent and result-oriented financial solutions to help you achieve your dreams.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <button 
-                  onClick={onOpenConsultation}
-                  className="bg-[#700619] hover:bg-[#570413] text-white px-7 py-3.5 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-[#700619]/25 hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-0.5"
-                >
-                  <span>Get Free Consultation</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
-                <button 
-                  onClick={onOpenConsultation}
-                  className="bg-[#FFFDF7] hover:bg-[#FFF8E6] text-[#700619] border border-[#EBB638] px-7 py-3.5 rounded-2xl font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-xs"
-                >
-                  Know More
-                </button>
-              </div>
-
+            {/* Category Header */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs sm:text-sm font-extrabold text-[#700619] tracking-[0.18em] uppercase">
+                YOUR TRUSTED LOAN PARTNER
+              </span>
             </div>
 
-            {/* RIGHT SIDE: FLOATING STATS BADGE & HERO BUILDING (5.5 COLS) */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/60 bg-white min-h-[320px] lg:min-h-[380px] group">
-                
-                {/* Building Image */}
-                <img 
-                  src={homeBg} 
-                  alt="Rajalakshimi Associates Headquarters" 
-                  className="w-full h-full object-cover min-h-[320px] lg:min-h-[380px] transform group-hover:scale-105 transition-transform duration-700"
-                />
+            {/* Main Headline with Serif Typography & Gold Underline */}
+            <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-serif-brand font-bold text-slate-900 leading-[1.12]">
+              Building Trust. <br />
+              Empowering Growth. <br />
+              <span className="relative inline-block text-[#700619] pb-1">
+                Creating Financial Success.
+                {/* Brush stroke underline */}
+                <span className="absolute bottom-0 left-0 w-full h-[3.5px] bg-gradient-to-r from-[#EBB638] via-[#EBB638] to-amber-300 rounded-full"></span>
+              </span>
+            </h1>
 
-                {/* Center-Left Translucent Floating Stats Card */}
-                <div className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl border border-white/80 space-y-3.5 z-30 max-w-[210px] text-left">
-                  
-                  {/* Stat 1 */}
-                  <div className="flex items-center gap-3 border-b border-slate-100 pb-2">
-                    <div className="w-8 h-8 rounded-full bg-rose-100 text-[#700619] flex items-center justify-center shrink-0">
-                      <Award className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-black text-slate-900 leading-tight">8.5+</div>
-                      <div className="text-[10px] text-slate-500 font-semibold">Years of Excellence</div>
-                    </div>
-                  </div>
+            {/* Subtitle */}
+            <p className="text-xs sm:text-sm md:text-base text-slate-700 font-medium leading-relaxed max-w-xl">
+              At Rajalakshimi Associates, we provide ethical, transparent and result-oriented financial solutions to help you achieve your dreams.
+            </p>
 
-                  {/* Stat 2 */}
-                  <div className="flex items-center gap-3 border-b border-slate-100 pb-2">
-                    <div className="w-8 h-8 rounded-full bg-rose-100 text-[#700619] flex items-center justify-center shrink-0">
-                      <Users className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-black text-slate-900 leading-tight">30+</div>
-                      <div className="text-[10px] text-slate-500 font-semibold">Professional Employees</div>
-                    </div>
-                  </div>
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <button 
+                onClick={onOpenConsultation}
+                className="bg-[#700619] hover:bg-[#570413] text-white px-7 py-3.5 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-[#700619]/25 hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-0.5"
+              >
+                <span>Get Free Consultation</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
 
-                  {/* Stat 3 */}
-                  <div className="flex items-center gap-3 border-b border-slate-100 pb-2">
-                    <div className="w-8 h-8 rounded-full bg-rose-100 text-[#700619] flex items-center justify-center shrink-0">
-                      <Building className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-black text-slate-900 leading-tight">2</div>
-                      <div className="text-[10px] text-slate-500 font-semibold">Branch Offices</div>
-                    </div>
-                  </div>
-
-                  {/* Stat 4 */}
-                  <div className="flex items-center gap-3 border-b border-slate-100 pb-2">
-                    <div className="w-8 h-8 rounded-full bg-rose-100 text-[#700619] flex items-center justify-center shrink-0">
-                      <Target className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-black text-slate-900 leading-tight">90%</div>
-                      <div className="text-[10px] text-slate-500 font-semibold">Loan Success Ratio</div>
-                    </div>
-                  </div>
-
-                  {/* Stat 5 */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-rose-100 text-[#700619] flex items-center justify-center shrink-0">
-                      <Handshake className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-black text-[#700619] leading-tight">Thousands</div>
-                      <div className="text-[10px] text-slate-500 font-semibold">of Happy Customers</div>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
+              <button 
+                onClick={onOpenConsultation}
+                className="bg-[#FFFDF7] hover:bg-[#FFF8E6] text-[#700619] border border-[#EBB638] px-7 py-3.5 rounded-2xl font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-xs"
+              >
+                Know More
+              </button>
             </div>
 
           </div>
