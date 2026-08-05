@@ -77,12 +77,12 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
 
       {/* 2. OUR SERVICES SECTION HEADER */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pt-12 pb-8 text-center space-y-2">
-        <div className="flex items-center justify-center gap-3">
-          <span className="w-12 h-[2px] bg-[#EBB638]"></span>
-          <span className="text-xs font-extrabold text-[#700619] uppercase tracking-[0.2em]">
+        <div className="flex items-center justify-center gap-4 max-w-3xl mx-auto px-4">
+          <span className="h-[1.5px] sm:h-[2px] flex-1 max-w-[140px] sm:max-w-[220px] bg-gradient-to-r from-transparent via-[#EBB638] to-[#EBB638] rounded-full"></span>
+          <span className="text-xs sm:text-sm font-extrabold text-[#700619] uppercase tracking-[0.22em] shrink-0">
             OUR SERVICES
           </span>
-          <span className="w-12 h-[2px] bg-[#EBB638]"></span>
+          <span className="h-[1.5px] sm:h-[2px] flex-1 max-w-[140px] sm:max-w-[220px] bg-gradient-to-r from-[#EBB638] via-[#EBB638] to-transparent rounded-full"></span>
         </div>
 
         <h2 className="text-2xl sm:text-4xl font-serif-brand font-bold text-slate-900">
