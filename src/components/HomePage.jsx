@@ -1,5 +1,9 @@
 import React from 'react';
 import homeBg from '../assets/homebg.png';
+import loanImg from '../assets/loan.png';
+import insuranceImg from '../assets/insurance.png';
+import propertiesImg from '../assets/properties.png';
+import onlineServicesImg from '../assets/online services.png';
 import { 
   Award, 
   Users, 
@@ -99,30 +103,8 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
             onClick={onOpenConsultation}
             className="bg-white p-7 rounded-2xl border border-rose-100/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
           >
-            <div className="w-20 h-20 rounded-full bg-[#700619] flex items-center justify-center mb-5 text-white shadow-md shadow-[#700619]/20 group-hover:scale-105 transition-transform duration-300">
-              <svg className="w-12 h-12 text-white" viewBox="0 0 32 32" fill="currentColor">
-                {/* Sleeve / Cuff */}
-                <rect x="3" y="15" width="2.8" height="9" rx="0.6" fill="currentColor" />
-                <circle cx="4.4" cy="22" r="0.5" fill="#700619" />
-
-                {/* Hand / Palm */}
-                <path d="M6.8 15h5.5c1.8 0 3.2 0.8 4.2 2.2l3.8 1.9c1.2 0.6 1.4 2.2 0.4 3.1l-2.8 2.2c-1 0.8-2.2 1.1-3.4 1.1H6.8V15z" fill="currentColor" />
-
-                {/* Top Knob of Coin */}
-                <rect x="18" y="2.5" width="3" height="1.8" rx="0.6" fill="currentColor" />
-
-                {/* Outer Ring of Coin */}
-                <circle cx="19.5" cy="10" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.5" />
-
-                {/* Inner Circle of Coin */}
-                <circle cx="19.5" cy="10" r="4.8" fill="currentColor" />
-
-                {/* Rupee Symbol */}
-                <text x="19.5" y="12.2" fontSize="6.2" fontWeight="bold" fontFamily="sans-serif" fill="#700619" textAnchor="middle">₹</text>
-
-                {/* Bottom Connector Base */}
-                <rect x="18" y="16.5" width="3" height="1.5" rx="0.4" fill="currentColor" />
-              </svg>
+            <div className="w-20 h-20 mb-5 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <img src={loanImg} alt="Loans" className="w-full h-full object-contain" />
             </div>
             <h3 className="font-serif-brand font-bold text-2xl text-[#700619] mb-3">Loans</h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-medium max-w-[240px] flex-grow">
@@ -139,16 +121,8 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
             onClick={onOpenConsultation}
             className="bg-white p-7 rounded-2xl border border-rose-100/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
           >
-            <div className="w-20 h-20 rounded-full bg-[#700619] flex items-center justify-center mb-5 text-white shadow-md shadow-[#700619]/20 group-hover:scale-105 transition-transform duration-300">
-              <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2v2" />
-                <path d="M3.5 12a8.5 8.5 0 0 1 17 0H3.5z" fill="currentColor" fillOpacity="0.25" />
-                <path d="M12 12v6a2 2 0 0 0 2 2" />
-                <circle cx="9" cy="15.5" r="1" fill="currentColor" />
-                <path d="M7.5 18.5a1.5 1.5 0 0 1 3 0" />
-                <circle cx="15" cy="15.5" r="1" fill="currentColor" />
-                <path d="M13.5 18.5a1.5 1.5 0 0 1 3 0" />
-              </svg>
+            <div className="w-20 h-20 mb-5 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <img src={insuranceImg} alt="Insurance" className="w-full h-full object-contain" />
             </div>
             <h3 className="font-serif-brand font-bold text-2xl text-[#700619] mb-3">Insurance</h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-medium max-w-[240px] flex-grow">
@@ -165,12 +139,8 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
             onClick={onOpenConsultation}
             className="bg-white p-7 rounded-2xl border border-rose-100/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
           >
-            <div className="w-20 h-20 rounded-full bg-[#700619] flex items-center justify-center mb-5 text-white shadow-md shadow-[#700619]/20 group-hover:scale-105 transition-transform duration-300">
-              <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 10.5L12 3l9 7.5" />
-                <path d="M5 9.5V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9.5" />
-                <path d="M9 21V12h6v9" />
-              </svg>
+            <div className="w-20 h-20 mb-5 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <img src={propertiesImg} alt="Properties" className="w-full h-full object-contain" />
             </div>
             <h3 className="font-serif-brand font-bold text-2xl text-[#700619] mb-3">Properties</h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-medium max-w-[240px] flex-grow">
@@ -187,14 +157,8 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
             onClick={onOpenConsultation}
             className="bg-white p-7 rounded-2xl border border-rose-100/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
           >
-            <div className="w-20 h-20 rounded-full bg-[#700619] flex items-center justify-center mb-5 text-white shadow-md shadow-[#700619]/20 group-hover:scale-105 transition-transform duration-300">
-              <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="9" />
-                <line x1="3.6" y1="9" x2="20.4" y2="9" />
-                <line x1="3.6" y1="15" x2="20.4" y2="15" />
-                <path d="M11.5 3a17 17 0 0 0 0 18" />
-                <path d="M12.5 3a17 17 0 0 1 0 18" />
-              </svg>
+            <div className="w-20 h-20 mb-5 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <img src={onlineServicesImg} alt="Online Services" className="w-full h-full object-contain" />
             </div>
             <h3 className="font-serif-brand font-bold text-2xl text-[#700619] mb-3">Online Services</h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-medium max-w-[240px] flex-grow">
