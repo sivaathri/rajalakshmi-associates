@@ -44,10 +44,18 @@ export const Header = ({
       <div className="bg-[#700619] text-white py-1.5 sm:py-2 px-2.5 sm:px-4 lg:px-8 border-b border-[#880820]">
         <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-1.5 sm:gap-2 text-[11px] sm:text-xs md:text-sm">
           
-          {/* Left: Location */}
-          <div className="flex items-center gap-1 sm:gap-2 font-medium tracking-wide shrink-0">
-            <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-rose-200 shrink-0" />
-            <span className="truncate max-w-[130px] xs:max-w-none">Puducherry</span>
+          {/* Left: Location & Phone Numbers */}
+          <div className="flex items-center gap-2 sm:gap-4 font-medium tracking-wide shrink-0">
+            <div className="flex items-center gap-1 sm:gap-1.5">
+              <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-200 shrink-0" />
+              <span>Puducherry</span>
+            </div>
+            <div className="hidden sm:flex items-center gap-1.5 text-amber-100/90 text-[11px] sm:text-xs">
+              <Phone className="w-3 h-3 text-rose-200 shrink-0" />
+              <a href="tel:+917904634737" className="hover:text-amber-200 transition-colors">+91 79046 34737</a>
+              <span className="text-rose-300/60">|</span>
+              <a href="tel:+919566675322" className="hover:text-amber-200 transition-colors">+91 95666 75322</a>
+            </div>
           </div>
 
           {/* Center: Tamil Regional Tagline */}

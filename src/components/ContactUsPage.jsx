@@ -93,8 +93,11 @@ export const ContactUsPage = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 text-xs sm:text-sm">Call Us</h4>
-                  <p className="font-medium text-slate-800 text-xs sm:text-sm mt-0.5">+91 95666 75322</p>
-                  <p className="text-[11px] text-slate-500 mt-0.5">Mon - Sat: 9:30 AM - 6:30 PM</p>
+                  <div className="flex flex-col font-medium text-slate-800 text-xs sm:text-sm mt-0.5 gap-0.5">
+                    <a href="tel:+917904634737" className="hover:text-[#6D0014] transition-colors">+91 79046 34737</a>
+                    <a href="tel:+919566675322" className="hover:text-[#6D0014] transition-colors">+91 95666 75322</a>
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-1">Mon - Sat: 9:30 AM - 6:30 PM</p>
                 </div>
               </div>
 
@@ -279,8 +282,8 @@ export const ContactUsPage = () => {
               </div>
 
               <a 
-                href="tel:+919842300000"
-                className="inline-flex items-center gap-2 bg-[#6D0014] hover:bg-[#52000F] border border-white/20 text-white px-4 py-1.5 rounded-lg text-xs font-bold transition-all"
+                href="tel:+917904634737"
+                className="inline-flex items-center gap-2 bg-[#6D0014] hover:bg-[#52000F] border border-white/20 text-white px-4 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer"
               >
                 <span>Call Now</span>
                 <ArrowRight className="w-3.5 h-3.5" />
