@@ -48,7 +48,7 @@ export const Header = ({
           <div className="flex items-center gap-2 sm:gap-4 font-medium tracking-wide shrink-0">
             <div className="flex items-center gap-1 sm:gap-1.5">
               <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-200 shrink-0" />
-              <span>Puducherry</span>
+              <span>Puducherry & Tamilnadu</span>
             </div>
             <div className="hidden sm:flex items-center gap-1.5 text-amber-100/90 text-[11px] sm:text-xs">
               <Phone className="w-3 h-3 text-rose-200 shrink-0" />
