@@ -136,7 +136,7 @@ export const Header = ({
                   >
                     <button 
                       onClick={() => setActiveTab(item.name)}
-                      className={`flex items-center gap-1 transition-colors hover:text-[#700619] ${
+                      className={`flex items-center gap-1 transition-colors hover:text-[#700619] cursor-pointer ${
                         isActive ? 'text-[#700619]' : 'text-slate-700'
                       }`}
                     >
@@ -159,7 +159,7 @@ export const Header = ({
                                   setActiveTab('Our Services');
                                   setServicesDropdownOpen(false);
                                 }}
-                                className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-rose-50/70 transition-colors group/sub"
+                                className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-rose-50/70 transition-colors group/sub cursor-pointer"
                               >
                                 <div className="p-2 bg-rose-100/60 rounded-md text-[#700619] group-hover/sub:bg-[#700619] group-hover/sub:text-white transition-colors shrink-0">
                                   <IconComp className="w-4 h-4" />
@@ -186,7 +186,7 @@ export const Header = ({
                 <button
                   key={item.name}
                   onClick={() => setActiveTab(item.name)}
-                  className={`relative py-2 transition-colors hover:text-[#700619] whitespace-nowrap ${
+                  className={`relative py-2 transition-colors hover:text-[#700619] whitespace-nowrap cursor-pointer ${
                     isActive ? 'text-[#700619] font-bold' : 'text-slate-700'
                   }`}
                 >
@@ -215,7 +215,7 @@ export const Header = ({
           <div className="lg:hidden flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={onOpenConsultation}
-              className="sm:hidden bg-[#700619] text-white p-2 rounded-full shadow-md hover:bg-[#570413]"
+              className="sm:hidden bg-[#700619] text-white p-2 rounded-full shadow-md hover:bg-[#570413] cursor-pointer"
               aria-label="Call for Free Consultation"
             >
               <Phone className="w-4 h-4 fill-white stroke-none text-white" />
@@ -223,7 +223,7 @@ export const Header = ({
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 sm:p-2 text-slate-700 hover:text-[#700619] hover:bg-rose-50 rounded-lg transition-colors"
+              className="p-1.5 sm:p-2 text-slate-700 hover:text-[#700619] hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -243,7 +243,7 @@ export const Header = ({
                   <div key={item.name} className="flex flex-col">
                     <button
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors ${
+                      className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors cursor-pointer ${
                         activeTab === item.name 
                           ? 'bg-rose-50 text-[#700619]' 
                           : 'text-slate-700 hover:bg-slate-50'
@@ -265,7 +265,7 @@ export const Header = ({
                               setActiveTab('Our Services');
                               setMobileMenuOpen(false);
                             }}
-                            className="block py-1.5 px-2 text-xs font-medium text-slate-700 hover:text-[#700619]"
+                            className="block py-1.5 px-2 text-xs font-medium text-slate-700 hover:text-[#700619] cursor-pointer"
                           >
                             • {sub.title}
                           </a>
@@ -283,7 +283,7 @@ export const Header = ({
                     setActiveTab(item.name);
                     setMobileMenuOpen(false);
                   }}
-                  className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors ${
+                  className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors cursor-pointer ${
                     activeTab === item.name 
                       ? 'bg-rose-50 text-[#700619] border-l-4 border-[#700619]' 
                       : 'text-slate-700 hover:bg-slate-50'
