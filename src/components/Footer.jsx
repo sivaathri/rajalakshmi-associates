@@ -144,7 +144,7 @@ export const Footer = ({ onOpenConsultation = () => {} }) => {
 
         {/* BOTTOM COPYRIGHT BAR */}
         <div className="pt-4 border-t border-[#850D24]/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/90 font-medium">
-          <p>© {new Date().getFullYear()} Rajalakshmi Associates. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Pondy IT Solutions</p>
           
           <div className="flex items-center space-x-4 text-white/90">
             <a href="#privacy" className="hover:text-[#EBB638] transition-colors">Privacy Policy</a>
