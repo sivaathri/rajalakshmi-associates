@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '../assets/footer logo.png';
+import { Logo } from './Logo';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export const Footer = ({ onOpenConsultation = () => {} }) => {
@@ -14,11 +14,7 @@ export const Footer = ({ onOpenConsultation = () => {} }) => {
           <div className="lg:col-span-4 space-y-4 pr-0 lg:pr-6 lg:border-r border-[#850D24]/70">
             {/* Logo Image */}
             <div className="flex items-center">
-              <img 
-                src={logoImg} 
-                alt="Rajalakshmi Associates" 
-                className="h-14 sm:h-16 w-auto object-contain brightness-0 invert"
-              />
+              <Logo variant="light" className="h-14 sm:h-16" />
             </div>
 
             {/* Tagline */}
