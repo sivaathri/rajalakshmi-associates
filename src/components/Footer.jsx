@@ -98,7 +98,7 @@ export const Footer = ({ onOpenConsultation = () => {}, setActiveTab = () => {} 
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm font-medium text-white/90">
               <li><button onClick={() => setActiveTab('Loans')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Loans</button></li>
-              <li><button onClick={() => setActiveTab('Our Services')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Insurance</button></li>
+              <li><button onClick={() => setActiveTab('Insurance')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Insurance</button></li>
               <li><button onClick={() => setActiveTab('Our Services')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Properties</button></li>
             </ul>
           </div>

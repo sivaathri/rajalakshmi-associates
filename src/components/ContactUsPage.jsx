@@ -1,28 +1,35 @@
 import React, { useState } from 'react';
 import bannerBgImg from '../assets/contactbg.png';
-import officeReceptionImg from '../assets/office_reception.png';
 import { 
   Phone, 
   Mail, 
   MapPin, 
   Clock, 
-  User, 
-  FileText, 
-  Edit3, 
-  ArrowRight, 
-  Headphones,
-  CheckCircle2 
+  Send, 
+  ShieldCheck, 
+  Building2, 
+  Navigation, 
+  MessageSquare, 
+  ArrowRight,
+  CheckCircle2
 } from 'lucide-react';
 
 export const ContactUsPage = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
+    email: '',
     subject: '',
     message: ''
   });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,111 +37,107 @@ export const ContactUsPage = () => {
   };
 
   return (
-    <div className="bg-[#F8F5F2] min-h-screen text-slate-800 font-sans pb-12 select-none">
+    <div className="bg-[#FAF7F4] min-h-screen text-slate-800 font-sans pb-16 select-none overflow-x-hidden">
       
-      {/* 1. TOP PANORAMIC HERO BANNER WITH DARK CRIMSON OVERLAY */}
+      {/* 1. HERO BANNER */}
       <section 
-        className="w-full bg-[#350008] text-white relative overflow-hidden bg-cover bg-center bg-no-reprat min-h-[320px] lg:min-h-[380px] flex items-center"
+        className="w-full bg-[#350008] text-white relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-[280px] sm:min-h-[340px] flex items-center mb-8 sm:mb-12"
         style={{ backgroundImage: `url(${bannerBgImg})` }}
       >
-        {/* Dark crimson gradient overlay fading from left to right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#42000A] via-[#42000A]/90 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#4A000E] via-[#4A000E]/90 to-[#2A0007]/80 z-10" />
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16 relative z-20 w-full">
-          <div className="max-w-2xl text-left space-y-4 animate-float-up">
-            
-            {/* Category label with line */}
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-10 relative z-20 w-full">
+          <div className="max-w-2xl text-left space-y-3 animate-float-up">
             <div className="flex items-center gap-3">
-              <span className="text-xs font-bold text-[#EBB638] uppercase tracking-[0.2em]">
-                CONTACT US
+              <span className="text-xs sm:text-sm font-extrabold text-[#EBB638] uppercase tracking-[0.2em]">
+                CONTACT RAJALAKSHMY ASSOCIATES
               </span>
-              <span className="w-12 h-[2px] bg-[#EBB638]"></span>
+              <span className="w-12 h-[2px] bg-[#EBB638] rounded-full inline-block" />
             </div>
 
-            {/* Headline matching exact reference text & typography */}
-            <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-serif-brand font-bold text-white leading-[1.12]">
-              We’re Here to Help You <br />
-              <span className="text-[#EBB638]">Achieve Your Financial Goals.</span>
+            <h1 className="text-3xl sm:text-5xl font-serif-brand font-bold text-white leading-tight">
+              Get In Touch With <br />
+              <span className="text-[#EBB638]">Our Financial Experts.</span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-xs sm:text-sm md:text-base text-rose-100/90 max-w-xl font-normal leading-relaxed pt-1">
-              Have questions or need personalized financial solutions? <br />
-              Our team is ready to assist you.
+            <p className="text-xs sm:text-sm text-rose-100/90 max-w-xl font-normal leading-relaxed">
+              Have questions or need personalized loan, insurance, or property legal advisory? We are here to assist you.
             </p>
-
-            <div className="w-20 h-[2px] bg-[#EBB638] mt-2"></div>
           </div>
         </div>
       </section>
 
-      {/* 2. MIDDLE CONTENT GRID (GET IN TOUCH | SEND MESSAGE | RECEPTION & CALL CARD) */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+      {/* 2. TOP SECTION: GET IN TOUCH & SEND US A MESSAGE (EXACT UI MATCHING REFERENCE IMAGE) */}
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-10 sm:mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* CARD 1: GET IN TOUCH (3.5 COLS) */}
-          <div className="lg:col-span-4 bg-white rounded-2xl p-7 sm:p-8 shadow-md border border-slate-100/80 space-y-6 text-left">
+          {/* LEFT CARD: GET IN TOUCH */}
+          <div className="lg:col-span-5 bg-white rounded-3xl p-7 sm:p-9 shadow-md border border-slate-100/80 space-y-6 text-left">
             
-            {/* Header */}
-            <div className="flex items-center gap-3 border-b border-slate-100 pb-3">
-              <h3 className="text-sm font-bold text-[#6D0014] uppercase tracking-wider">
-                GET IN TOUCH
-              </h3>
-              <span className="w-10 h-[2px] bg-[#EBB638]"></span>
+            {/* Header with Orange Bar */}
+            <div className="space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-slate-900">
+                Get In Touch
+              </h2>
+              <div className="w-12 h-[3px] bg-[#D97706] rounded-full" />
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+                Have a question or need assistance? Reach out to us using the details below.
+              </p>
             </div>
 
-            {/* Contact Details List with Maroon Circle Badges */}
-            <div className="space-y-5 text-xs sm:text-sm">
+            {/* Contact Items List */}
+            <div className="space-y-6 pt-2">
               
-              {/* Call Us */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-[#6D0014] text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                  <Phone className="w-4 h-4" />
+              {/* Item 1: Phone */}
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center shrink-0 shadow-xs">
+                  <Phone className="w-5 h-5" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-xs sm:text-sm">Call Us</h4>
-                  <div className="flex flex-col font-medium text-slate-800 text-xs sm:text-sm mt-0.5 gap-0.5">
-                    <a href="tel:+917904634737" className="hover:text-[#6D0014] transition-colors">+91 79046 34737</a>
-                    <a href="tel:+919566675322" className="hover:text-[#6D0014] transition-colors">+91 95666 75322</a>
+                <div className="space-y-0.5">
+                  <h4 className="font-bold text-slate-900 text-sm sm:text-base">Phone</h4>
+                  <div className="text-xs sm:text-sm font-semibold text-slate-700 flex flex-wrap gap-2 items-center">
+                    <a href="tel:+917904634737" className="hover:text-[#D97706] transition-colors">+91 79046 34737</a>
+                    <span className="text-slate-300">|</span>
+                    <a href="tel:+919566675322" className="hover:text-[#D97706] transition-colors">+91 95666 75322</a>
                   </div>
-                  <p className="text-[11px] text-slate-500 mt-1">Mon - Sat: 9:30 AM - 6:30 PM</p>
                 </div>
               </div>
 
-              {/* Email Us */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-[#6D0014] text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                  <Mail className="w-4 h-4" />
+              {/* Item 2: Email */}
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center shrink-0 shadow-xs">
+                  <Mail className="w-5 h-5" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-xs sm:text-sm">Email Us</h4>
-                  <p className="font-medium text-slate-800 text-xs sm:text-sm mt-0.5">info@rajalakshmiassociates.com</p>
-                  <p className="text-[11px] text-slate-500 mt-0.5">We reply within 24 hours</p>
+                <div className="space-y-0.5">
+                  <h4 className="font-bold text-slate-900 text-sm sm:text-base">Email</h4>
+                  <a href="mailto:info@rajalakshmiassociates.com" className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#D97706] transition-colors block break-all">
+                    info@rajalakshmiassociates.com
+                  </a>
                 </div>
               </div>
 
-              {/* Visit Us */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-[#6D0014] text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                  <MapPin className="w-4 h-4" />
+              {/* Item 3: Office Address */}
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center shrink-0 shadow-xs">
+                  <MapPin className="w-5 h-5" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-xs sm:text-sm">Visit Us</h4>
-                  <p className="text-slate-700 text-xs sm:text-sm leading-relaxed mt-0.5">
-                    1st Floor, No. 151/35, Plot No. 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry - 605013.
+                <div className="space-y-0.5">
+                  <h4 className="font-bold text-slate-900 text-sm sm:text-base">Office Address</h4>
+                  <p className="text-xs sm:text-sm font-medium text-slate-600 leading-relaxed">
+                    1st Floor, No. 151/35, Plot 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry - 605013, India
                   </p>
                 </div>
               </div>
 
-              {/* Working Hours */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-[#6D0014] text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                  <Clock className="w-4 h-4" />
+              {/* Item 4: Working Hours */}
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center shrink-0 shadow-xs">
+                  <Clock className="w-5 h-5" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-xs sm:text-sm">Working Hours</h4>
-                  <p className="text-slate-700 text-xs sm:text-sm mt-0.5">Mon - Sat: 9:30 AM - 6:30 PM</p>
-                  <p className="text-slate-500 text-xs mt-0.5">Sunday: Closed</p>
+                <div className="space-y-0.5">
+                  <h4 className="font-bold text-slate-900 text-sm sm:text-base">Working Hours</h4>
+                  <p className="text-xs sm:text-sm font-medium text-slate-600">Mon - Sat: 9:30 AM - 6:30 PM</p>
+                  <p className="text-xs font-medium text-slate-500">Sunday: By Appointment</p>
                 </div>
               </div>
 
@@ -142,112 +145,131 @@ export const ContactUsPage = () => {
 
           </div>
 
-          {/* CARD 2: SEND US A MESSAGE FORM (4.5 COLS) */}
-          <div className="lg:col-span-5 bg-white rounded-2xl p-7 sm:p-8 shadow-md border border-slate-100/80 space-y-6 text-left">
-            
-            {/* Header */}
-            <div className="flex items-center gap-3 border-b border-slate-100 pb-3">
-              <h3 className="text-sm font-bold text-[#6D0014] uppercase tracking-wider">
-                SEND US A MESSAGE
-              </h3>
-              <span className="w-10 h-[2px] bg-[#EBB638]"></span>
+          {/* RIGHT CARD: SEND US A MESSAGE */}
+          <div className="lg:col-span-7 bg-white rounded-3xl p-7 sm:p-9 shadow-md border border-slate-100/80 text-left">
+            <div className="space-y-2 mb-6">
+              <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-slate-900">
+                Send Us a Message
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                Fill out the form below and our team will get back to you soon.
+              </p>
             </div>
 
             {formSubmitted ? (
-              <div className="py-12 text-center space-y-3 bg-rose-50/50 rounded-xl p-4 border border-rose-100">
-                <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+              <div className="bg-emerald-50 border border-emerald-200 text-emerald-900 p-6 sm:p-8 rounded-2xl text-center space-y-3 my-4">
+                <div className="w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto shadow-md">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h4 className="text-lg font-bold text-slate-900">Message Sent!</h4>
-                <p className="text-xs text-slate-600">
-                  Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Our team will contact you shortly.
+                <h3 className="text-xl font-serif-brand font-bold text-emerald-950">Thank You! Message Sent.</h3>
+                <p className="text-xs sm:text-sm text-emerald-700 max-w-md mx-auto">
+                  Our loan & legal advisory team at Rajalakshmy Associates will reach out to you shortly.
                 </p>
-                <button
+                <button 
                   onClick={() => setFormSubmitted(false)}
-                  className="mt-2 bg-[#6D0014] text-white px-5 py-2 rounded-full font-semibold text-xs hover:bg-[#52000F]"
+                  className="mt-2 text-xs font-bold text-emerald-800 underline hover:text-emerald-950 cursor-pointer"
                 >
                   Send Another Message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4.5">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 
-                {/* Row 1: Name & Email */}
+                {/* Row 1: Name & Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="relative">
-                    <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
+                  <div className="space-y-1.5">
+                    <label className="text-xs sm:text-sm font-bold text-slate-700">
+                      Your Name <span className="text-rose-500">*</span>
+                    </label>
                     <input 
-                      type="text" 
+                      type="text"
+                      name="name"
                       required
-                      placeholder="Your Name"
                       value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
+                      onChange={handleChange}
+                      placeholder="Enter your full name"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#D97706]/40 focus:border-[#D97706] transition-all bg-slate-50/50"
                     />
                   </div>
 
-                  <div className="relative">
-                    <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
+                  <div className="space-y-1.5">
+                    <label className="text-xs sm:text-sm font-bold text-slate-700">
+                      Your Phone <span className="text-rose-500">*</span>
+                    </label>
                     <input 
-                      type="email" 
+                      type="tel"
+                      name="phone"
                       required
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
-                    />
-                  </div>
-                </div>
-
-                {/* Row 2: Phone & Subject */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="relative">
-                    <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
-                    <input 
-                      type="tel" 
-                      required
-                      placeholder="Your Phone"
                       value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
-                    />
-                  </div>
-
-                  <div className="relative">
-                    <FileText className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
-                    <input 
-                      type="text" 
-                      required
-                      placeholder="Subject"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                      className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none"
+                      onChange={handleChange}
+                      placeholder="Enter your phone number"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#D97706]/40 focus:border-[#D97706] transition-all bg-slate-50/50"
                     />
                   </div>
                 </div>
 
-                {/* Textarea */}
-                <div className="relative">
-                  <Edit3 className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
+                {/* Row 2: Email */}
+                <div className="space-y-1.5">
+                  <label className="text-xs sm:text-sm font-bold text-slate-700">
+                    Your Email <span className="text-rose-500">*</span>
+                  </label>
+                  <input 
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email address"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#D97706]/40 focus:border-[#D97706] transition-all bg-slate-50/50"
+                  />
+                </div>
+
+                {/* Row 3: Subject */}
+                <div className="space-y-1.5">
+                  <label className="text-xs sm:text-sm font-bold text-slate-700">
+                    Subject <span className="text-rose-500">*</span>
+                  </label>
+                  <input 
+                    type="text"
+                    name="subject"
+                    required
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Enter subject"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#D97706]/40 focus:border-[#D97706] transition-all bg-slate-50/50"
+                  />
+                </div>
+
+                {/* Row 4: Message */}
+                <div className="space-y-1.5">
+                  <label className="text-xs sm:text-sm font-bold text-slate-700">
+                    Your Message <span className="text-rose-500">*</span>
+                  </label>
                   <textarea 
+                    name="message"
                     required
                     rows={4}
-                    placeholder="Your Message"
                     value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="w-full pl-10 pr-3.5 py-3 text-xs sm:text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-[#6D0014] focus:border-transparent outline-none resize-none"
-                  ></textarea>
+                    onChange={handleChange}
+                    placeholder="Type your message here..."
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#D97706]/40 focus:border-[#D97706] transition-all bg-slate-50/50 resize-y"
+                  />
                 </div>
 
-                {/* Submit Button matching reference image */}
-                <div className="pt-1">
+                {/* Submit Action Row */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2">
                   <button 
                     type="submit"
-                    className="bg-[#6D0014] hover:bg-[#52000F] text-white px-7 py-3 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-md active:scale-95 cursor-pointer"
+                    className="bg-[#D97706] hover:bg-[#B45309] text-white px-7 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
                     <span>Send Message</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <Send className="w-4 h-4" />
                   </button>
+
+                  <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 font-medium">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                    <span>Your information is safe with us.</span>
+                  </div>
                 </div>
 
               </form>
@@ -255,40 +277,63 @@ export const ContactUsPage = () => {
 
           </div>
 
-          {/* RIGHT SIDE STACK (3 COLS: RECEPTION IMAGE + NEED ASSISTANCE CARD) */}
-          <div className="lg:col-span-3 space-y-6">
-            
-            {/* Top Reception Image */}
-            <div className="rounded-2xl overflow-hidden shadow-md border border-slate-100 h-44">
-              <img 
-                src={officeReceptionImg} 
-                alt="Rajalakshmi Associates Reception Interior" 
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-              />
+        </div>
+      </section>
+
+      {/* 3. MIDDLE SECTION: MAP EMBED & VISIT OUR OFFICE CARD */}
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* MAP EMBED (7 COLS) */}
+          <div className="lg:col-span-7 bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 min-h-[320px] sm:min-h-[380px] relative">
+            <iframe 
+              title="Rajalakshmy Associates Office Location Map"
+              src="https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              className="w-full h-full min-h-[320px] sm:min-h-[380px] border-0"
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
+          {/* VISIT OUR OFFICE CARD (5 COLS) */}
+          <div className="lg:col-span-5 bg-[#FFFDF7] border border-amber-200/70 rounded-3xl p-7 sm:p-9 shadow-md flex flex-col justify-between text-left space-y-6">
+            <div className="space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-slate-900">
+                Visit Our Office
+              </h2>
+              <div className="w-12 h-[3px] bg-[#D97706] rounded-full" />
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+                We welcome you to visit our office for personalized assistance.
+              </p>
             </div>
 
-            {/* Bottom Dark Maroon Assistance Card */}
-            <div className="bg-[#4D000E] text-white rounded-2xl p-5 shadow-lg space-y-3.5 text-left border border-white/10">
-              
-              <div className="w-10 h-10 rounded-full border border-[#EBB638] bg-[#6D0014] text-[#EBB638] flex items-center justify-center">
-                <Headphones className="w-5 h-5" />
+            {/* Office Badge Card */}
+            <div className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-[#0F172A] text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                <Building2 className="w-6 h-6" />
               </div>
-
               <div className="space-y-1">
-                <h4 className="font-bold text-sm text-white">Need Immediate Assistance?</h4>
-                <p className="text-[11px] text-rose-100/80 leading-snug">
-                  Talk to our experts for quick support and the right financial advice.
+                <h3 className="font-bold text-slate-900 text-base font-serif-brand">
+                  Rajalakshmy Associates
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                  1st Floor, No. 151/35, Plot 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry - 605013, India
                 </p>
               </div>
+            </div>
 
+            {/* Action Button */}
+            <div>
               <a 
-                href="tel:+917904634737"
-                className="inline-flex items-center gap-2 bg-[#6D0014] hover:bg-[#52000F] border border-white/20 text-white px-4 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer"
+                href="https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 border-2 border-[#D97706] text-[#D97706] hover:bg-[#D97706] hover:text-white px-7 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer shadow-xs"
               >
-                <span>Call Now</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span>Get Directions</span>
+                <Navigation className="w-4 h-4" />
               </a>
-
             </div>
 
           </div>
@@ -296,35 +341,96 @@ export const ContactUsPage = () => {
         </div>
       </section>
 
-      {/* 3. BOTTOM EMBEDDED REAL GOOGLE MAP */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mt-6">
-        <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative bg-slate-200 h-72 sm:h-80 w-full">
-          
-          {/* Interactive Google Maps Iframe for Gorimedu, Puducherry (Exact GPS: 11.968971, 79.791846) */}
-          <iframe
-            title="Rajalakshmi Associates Gorimedu Puducherry Location Map"
-            src="https://maps.google.com/maps?q=11.968971,79.791846&z=17&output=embed"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full"
-          ></iframe>
+      {/* 4. BOTTOM SECTION: OTHER WAYS TO CONNECT DIVIDER & 4 CARDS */}
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
+        
+        {/* Section Heading Divider with Gold Line Accents */}
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 text-center">
+          <span className="h-[1.5px] w-16 sm:w-32 bg-gradient-to-r from-transparent to-[#D97706] rounded-full inline-block" />
+          <h2 className="text-xl sm:text-2xl font-serif-brand font-bold text-slate-900 flex items-center gap-2">
+            <span className="text-[#D97706] text-xs">◆</span> Other Ways to Connect <span className="text-[#D97706] text-xs">◆</span>
+          </h2>
+          <span className="h-[1.5px] w-16 sm:w-32 bg-gradient-to-l from-transparent to-[#D97706] rounded-full inline-block" />
+        </div>
 
-          {/* Floating Location Overlay Badge */}
-          <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-xl border border-slate-200 flex items-center gap-3 z-10 pointer-events-none">
-            <div className="w-9 h-9 rounded-full bg-[#6D0014] text-white flex items-center justify-center shrink-0">
-              <MapPin className="w-5 h-5 text-[#EBB638] fill-[#EBB638]" />
+        {/* 4-Card Row Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          {/* Card 1: WhatsApp */}
+          <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all text-left flex items-start gap-4 group">
+            <div className="w-12 h-12 rounded-full bg-[#10B981] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+              <MessageSquare className="w-6 h-6" />
             </div>
-            <div>
-              <div className="text-xs font-extrabold text-[#6D0014]">Rajalakshmi Associates</div>
-              <div className="text-[11px] text-slate-600 font-medium">1st Floor, Gorimedu, Puducherry - 605013</div>
+            <div className="space-y-1">
+              <h3 className="font-bold text-slate-900 text-base">WhatsApp</h3>
+              <p className="text-xs text-slate-500 leading-snug">Chat with us for quick assistance</p>
+              <a 
+                href="https://wa.me/917904634737" 
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs sm:text-sm font-bold text-[#10B981] hover:underline block pt-1"
+              >
+                +91 79046 34737
+              </a>
+            </div>
+          </div>
+
+          {/* Card 2: Call Us */}
+          <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all text-left flex items-start gap-4 group">
+            <div className="w-12 h-12 rounded-full bg-[#0284C7] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+              <Phone className="w-6 h-6" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="font-bold text-slate-900 text-base">Call Us</h3>
+              <p className="text-xs text-slate-500 leading-snug">Speak directly with our experts</p>
+              <a 
+                href="tel:+919566675322" 
+                className="text-xs sm:text-sm font-bold text-[#0284C7] hover:underline block pt-1"
+              >
+                +91 95666 75322
+              </a>
+            </div>
+          </div>
+
+          {/* Card 3: Email Us */}
+          <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all text-left flex items-start gap-4 group">
+            <div className="w-12 h-12 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+              <Mail className="w-6 h-6" />
+            </div>
+            <div className="space-y-1 overflow-hidden">
+              <h3 className="font-bold text-slate-900 text-base">Email Us</h3>
+              <p className="text-xs text-slate-500 leading-snug">Drop us an email anytime</p>
+              <a 
+                href="mailto:info@rajalakshmiassociates.com" 
+                className="text-xs font-bold text-[#8B5CF6] hover:underline block pt-1 truncate"
+              >
+                info@rajalakshmiassociates.com
+              </a>
+            </div>
+          </div>
+
+          {/* Card 4: Visit Office */}
+          <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all text-left flex items-start gap-4 group">
+            <div className="w-12 h-12 rounded-full bg-[#D97706] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+              <Building2 className="w-6 h-6" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="font-bold text-slate-900 text-base">Visit Office</h3>
+              <p className="text-xs text-slate-500 leading-snug">Come and meet our team</p>
+              <a 
+                href="https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs sm:text-sm font-bold text-[#D97706] hover:underline flex items-center gap-1 pt-1"
+              >
+                <span>Get Directions</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
 
         </div>
+
       </section>
 
     </div>

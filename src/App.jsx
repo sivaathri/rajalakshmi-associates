@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { HomePage } from './components/HomePage';
 import { AboutUsPage } from './components/AboutUsPage';
 import { LoansPage } from './components/LoansPage';
+import { InsurancePage } from './components/InsurancePage';
 import { GalleryPage } from './components/GalleryPage';
 import { ContactUsPage } from './components/ContactUsPage';
 import { Footer } from './components/Footer';
@@ -32,6 +33,8 @@ export function App() {
           <AboutUsPage onOpenConsultation={() => setActiveTab('Contact Us')} />
         ) : activeTab === 'Loans' ? (
           <LoansPage onOpenConsultation={() => setActiveTab('Contact Us')} />
+        ) : activeTab === 'Insurance' ? (
+          <InsurancePage onOpenConsultation={() => setActiveTab('Contact Us')} />
         ) : activeTab === 'Gallery' ? (
           <GalleryPage onOpenConsultation={() => setActiveTab('Contact Us')} />
         ) : (

@@ -202,7 +202,7 @@ export const HomePage = ({ onOpenConsultation = () => {}, setActiveTab = () => {
 
           {/* Card 2: Insurance */}
           <div 
-            onClick={onOpenConsultation}
+            onClick={() => setActiveTab('Insurance')}
             className="bg-white p-6 sm:p-7 rounded-2xl border border-rose-100/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
           >
             <div className="w-16 h-16 sm:w-20 sm:h-20 mb-4 sm:mb-5 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
