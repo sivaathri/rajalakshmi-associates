@@ -103,10 +103,14 @@ export const LoansPage = ({ onOpenConsultation = () => {} }) => {
         'Clear legal title of the property'
       ],
       documents: [
-        'Income proof (Salary slips / ITR for 3 years)',
-        'Bank statements for the last 6-12 months',
-        'Property title deed, EC & Parent documents',
-        'Approved building plan & site approval copy'
+        'Basic KYC (Applicant & Co-applicant): Aadhaar, PAN',
+        'If both are salaried: Last 3 months payslips, last 6 months bank account statement',
+        'If one is salaried & one is business (Salaried): Last 3 months payslips, last 6 months bank account statement',
+        'If one is salaried & one is business (Business): Last 2 years IT papers, GST certificate, MSME certificate, last 1 year bank account statement (current/savings/OD)',
+        'Property documents: Full set including mother document / parent document, patta, EC, house tax, EB bill, water tax',
+        'For construction: Approval copy or plan and estimation copy',
+        'Photos: 3 passport size photos each for applicant and co-applicant',
+        'Note: Additional income (rental, home business, other business, agricultural, etc.) can also be considered with valid supporting documents as per lender policy.'
       ]
     },
     {
@@ -129,15 +133,18 @@ export const LoansPage = ({ onOpenConsultation = () => {} }) => {
         'Property located in Puducherry or Tamilnadu'
       ],
       documents: [
-        'Original property title deed & sale agreement',
-        'Encumbrance Certificate (EC) for 30 years',
-        'Patta, Chitta, Adangal & Property Tax receipts',
-        'ID, Address & Income proof of all co-applicants'
+        'Basic KYC (Applicant & Co-applicant): Aadhaar, PAN',
+        'If both are salaried: Last 3 months payslips, last 6 months bank account statement',
+        'If one is salaried & one is business (Salaried): Last 3 months payslips, last 6 months bank account statement',
+        'If one is salaried & one is business (Business): Last 2 years IT papers, GST certificate, MSME certificate, last 1 year bank account statement (current/savings/OD)',
+        'Property documents: Full set including mother document / parent document, Patta, EC, house tax, EB bill, water tax',
+        'Photos: 3 passport size photos each for applicant and co-applicant',
+        'Note: Additional income (rental, home business, other business, agricultural, etc.) can also be submitted and considered as per lender policy.'
       ]
     },
     {
       id: 'vehicle-refinance',
-      title: 'Car & Commercial Vehicle Refinance',
+      title: 'Used Car Loans & Commercial Vehicle Refinance',
       tagline: 'Cash Against Vehicle & Loan Refinancing',
       icon: Car,
       badge: 'Easy Liquidity',
@@ -155,10 +162,13 @@ export const LoansPage = ({ onOpenConsultation = () => {} }) => {
         'Clear RC with active insurance & fitness certificates'
       ],
       documents: [
-        'Vehicle RC Book copy & active Insurance Policy',
-        'Fitness Certificate (FC) & Permit (for commercial vehicles)',
-        'Owner PAN Card, Aadhaar Card & passport size photo',
-        '6 months bank statement & income proof'
+        'Applicant (Vehicle Owner): Aadhaar Card, PAN Card',
+        'Vehicle RC Book copy',
+        'Active Insurance copy',
+        '6 to 8 clear photos of the vehicle',
+        'Last 6 months bank account statement',
+        'If salaried: Last 3 months payslips, last 6 months bank statement, employee ID card, Form 16',
+        'If business owner: GST certificate, MSME certificate, last 6 months bank account statement'
       ]
     }
   ];
