@@ -58,7 +58,7 @@ export const Header = ({
           </div>
 
           {/* Center: Tamil Regional Tagline */}
-          <div className="font-tamil font-semibold text-[11px] sm:text-xs md:text-sm lg:text-base tracking-wider text-amber-100 flex items-center gap-2">
+          <div className="font-tamil font-semibold text-[11px] sm:text-xs md:text-sm lg:text-base tracking-wider text-amber-100 flex items-center justify-center text-center flex-1 mx-2">
             <span>இராஜலட்சுமி இணை</span>
           </div>
 
