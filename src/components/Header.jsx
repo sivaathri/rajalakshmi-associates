@@ -34,6 +34,7 @@ export const Header = ({
       ]
     },
     { name: 'Why Choose Us', hasDropdown: false },
+    { name: 'Gallery', hasDropdown: false },
     { name: 'Contact Us', hasDropdown: false },
   ];
 
@@ -122,7 +123,11 @@ export const Header = ({
           {/* BRAND LOGO - AUTO SCALES PER SCREEN SIZE */}
           <a 
             href="#home" 
-            onClick={(e) => { e.preventDefault(); setActiveTab('Home'); }}
+            onClick={(e) => { 
+              e.preventDefault(); 
+              setActiveTab('Home'); 
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             className="flex items-center group cursor-pointer shrink-0"
           >
             <Logo className="h-9 xs:h-11 sm:h-13 md:h-14 lg:h-16" />
@@ -142,7 +147,10 @@ export const Header = ({
                     onMouseLeave={() => setServicesDropdownOpen(false)}
                   >
                     <button 
-                      onClick={() => setActiveTab(item.name)}
+                      onClick={() => {
+                        setActiveTab(item.name);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                       className={`flex items-center gap-1 transition-colors hover:text-[#700619] cursor-pointer ${
                         isActive ? 'text-[#700619]' : 'text-slate-700'
                       }`}
@@ -164,6 +172,7 @@ export const Header = ({
                                 onClick={(e) => {
                                   e.preventDefault();
                                   setActiveTab('Our Services');
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
                                   setServicesDropdownOpen(false);
                                 }}
                                 className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-rose-50/70 transition-colors group/sub cursor-pointer"
@@ -192,7 +201,10 @@ export const Header = ({
               return (
                 <button
                   key={item.name}
-                  onClick={() => setActiveTab(item.name)}
+                  onClick={() => {
+                    setActiveTab(item.name);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                   className={`relative py-2 transition-colors hover:text-[#700619] whitespace-nowrap cursor-pointer ${
                     isActive ? 'text-[#700619] font-bold' : 'text-slate-700'
                   }`}
@@ -270,6 +282,7 @@ export const Header = ({
                             onClick={(e) => {
                               e.preventDefault();
                               setActiveTab('Our Services');
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
                               setMobileMenuOpen(false);
                             }}
                             className="block py-1.5 px-2 text-xs font-medium text-slate-700 hover:text-[#700619] cursor-pointer"
@@ -288,6 +301,7 @@ export const Header = ({
                   key={item.name}
                   onClick={() => {
                     setActiveTab(item.name);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                     setMobileMenuOpen(false);
                   }}
                   className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors cursor-pointer ${

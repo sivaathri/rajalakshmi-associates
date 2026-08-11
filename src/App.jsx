@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { HomePage } from './components/HomePage';
 import { AboutUsPage } from './components/AboutUsPage';
+import { GalleryPage } from './components/GalleryPage';
 import { ContactUsPage } from './components/ContactUsPage';
 import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
 
 export function App() {
   const [activeTab, setActiveTab] = useState('Home');
+
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTab]);
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 font-sans flex flex-col selection:bg-[#700619] selection:text-white">
@@ -24,6 +29,8 @@ export function App() {
           <ContactUsPage />
         ) : activeTab === 'About Us' ? (
           <AboutUsPage onOpenConsultation={() => setActiveTab('Contact Us')} />
+        ) : activeTab === 'Gallery' ? (
+          <GalleryPage onOpenConsultation={() => setActiveTab('Contact Us')} />
         ) : (
           <HomePage onOpenConsultation={() => setActiveTab('Contact Us')} />
         )}
