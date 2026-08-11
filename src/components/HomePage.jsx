@@ -26,7 +26,7 @@ import {
   PhoneCall
 } from 'lucide-react';
 
-export const HomePage = ({ onOpenConsultation = () => {} }) => {
+export const HomePage = ({ onOpenConsultation = () => {}, setActiveTab = () => {} }) => {
   const testimonials = [
     {
       id: 1,
@@ -146,10 +146,10 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
               </button>
 
               <button 
-                onClick={onOpenConsultation}
+                onClick={() => setActiveTab('Loans')}
                 className="bg-[#FFFDF7] hover:bg-[#FFF8E6] text-[#700619] border border-[#EBB638] px-6 sm:px-7 py-3 sm:py-3.5 rounded-2xl font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-xs text-center"
               >
-                Know More
+                Explore Loans
               </button>
             </div>
 
@@ -184,7 +184,7 @@ export const HomePage = ({ onOpenConsultation = () => {} }) => {
           
           {/* Card 1: Loans */}
           <div 
-            onClick={onOpenConsultation}
+            onClick={() => setActiveTab('Loans')}
             className="bg-white p-6 sm:p-7 rounded-2xl border border-rose-100/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
           >
             <div className="w-16 h-16 sm:w-20 sm:h-20 mb-4 sm:mb-5 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">

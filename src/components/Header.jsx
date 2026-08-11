@@ -24,13 +24,14 @@ export const Header = ({
   const navItems = [
     { name: 'Home', hasDropdown: false },
     { name: 'About Us', hasDropdown: false },
+   
     { 
       name: 'Our Services', 
       hasDropdown: true,
       items: [
-        { title: 'Loans', desc: 'Customized loan solutions for individuals & businesses', icon: Landmark },
-        { title: 'Insurance', desc: 'Life, health, general & business insurance solutions', icon: ShieldCheck },
-        { title: 'Properties', desc: 'Property registration, legal verification & documentation', icon: Home },
+        { title: 'Loans', desc: 'Personal, Business, Housing, Mortgage & Vehicle Refinance', icon: Landmark, targetTab: 'Loans' },
+        { title: 'Insurance', desc: 'Life, health, general & business insurance solutions', icon: ShieldCheck, targetTab: 'Insurance' },
+        { title: 'Properties', desc: 'Property registration, legal verification & documentation', icon: Home, targetTab: 'Properties' },
       ]
     },
     { name: 'Why Choose Us', hasDropdown: false },
@@ -168,10 +169,10 @@ export const Header = ({
                             return (
                               <a
                                 key={idx}
-                                href={`#service-${idx}`}
+                                href={`#${sub.targetTab || 'services'}`}
                                 onClick={(e) => {
                                   e.preventDefault();
-                                  setActiveTab('Our Services');
+                                  setActiveTab(sub.targetTab || 'Our Services');
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                   setServicesDropdownOpen(false);
                                 }}
@@ -278,10 +279,10 @@ export const Header = ({
                         {item.items?.map((sub, idx) => (
                           <a
                             key={idx}
-                            href={`#service-${idx}`}
+                            href={`#${sub.targetTab || 'services'}`}
                             onClick={(e) => {
                               e.preventDefault();
-                              setActiveTab('Our Services');
+                              setActiveTab(sub.targetTab || 'Our Services');
                               window.scrollTo({ top: 0, behavior: 'smooth' });
                               setMobileMenuOpen(false);
                             }}
