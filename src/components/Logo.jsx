@@ -61,7 +61,7 @@ export const Logo = ({
             x="260"
             y="65"
             textAnchor="middle"
-            fill={isLightVariant ? "url(#logoWhiteGrad)" : "url(#logoMaroonGrad)"}
+            fill={isLightVariant ? "url(#logoWhiteGrad)" : "#700619"}
             style={{
               fontFamily: "'Cinzel', 'Playfair Display', 'Times New Roman', serif",
               fontWeight: 800,
