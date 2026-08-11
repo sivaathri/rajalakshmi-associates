@@ -24,9 +24,6 @@ export const Header = ({
   const navItems = [
     { name: 'Home', hasDropdown: false },
     { name: 'About Us', hasDropdown: false },
-    { name: 'Loans', hasDropdown: false },
-    { name: 'Insurance', hasDropdown: false },
-    { name: 'Properties', hasDropdown: false },
     { 
       name: 'Our Services', 
       hasDropdown: true,
