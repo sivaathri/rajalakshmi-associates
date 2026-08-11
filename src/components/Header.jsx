@@ -30,7 +30,7 @@ export const Header = ({
       items: [
         { title: 'Loans', desc: 'Customized loan solutions for individuals & businesses', icon: Landmark },
         { title: 'Insurance', desc: 'Life, health, general & business insurance solutions', icon: ShieldCheck },
-        { title: 'Property', desc: 'Property registration, legal verification & documentation', icon: Home },
+        { title: 'Properties', desc: 'Property registration, legal verification & documentation', icon: Home },
       ]
     },
     { name: 'Why Choose Us', hasDropdown: false },
