@@ -31,7 +31,7 @@ export const Header = ({
       items: [
         { title: 'Loans', desc: 'Personal, Business, Housing, Mortgage & Vehicle Refinance', icon: Landmark, targetTab: 'Loans' },
         { title: 'Insurance', desc: 'Life, Health, General & Business Insurance Solutions', icon: ShieldCheck, targetTab: 'Insurance' },
-        { title: 'Properties', desc: 'Property registration, legal verification & documentation', icon: Home, targetTab: 'Properties' },
+        { title: 'Properties', desc: 'Buying, Selling, Rental & Property Legal Documentation', icon: Home, targetTab: 'Properties' },
       ]
     },
     { name: 'Why Choose Us', hasDropdown: false },
