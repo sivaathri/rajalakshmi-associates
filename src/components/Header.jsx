@@ -24,7 +24,9 @@ export const Header = ({
   const navItems = [
     { name: 'Home', hasDropdown: false },
     { name: 'About Us', hasDropdown: false },
-   
+    { name: 'Loans', hasDropdown: false },
+    { name: 'Insurance', hasDropdown: false },
+    { name: 'Properties', hasDropdown: false },
     { 
       name: 'Our Services', 
       hasDropdown: true,
@@ -152,7 +154,7 @@ export const Header = ({
                         setActiveTab(item.name);
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className={`flex items-center gap-1 transition-colors hover:text-[#700619] cursor-pointer ${
+                      className={`flex items-center gap-1 transition-colors hover:text-[#700619] cursor-pointer focus:outline-none focus-visible:outline-none ${
                         isActive ? 'text-[#700619]' : 'text-slate-700'
                       }`}
                     >
@@ -176,7 +178,7 @@ export const Header = ({
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                   setServicesDropdownOpen(false);
                                 }}
-                                className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-rose-50/70 transition-colors group/sub cursor-pointer"
+                                className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-rose-50/70 transition-colors group/sub cursor-pointer focus:outline-none focus-visible:outline-none"
                               >
                                 <div className="p-2 bg-rose-100/60 rounded-md text-[#700619] group-hover/sub:bg-[#700619] group-hover/sub:text-white transition-colors shrink-0">
                                   <IconComp className="w-4 h-4" />
@@ -206,7 +208,7 @@ export const Header = ({
                     setActiveTab(item.name);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className={`relative py-2 transition-colors hover:text-[#700619] whitespace-nowrap cursor-pointer ${
+                  className={`relative py-2 transition-colors hover:text-[#700619] whitespace-nowrap cursor-pointer focus:outline-none focus-visible:outline-none ${
                     isActive ? 'text-[#700619] font-bold' : 'text-slate-700'
                   }`}
                 >
@@ -224,7 +226,7 @@ export const Header = ({
           <div className="hidden sm:flex items-center shrink-0">
             <button 
               onClick={onOpenConsultation}
-              className="bg-[#700619] hover:bg-[#570413] text-white px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 rounded-full font-semibold text-xs lg:text-sm flex items-center gap-2 shadow-md shadow-[#700619]/25 hover:shadow-lg hover:shadow-[#700619]/35 transition-all duration-200 active:scale-95 transform hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
+              className="bg-[#700619] hover:bg-[#570413] text-white px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 rounded-full font-semibold text-xs lg:text-sm flex items-center gap-2 shadow-md shadow-[#700619]/25 hover:shadow-lg hover:shadow-[#700619]/35 transition-all duration-200 active:scale-95 transform hover:-translate-y-0.5 cursor-pointer whitespace-nowrap focus:outline-none focus-visible:outline-none"
             >
               <Phone className="w-3.5 h-3.5 lg:w-4 lg:h-4 fill-white stroke-none text-white -rotate-12" />
               <span>Free Consultation</span>
@@ -235,7 +237,7 @@ export const Header = ({
           <div className="lg:hidden flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={onOpenConsultation}
-              className="sm:hidden bg-[#700619] text-white p-2 rounded-full shadow-md hover:bg-[#570413] cursor-pointer"
+              className="sm:hidden bg-[#700619] text-white p-2 rounded-full shadow-md hover:bg-[#570413] cursor-pointer focus:outline-none focus-visible:outline-none"
               aria-label="Call for Free Consultation"
             >
               <Phone className="w-4 h-4 fill-white stroke-none text-white" />
@@ -243,7 +245,7 @@ export const Header = ({
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 sm:p-2 text-slate-700 hover:text-[#700619] hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
+              className="p-1.5 sm:p-2 text-slate-700 hover:text-[#700619] hover:bg-rose-50 rounded-lg transition-colors cursor-pointer focus:outline-none focus-visible:outline-none"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -263,7 +265,7 @@ export const Header = ({
                   <div key={item.name} className="flex flex-col">
                     <button
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors cursor-pointer ${
+                      className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors cursor-pointer focus:outline-none focus-visible:outline-none ${
                         activeTab === item.name 
                           ? 'bg-rose-50 text-[#700619]' 
                           : 'text-slate-700 hover:bg-slate-50'
@@ -286,7 +288,7 @@ export const Header = ({
                               window.scrollTo({ top: 0, behavior: 'smooth' });
                               setMobileMenuOpen(false);
                             }}
-                            className="block py-1.5 px-2 text-xs font-medium text-slate-700 hover:text-[#700619] cursor-pointer"
+                            className="block py-1.5 px-2 text-xs font-medium text-slate-700 hover:text-[#700619] cursor-pointer focus:outline-none focus-visible:outline-none"
                           >
                             • {sub.title}
                           </a>
@@ -305,7 +307,7 @@ export const Header = ({
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     setMobileMenuOpen(false);
                   }}
-                  className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors cursor-pointer ${
+                  className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors cursor-pointer focus:outline-none focus-visible:outline-none ${
                     activeTab === item.name 
                       ? 'bg-rose-50 text-[#700619] border-l-4 border-[#700619]' 
                       : 'text-slate-700 hover:bg-slate-50'
@@ -323,7 +325,7 @@ export const Header = ({
                 onOpenConsultation();
                 setMobileMenuOpen(false);
               }}
-              className="w-full bg-[#700619] hover:bg-[#570413] text-white py-3 rounded-full font-semibold text-sm flex items-center justify-center gap-2 shadow-md"
+              className="w-full bg-[#700619] hover:bg-[#570413] text-white py-3 rounded-full font-semibold text-sm flex items-center justify-center gap-2 shadow-md focus:outline-none focus-visible:outline-none"
             >
               <Phone className="w-4 h-4 fill-white stroke-none text-white" />
               <span>Free Consultation</span>
