@@ -2,7 +2,7 @@ import React from 'react';
 import { Logo } from './Logo';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
-export const Footer = ({ onOpenConsultation = () => {} }) => {
+export const Footer = ({ onOpenConsultation = () => {}, setActiveTab = () => {} }) => {
   return (
     <footer className="bg-gradient-to-r from-[#4E010F] via-[#670216] to-[#4E010F] text-white pt-12 pb-5 border-t border-[#850D24] select-none">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
@@ -82,11 +82,11 @@ export const Footer = ({ onOpenConsultation = () => {} }) => {
               QUICK LINKS
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm font-medium text-white/90">
-              <li><a href="#home" className="hover:text-[#EBB638] transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-[#EBB638] transition-colors">About Us</a></li>
-              <li><a href="#services" className="hover:text-[#EBB638] transition-colors">Services</a></li>
-              <li><a href="#why-us" className="hover:text-[#EBB638] transition-colors">Why Choose Us</a></li>
-              <li><button onClick={onOpenConsultation} className="hover:text-[#EBB638] transition-colors text-left">Contact Us</button></li>
+              <li><button onClick={() => setActiveTab('Home')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Home</button></li>
+              <li><button onClick={() => setActiveTab('About Us')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">About Us</button></li>
+              <li><button onClick={() => setActiveTab('Our Services')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Services</button></li>
+              <li><button onClick={() => setActiveTab('Why Choose Us')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Why Choose Us</button></li>
+              <li><button onClick={onOpenConsultation} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Contact Us</button></li>
             </ul>
           </div>
 

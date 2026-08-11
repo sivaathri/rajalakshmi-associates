@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { HomePage } from './components/HomePage';
+import { AboutUsPage } from './components/AboutUsPage';
 import { ContactUsPage } from './components/ContactUsPage';
 import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
@@ -21,13 +22,18 @@ export function App() {
       <main key={activeTab} className="flex-grow animate-page-entry">
         {activeTab === 'Contact Us' ? (
           <ContactUsPage />
+        ) : activeTab === 'About Us' ? (
+          <AboutUsPage onOpenConsultation={() => setActiveTab('Contact Us')} />
         ) : (
           <HomePage onOpenConsultation={() => setActiveTab('Contact Us')} />
         )}
       </main>
 
       {/* Footer UI */}
-      <Footer onOpenConsultation={() => setActiveTab('Contact Us')} />
+      <Footer 
+        onOpenConsultation={() => setActiveTab('Contact Us')} 
+        setActiveTab={setActiveTab}
+      />
 
       {/* Floating Bottom Right Back to Top Button */}
       <BackToTop />
