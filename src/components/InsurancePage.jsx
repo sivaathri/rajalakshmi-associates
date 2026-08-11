@@ -34,18 +34,18 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
       tagline: 'Secure Your Family’s Financial Future',
       icon: HeartHandshake,
       badge: 'Family Security',
-      overview: 'Protect your family against life’s uncertainties with comprehensive term insurance, savings plans, and guaranteed retirement income solutions.',
+      overview: 'Protect your family against life’s uncertainties with comprehensive term insurance, savings plans, and retirement income solutions.',
       types: [
-        { name: 'Term Life Insurance', desc: 'High financial cover at minimal monthly premium for peace of mind.' },
-        { name: 'Guaranteed Savings Plans', desc: 'Secure family protection combined with tax-free guaranteed returns.' },
+        { name: 'Term Life Insurance', desc: 'High financial cover at competitive premiums for peace of mind.' },
+        { name: 'Guaranteed Savings Plans', desc: 'Family protection combined with assured benefits, subject to policy terms.' },
         { name: 'Child Education Plans', desc: 'Ensure your child’s dream education funding even in your absence.' },
-        { name: 'Retirement & Pension Plans', desc: 'Guaranteed monthly income to enjoy your golden post-retirement years.' }
+        { name: 'Retirement & Pension Plans', desc: 'Planned monthly income to enjoy your golden post-retirement years.' }
       ],
       benefits: [
-        'High Sum Assured up to ₹1 Crore+ at low premiums',
-        'Tax savings under Section 80C & tax-free maturity under 10(10D)',
+        'High sum assured options at competitive premiums',
+        'Tax benefits and guaranteed/assured benefits, subject to policy terms and applicable tax laws',
         'Critical illness & accidental death benefit riders',
-        'Quick 100% claim settlement assistance'
+        'Dedicated claim assistance throughout the claim process'
       ],
       documents: [
         'Aadhaar Card & PAN Card',
@@ -57,21 +57,21 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
     {
       id: 'health',
       title: 'Health Insurance',
-      tagline: 'World-Class Cashless Medical Protection',
+      tagline: 'Cashless Medical Protection for Your Family',
       icon: Stethoscope,
-      badge: '10,000+ Cashless Hospitals',
+      badge: 'Extensive Cashless Network',
       overview: 'Safeguard your hard-earned savings against medical inflation, sudden hospitalizations, surgery expenses, and critical illness treatments.',
       types: [
         { name: 'Individual Health Cover', desc: 'Dedicated sum insured for single person medical protection.' },
         { name: 'Family Floater Health Plan', desc: 'Single umbrella policy covering spouse, children, and parents.' },
         { name: 'Senior Citizen Health Plan', desc: 'Tailored medical coverage for parents including pre-existing diseases.' },
-        { name: 'Critical Illness Protection', desc: 'Lump sum cash payout upon diagnosis of major critical illnesses.' }
+        { name: 'Critical Illness Protection', desc: 'Lump sum payout upon diagnosis of major critical illnesses.' }
       ],
       benefits: [
-        'Cashless treatment across 10,000+ network hospitals in India',
-        'Pre & post hospitalization expenses covered up to 60-90 days',
-        'Tax deduction up to ₹75,000 under Section 80D',
-        'Cumulative No Claim Bonus (NCB) up to 100% sum insured booster'
+        'Extensive cashless hospital network across India',
+        'Pre- and post-hospitalization expenses, as specified in the policy',
+        'Tax deduction under Section 80D, as per applicable tax rules',
+        'Cumulative No Claim Bonus (NCB) booster, subject to policy terms'
       ],
       documents: [
         'Aadhaar Card & PAN Card of proposer',
@@ -88,7 +88,7 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
       badge: 'Instant Renewal',
       overview: 'Protect your personal cars, commercial transport fleets, factory, shop, and business assets from accident damage, fire, theft, or natural disasters.',
       types: [
-        { name: 'Car & Two-Wheeler Insurance', desc: 'Comprehensive & 3rd party liability cover with zero-depreciation.' },
+        { name: 'Car & Two-Wheeler Insurance', desc: 'Comprehensive & 3rd party liability cover with optional add-ons.' },
         { name: 'Commercial Fleet Insurance', desc: 'Protection for commercial trucks, buses, tippers, & delivery vans.' },
         { name: 'Shop & Fire Insurance', desc: 'Safeguard shop inventory, equipment, and building against fire & theft.' },
         { name: 'Personal Accident & Travel Cover', desc: 'Accidental disability cover & overseas emergency travel protection.' }
@@ -96,7 +96,7 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
       benefits: [
         'Instant policy issuance & hassle-free online renewal',
         'Cashless repair network at authorized workshops & garages',
-        'Zero-Depreciation & 24/7 Roadside Assistance (RSA) add-ons',
+        'Zero-Depreciation & 24/7 Roadside Assistance (RSA) as available add-ons',
         'Protection against third-party property damage & legal liability'
       ],
       documents: [
@@ -116,20 +116,20 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
 
   const faqs = [
     {
-      q: "Why should I buy insurance through Rajalakshmy Associates?",
-      a: "We offer unbiased policy comparison across 15+ top insurance companies, personalized advice matching your exact budget, and dedicated 100% claim settlement support when you need it most."
+      q: "Why should I consult Rajalakshmy Associates for insurance?",
+      a: "We offer guidance and policy comparison across multiple leading insurance companies, personalized advice matching your exact requirements, and dedicated support throughout the claim process."
     },
     {
       q: "What is cashless hospitalization in Health Insurance?",
-      a: "With cashless hospitalization, your medical bills are settled directly between the insurance company and the network hospital, saving you from paying large out-of-pocket amounts."
+      a: "With cashless hospitalization, eligible medical bills are settled directly between the insurance company and the network hospital, subject to policy terms and limits."
     },
     {
-      q: "Can I transfer my existing health or car insurance policy to you?",
-      a: "Yes! Porting or renewing your existing health or motor insurance is seamless. We retain your No Claim Bonus (NCB) and continuity benefits without any loss."
+      q: "Can I port or transfer my existing health insurance policy?",
+      a: "Yes! Porting or renewing your existing health or motor insurance is possible. Eligible continuity benefits and accumulated credits can be carried forward, subject to portability rules and insurer terms."
     },
     {
       q: "What tax benefits can I claim under Life & Health Insurance?",
-      a: "Life Insurance premiums qualify for tax deduction under Section 80C (up to ₹1.5 Lakhs), while Health Insurance premiums qualify under Section 80D (up to ₹75,000 for self & parents)."
+      a: "Life Insurance premiums qualify for tax deductions under Section 80C, while Health Insurance premiums qualify under Section 80D, as per applicable tax laws and policy terms."
     }
   ];
 
@@ -150,30 +150,30 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
             <div className="lg:col-span-8 space-y-4 text-left animate-float-up">
               <div className="flex items-center gap-3">
                 <span className="text-xs sm:text-sm font-extrabold text-[#EBB638] uppercase tracking-[0.2em]">
-                  INSURANCE SERVICES PORTFOLIO
+                  COMPARE. CHOOSE. PROTECT.
                 </span>
                 <span className="w-12 h-[2px] bg-[#EBB638] rounded-full inline-block" />
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-serif-brand font-bold text-white leading-[1.12]">
-                Comprehensive Insurance Protection <br />
-                <span className="text-[#EBB638]">For You, Your Family & Assets.</span>
+                Personalized Insurance Solutions <br />
+                <span className="text-[#EBB638]">For Family, Health & Business.</span>
               </h1>
 
               <p className="text-xs sm:text-sm md:text-base text-rose-100/90 max-w-2xl font-normal leading-relaxed pt-1">
-                Protect your loved ones, health, vehicle fleets, and business assets. Get expert policy guidance, maximum tax savings, and guaranteed 100% claim assistance across Puducherry & Tamilnadu.
+                Get personalized insurance solutions for your family, health, vehicles, and business from leading insurance providers — with guidance from policy selection to claims.
               </p>
 
               {/* Stats badges */}
               <div className="flex flex-wrap items-center gap-3 pt-3">
                 <span className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-amber-200 text-xs font-semibold flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#EBB638]" /> 100% Claim Assistance
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#EBB638]" /> Dedicated Claim Guidance
                 </span>
                 <span className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-amber-200 text-xs font-semibold flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-[#EBB638]" /> 15+ Top Insurer Partners
+                  <Award className="w-3.5 h-3.5 text-[#EBB638]" /> Multiple Leading Insurers
                 </span>
                 <span className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-amber-200 text-xs font-semibold flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#EBB638]" /> Max 80C & 80D Tax Savings
+                  <Sparkles className="w-3.5 h-3.5 text-[#EBB638]" /> Tax Savings Under 80C & 80D
                 </span>
               </div>
             </div>
@@ -183,7 +183,7 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
               <div className="bg-white/10 p-5 rounded-3xl border border-white/20 backdrop-blur-md max-w-xs text-center space-y-3 shadow-2xl">
                 <img src={insuranceHeroImg} alt="Insurance Protection" className="w-28 h-28 object-contain mx-auto" />
                 <h3 className="text-lg font-bold text-white font-serif-brand">Need Free Insurance Consultation?</h3>
-                <p className="text-xs text-rose-100/80">Compare top policy quotes with our expert insurance advisors.</p>
+                <p className="text-xs text-rose-100/80">Compare policy options with our experienced insurance advisors.</p>
                 <button 
                   onClick={onOpenConsultation}
                   className="w-full bg-[#EBB638] hover:bg-[#d49f28] text-slate-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider shadow-md transition-colors cursor-pointer"
@@ -345,7 +345,7 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
             Associated Insurance Companies
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-            We partner with India’s leading life, health, and general insurance giants to secure the best policy coverage for you.
+            We collaborate with leading insurance providers to help you compare and select appropriate policy coverage.
           </p>
         </div>
 
@@ -400,8 +400,15 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
         </div>
       </section>
 
+      {/* FOOTER DISCLAIMER */}
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pt-8 text-center">
+        <p className="text-[11px] sm:text-xs text-slate-500 max-w-3xl mx-auto leading-relaxed italic border-t border-slate-200/60 pt-4">
+          * Benefits, coverage, tax deductions, hospital networks, and claim processes are subject to specific policy terms, conditions, exclusions, and applicable regulatory guidelines.
+        </p>
+      </div>
+
       {/* 6. CALL TO ACTION BANNER */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pt-12">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pt-10">
         <div className="bg-gradient-to-r from-[#5B0010] via-[#700619] to-[#4A000D] rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
           
           <div className="space-y-2 text-center md:text-left z-10">
@@ -409,7 +416,7 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
               Ready to Protect What Matters Most?
             </h3>
             <p className="text-xs sm:text-sm text-rose-100/90 max-w-xl">
-              Talk to our licensed insurance experts for free policy comparison and instant claim support.
+              Talk to our insurance advisors for policy comparison and guidance throughout the claim process.
             </p>
           </div>
 

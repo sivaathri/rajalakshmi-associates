@@ -4,6 +4,7 @@ import { HomePage } from './components/HomePage';
 import { AboutUsPage } from './components/AboutUsPage';
 import { LoansPage } from './components/LoansPage';
 import { InsurancePage } from './components/InsurancePage';
+import { PropertiesPage } from './components/PropertiesPage';
 import { GalleryPage } from './components/GalleryPage';
 import { ContactUsPage } from './components/ContactUsPage';
 import { Footer } from './components/Footer';
@@ -35,6 +36,8 @@ export function App() {
           <LoansPage onOpenConsultation={() => setActiveTab('Contact Us')} />
         ) : activeTab === 'Insurance' ? (
           <InsurancePage onOpenConsultation={() => setActiveTab('Contact Us')} />
+        ) : activeTab === 'Properties' ? (
+          <PropertiesPage onOpenConsultation={() => setActiveTab('Contact Us')} />
         ) : activeTab === 'Gallery' ? (
           <GalleryPage onOpenConsultation={() => setActiveTab('Contact Us')} />
         ) : (
