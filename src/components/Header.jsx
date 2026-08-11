@@ -6,10 +6,10 @@ import {
   Phone, 
   Menu, 
   X,
-  Scale,
+  Landmark,
+  ShieldCheck,
   Building2,
-  FileCheck,
-  Briefcase
+  Home
 } from 'lucide-react';
 
 export const Header = ({ 
@@ -28,10 +28,9 @@ export const Header = ({
       name: 'Our Services', 
       hasDropdown: true,
       items: [
-        { title: 'Loans', desc: 'Complete legal documentation for land & property', icon: Building2 },
-        { title: 'Civil & Commercial Litigation', desc: 'Expert representation in District & High Courts', icon: Scale },
-        { title: 'Corporate & Business Legal', desc: 'GST, Company incorporation & Contracts', icon: Briefcase },
-        { title: 'Documentation & Notary Services', desc: 'Wills, Power of Attorney & Affidavits', icon: FileCheck },
+        { title: 'Loans', desc: 'Customized loan solutions for individuals & businesses', icon: Landmark },
+        { title: 'Insurance', desc: 'Life, health, general & business insurance solutions', icon: ShieldCheck },
+        { title: 'Property', desc: 'Property registration, legal verification & documentation', icon: Home },
       ]
     },
     { name: 'Why Choose Us', hasDropdown: false },
