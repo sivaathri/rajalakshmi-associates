@@ -46,10 +46,12 @@ export const LoansPage = ({ onOpenConsultation = () => {} }) => {
         'CIBIL score of 700+ preferred'
       ],
       documents: [
-        'Aadhaar Card & PAN Card',
-        'Last 3 months salary slips / Form 16',
-        'Last 6 months bank statement',
-        'Current residential address proof'
+        'Aadhaar Card',
+        'PAN Card',
+        'Last 3 months payslips',
+        'Last 6 months bank account statement',
+        'Employee ID card',
+        'Form 16'
       ]
     },
     {
@@ -72,10 +74,13 @@ export const LoansPage = ({ onOpenConsultation = () => {} }) => {
         'Clean financial track record & banking history'
       ],
       documents: [
-        'GST Registration & GST returns (12 months)',
-        'Business PAN Card & Proprietor / Partner ID',
-        '2 years audited financial statements & ITRs',
-        '12 months primary current bank account statement'
+        'Basic KYC (Applicant & Co-applicant): Aadhaar, PAN',
+        'Bank account statement (6 months or 1 year) - Current / Savings / OD',
+        'Last 2 years IT papers',
+        'GST certificate',
+        'MSME certificate',
+        'Selfie photo',
+        'Own house proof'
       ]
     },
     {
