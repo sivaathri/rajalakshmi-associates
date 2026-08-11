@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import bannerBgImg from '../assets/contactbg.png';
-import propertiesHeroImg from '../assets/properties.png';
+import propertiesHeroImg from '../assets/properties_hero_realestate.png';
 import buildingHeroImg from '../assets/contact_hero_building.png';
 import officeReceptionImg from '../assets/office_reception.png';
 import { 

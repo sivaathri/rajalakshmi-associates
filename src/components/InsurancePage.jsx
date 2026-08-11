@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import bannerBgImg from '../assets/contactbg.png';
-import insuranceHeroImg from '../assets/insurance.png';
+import insuranceHeroImg from '../assets/insurance_hero_protection.png';
 import { 
   ShieldCheck, 
   HeartHandshake, 
