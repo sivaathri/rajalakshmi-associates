@@ -108,64 +108,105 @@ export const WhyChooseUsPage = ({ onOpenConsultation = () => {} }) => {
   return (
     <div className="bg-[#FAF7F4] min-h-screen text-slate-800 font-sans pb-16 select-none overflow-x-hidden">
       
-      {/* 1. HERO BANNER */}
-      <section 
-        className="w-full bg-[#350008] text-white relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-[380px] lg:min-h-[440px] flex items-center"
-        style={{ backgroundImage: `url(${bannerBgImg})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#4A000E] via-[#4A000E]/90 to-[#2A0007]/80 z-10" />
+      {/* 1. HERO BANNER MATCHING EXACT REFERENCE DESIGN */}
+      <section className="w-full relative overflow-hidden bg-[#FAF7F2] min-h-[460px] lg:min-h-[500px] flex items-center">
+        
+        {/* RIGHT FULL-BLEED IMAGE CONTAINER (STRETCHES 100% TO RIGHT SCREEN EDGE) */}
+        <div className="absolute top-0 bottom-0 right-0 w-full lg:w-[48%] xl:w-[50%] hidden lg:block overflow-hidden z-10 pointer-events-none">
+          
+          {/* Slanted Crimson Divider Bar */}
+          <div 
+            className="absolute inset-0 bg-[#5B0010] z-10"
+            style={{ 
+              clipPath: 'polygon(0 0, 16% 0, 4% 100%, 0 100%)'
+            }}
+          />
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16 relative z-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Slanted Image Container Stretching to Right Edge */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat shadow-2xl z-20"
+            style={{ 
+              backgroundImage: `url(${handshakeImg})`,
+              clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 0% 100%)'
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          </div>
+
+        </div>
+
+        <div className="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-10 py-10 lg:py-14 relative z-20">
+          
+          {/* LEFT COLUMN: TEXT CONTENT */}
+          <div className="max-w-xl lg:max-w-2xl text-left space-y-5 relative">
             
-            {/* Left Headline */}
-            <div className="lg:col-span-8 space-y-4 text-left animate-float-up">
-              <div className="flex items-center gap-3">
-                <span className="text-xs sm:text-sm font-extrabold text-[#EBB638] uppercase tracking-[0.2em]">
-                  WHY CHOOSE RAJALAKSHMY ASSOCIATES
-                </span>
-                <span className="w-12 h-[2px] bg-[#EBB638] rounded-full inline-block" />
-              </div>
+            {/* Background Accent 1: Golden Concentric Circles */}
+            <svg className="absolute top-0 left-0 w-36 h-36 opacity-30 pointer-events-none -translate-x-6 -translate-y-6" viewBox="0 0 100 100" fill="none">
+              <circle cx="20" cy="20" r="20" stroke="#EBB638" strokeWidth="1" />
+              <circle cx="20" cy="20" r="35" stroke="#EBB638" strokeWidth="1" />
+              <circle cx="20" cy="20" r="50" stroke="#EBB638" strokeWidth="1" />
+              <circle cx="20" cy="20" r="65" stroke="#EBB638" strokeWidth="1" />
+            </svg>
 
-              <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-serif-brand font-bold text-white leading-[1.12]">
-                Your Most Trusted Financial <br />
-                <span className="text-[#EBB638]">& Property Legal Advisor.</span>
-              </h1>
-
-              <p className="text-xs sm:text-sm md:text-base text-rose-100/90 max-w-2xl font-normal leading-relaxed pt-1">
-                Empowering individuals, families, and businesses across Puducherry & Tamilnadu with transparent loan solutions, 100% legal title assurance, and dedicated doorstep assistance.
-              </p>
-
-              {/* Stats badges */}
-              <div className="flex flex-wrap items-center gap-3 pt-3">
-                <span className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-amber-200 text-xs font-semibold flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#EBB638]" /> 15+ Years Local Expertise
-                </span>
-                <span className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-amber-200 text-xs font-semibold flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-[#EBB638]" /> 5,000+ Happy Families
-                </span>
-                <span className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-amber-200 text-xs font-semibold flex items-center gap-1.5">
-                  <Landmark className="w-3.5 h-3.5 text-[#EBB638]" /> 25+ Bank & Insurer Partners
-                </span>
-              </div>
+            {/* Background Accent 2: Golden Dot Matrix Grid */}
+            <div className="absolute bottom-4 left-4 opacity-25 pointer-events-none hidden sm:grid grid-cols-5 gap-1.5">
+              {[...Array(20)].map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#EBB638]" />
+              ))}
             </div>
 
-            {/* Right Hero Image Card */}
-            <div className="lg:col-span-4 hidden lg:flex justify-center">
-              <div className="bg-white/10 p-5 rounded-3xl border border-white/20 backdrop-blur-md max-w-xs text-center space-y-3 shadow-2xl">
-                <img src={handshakeImg} alt="Trusted Partnership" className="w-32 h-28 object-cover rounded-2xl mx-auto shadow-md" />
-                <h3 className="text-lg font-bold text-white font-serif-brand">Experience Unmatched Trust</h3>
-                <p className="text-xs text-rose-100/80">Get free expert advice on loans, insurance, and property verification.</p>
-                <button 
-                  onClick={onOpenConsultation}
-                  className="w-full bg-[#EBB638] hover:bg-[#d49f28] text-slate-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider shadow-md transition-colors cursor-pointer"
-                >
-                  Consult Our Experts
-                </button>
-              </div>
+            {/* Tagline */}
+            <div className="flex items-center gap-3 relative z-10">
+              <span className="w-8 sm:w-12 h-[1.5px] bg-[#EBB638] rounded-full inline-block" />
+              <span className="text-[11px] sm:text-xs font-extrabold text-slate-800 tracking-[0.2em] uppercase">
+                WHY CHOOSE RAJALAKSHMY ASSOCIATES
+              </span>
+              <span className="w-8 sm:w-12 h-[1.5px] bg-[#EBB638] rounded-full inline-block" />
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-2xl sm:text-4xl lg:text-[46px] font-serif-brand font-bold text-slate-900 leading-[1.18] relative z-10">
+              Your Most Trusted Financial <br />
+              & <span className="text-[#700619]">Property Legal Advisor</span>
+            </h1>
+
+            {/* Separator Accent Line */}
+            <div className="flex items-center gap-2 relative z-10">
+              <div className="w-12 h-[2.5px] bg-[#EBB638] rounded-full" />
+              <div className="w-1.5 h-1.5 rotate-45 bg-[#EBB638]" />
+            </div>
+
+            {/* Paragraphs */}
+            <div className="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium max-w-xl relative z-10">
+              <p>
+                Empowering individuals, families, and businesses across Puducherry & Tamilnadu with transparent loan solutions, 100% legal title assurance, and dedicated doorstep assistance.
+              </p>
+              <p>
+                Over 8.5+ years of proven track record, 5,000+ happy clients, direct ties with 25+ partner banks, and zero hidden charges.
+              </p>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3.5 pt-3 relative z-10">
+              <button 
+                onClick={onOpenConsultation}
+                className="bg-[#700619] hover:bg-[#520412] text-white px-6 sm:px-7 py-2.5 sm:py-3 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
+              >
+                <span>Talk To Expert</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+
+              <a 
+                href="#core-pillars"
+                className="bg-transparent hover:bg-rose-50 text-[#700619] border-2 border-[#700619] px-6 sm:px-7 py-2.5 sm:py-3 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all cursor-pointer"
+              >
+                <span>Our Core Pillars</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
 
           </div>
+
         </div>
       </section>
 

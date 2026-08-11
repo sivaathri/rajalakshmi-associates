@@ -93,33 +93,97 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
   return (
     <div className="bg-[#FAF7F4] min-h-screen text-slate-800 font-sans pb-12 select-none overflow-x-hidden">
       
-      {/* 1. HERO BANNER */}
-      <section 
-        className="w-full bg-[#350008] text-white relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-[340px] lg:min-h-[380px] flex items-center"
-        style={{ backgroundImage: `url(${bannerBgImg})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#4A000E] via-[#4A000E]/90 to-[#2A0007]/80 z-10" />
+      {/* 1. HERO BANNER MATCHING EXACT REFERENCE DESIGN */}
+      <section className="w-full relative overflow-hidden bg-[#FAF7F2] min-h-[460px] lg:min-h-[500px] flex items-center">
+        
+        {/* RIGHT FULL-BLEED IMAGE CONTAINER (STRETCHES 100% TO RIGHT SCREEN EDGE) */}
+        <div className="absolute top-0 bottom-0 right-0 w-full lg:w-[48%] xl:w-[50%] hidden lg:block overflow-hidden z-10 pointer-events-none">
+          
+          {/* Slanted Crimson Divider Bar */}
+          <div 
+            className="absolute inset-0 bg-[#5B0010] z-10"
+            style={{ 
+              clipPath: 'polygon(0 0, 16% 0, 4% 100%, 0 100%)'
+            }}
+          />
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16 relative z-20 w-full">
-          <div className="max-w-3xl text-left space-y-4 animate-float-up">
+          {/* Slanted Image Container Stretching to Right Edge */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat shadow-2xl z-20"
+            style={{ 
+              backgroundImage: `url(${officeReceptionImg})`,
+              clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 0% 100%)'
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          </div>
+
+        </div>
+
+        <div className="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-10 py-10 lg:py-14 relative z-20">
+          
+          {/* LEFT COLUMN: TEXT CONTENT */}
+          <div className="max-w-xl lg:max-w-2xl text-left space-y-5 relative">
             
-            <div className="flex items-center gap-3">
-              <span className="text-xs sm:text-sm font-extrabold text-[#EBB638] uppercase tracking-[0.2em]">
-                RAJALAKSHMY ASSOCIATES GALLERY
-              </span>
-              <span className="w-12 h-[2px] bg-[#EBB638] rounded-full inline-block" />
+            {/* Background Accent 1: Golden Concentric Circles */}
+            <svg className="absolute top-0 left-0 w-36 h-36 opacity-30 pointer-events-none -translate-x-6 -translate-y-6" viewBox="0 0 100 100" fill="none">
+              <circle cx="20" cy="20" r="20" stroke="#EBB638" strokeWidth="1" />
+              <circle cx="20" cy="20" r="35" stroke="#EBB638" strokeWidth="1" />
+              <circle cx="20" cy="20" r="50" stroke="#EBB638" strokeWidth="1" />
+              <circle cx="20" cy="20" r="65" stroke="#EBB638" strokeWidth="1" />
+            </svg>
+
+            {/* Background Accent 2: Golden Dot Matrix Grid */}
+            <div className="absolute bottom-4 left-4 opacity-25 pointer-events-none hidden sm:grid grid-cols-5 gap-1.5">
+              {[...Array(20)].map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#EBB638]" />
+              ))}
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-serif-brand font-bold text-white leading-[1.12]">
+            {/* Tagline */}
+            <div className="flex items-center gap-3 relative z-10">
+              <span className="w-8 sm:w-12 h-[1.5px] bg-[#EBB638] rounded-full inline-block" />
+              <span className="text-[11px] sm:text-xs font-extrabold text-slate-800 tracking-[0.2em] uppercase">
+                RAJALAKSHMY ASSOCIATES GALLERY
+              </span>
+              <span className="w-8 sm:w-12 h-[1.5px] bg-[#EBB638] rounded-full inline-block" />
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-2xl sm:text-4xl lg:text-[46px] font-serif-brand font-bold text-slate-900 leading-[1.18] relative z-10">
               Moments of Trust, Excellence <br />
-              <span className="text-[#EBB638]">& Financial Growth.</span>
+              & <span className="text-[#700619]">Financial Growth</span>
             </h1>
 
-            <p className="text-xs sm:text-sm md:text-base text-rose-100/90 max-w-xl font-normal leading-relaxed pt-1">
-              Explore snapshots of our modern infrastructure, client consultations, financial advisory sessions, and legal property documentation processes.
-            </p>
+            {/* Separator Accent Line */}
+            <div className="flex items-center gap-2 relative z-10">
+              <div className="w-12 h-[2.5px] bg-[#EBB638] rounded-full" />
+              <div className="w-1.5 h-1.5 rotate-45 bg-[#EBB638]" />
+            </div>
+
+            {/* Paragraphs */}
+            <div className="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium max-w-xl relative z-10">
+              <p>
+                Explore snapshots of our modern infrastructure, client consultations, financial advisory sessions, and legal property documentation processes.
+              </p>
+              <p>
+                Showcasing our journey of building enduring relationships with families and business owners across Puducherry & Tamilnadu.
+              </p>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3.5 pt-3 relative z-10">
+              <button 
+                onClick={onOpenConsultation}
+                className="bg-[#700619] hover:bg-[#520412] text-white px-6 sm:px-7 py-2.5 sm:py-3 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
+              >
+                <span>Schedule Consultation</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
 
           </div>
+
         </div>
       </section>
 
