@@ -32,7 +32,10 @@ export function App() {
         {activeTab === 'Contact Us' ? (
           <ContactUsPage />
         ) : activeTab === 'About Us' ? (
-          <AboutUsPage onOpenConsultation={() => setActiveTab('Contact Us')} />
+          <AboutUsPage 
+            onOpenConsultation={() => setActiveTab('Contact Us')} 
+            setActiveTab={setActiveTab}
+          />
         ) : activeTab === 'Loans' ? (
           <LoansPage onOpenConsultation={() => setActiveTab('Contact Us')} />
         ) : activeTab === 'Insurance' ? (

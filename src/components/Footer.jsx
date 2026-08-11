@@ -84,7 +84,7 @@ export const Footer = ({ onOpenConsultation = () => {}, setActiveTab = () => {} 
             <ul className="space-y-2 text-xs sm:text-sm font-medium text-white/90">
               <li><button onClick={() => setActiveTab('Home')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Home</button></li>
               <li><button onClick={() => setActiveTab('About Us')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">About Us</button></li>
-              <li><button onClick={() => setActiveTab('Our Services')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Services</button></li>
+              <li><button onClick={() => setActiveTab('Loans')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Loans</button></li>
               <li><button onClick={() => setActiveTab('Why Choose Us')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Why Choose Us</button></li>
               <li><button onClick={() => setActiveTab('Gallery')} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Gallery</button></li>
               <li><button onClick={onOpenConsultation} className="hover:text-[#EBB638] transition-colors cursor-pointer text-left">Contact Us</button></li>

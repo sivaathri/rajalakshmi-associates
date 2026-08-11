@@ -136,7 +136,8 @@ export const Header = ({
           {/* DESKTOP & TABLET NAVIGATION LINKS */}
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-7 text-xs xl:text-sm font-semibold text-slate-800">
             {navItems.map((item) => {
-              const isActive = activeTab === item.name;
+              const isServiceTab = ['Loans', 'Insurance', 'Properties', 'Our Services'].includes(activeTab);
+              const isActive = activeTab === item.name || (item.name === 'Our Services' && isServiceTab);
               
               if (item.name === 'Our Services') {
                 return (
@@ -151,12 +152,15 @@ export const Header = ({
                         setActiveTab(item.name);
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className={`flex items-center gap-1 transition-colors hover:text-[#700619] cursor-pointer focus:outline-none focus-visible:outline-none ${
-                        isActive ? 'text-[#700619]' : 'text-slate-700'
+                      className={`relative flex items-center gap-1 transition-colors hover:text-[#700619] cursor-pointer focus:outline-none focus-visible:outline-none ${
+                        isActive ? 'text-[#700619] font-bold' : 'text-slate-700'
                       }`}
                     >
                       <span>{item.name}</span>
                       <ChevronDown className={`w-3.5 h-3.5 xl:w-4 xl:h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180 text-[#700619]' : 'text-slate-400'}`} />
+                      {isActive && (
+                        <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#700619] rounded-full transition-all duration-300" />
+                      )}
                     </button>
 
                     {/* Services Dropdown */}
@@ -263,7 +267,7 @@ export const Header = ({
                     <button
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                       className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-left transition-colors cursor-pointer focus:outline-none focus-visible:outline-none ${
-                        activeTab === item.name 
+                        ['Loans', 'Insurance', 'Properties', 'Our Services'].includes(activeTab)
                           ? 'bg-rose-50 text-[#700619]' 
                           : 'text-slate-700 hover:bg-slate-50'
                       }`}
