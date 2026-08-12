@@ -90,14 +90,6 @@ export const AboutUsPage = ({ onOpenConsultation = () => {}, setActiveTab = () =
         {/* RIGHT FULL-BLEED IMAGE CONTAINER (STRETCHES 100% TO RIGHT SCREEN EDGE) */}
         <div className="absolute top-0 bottom-0 right-0 w-full lg:w-[48%] xl:w-[50%] hidden lg:block overflow-hidden z-10 pointer-events-none">
           
-          {/* Slanted Crimson Divider Bar */}
-          <div 
-            className="absolute inset-0 bg-[#5B0010] z-10"
-            style={{ 
-              clipPath: 'polygon(0 0, 16% 0, 4% 100%, 0 100%)'
-            }}
-          />
-
           {/* Slanted Image Container Stretching to Right Edge */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat shadow-2xl z-20"
