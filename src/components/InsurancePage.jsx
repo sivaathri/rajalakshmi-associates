@@ -137,7 +137,7 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
     <div className="bg-[#FAF7F4] min-h-screen text-slate-800 font-sans pb-16 select-none overflow-x-hidden">
       
       {/* 1. HERO BANNER MATCHING EXACT REFERENCE DESIGN */}
-      <section className="w-full relative overflow-hidden bg-[#FAF7F2] min-h-[460px] lg:min-h-[500px] flex items-center">
+      <section className="w-full relative overflow-hidden bg-[#FAF7F2] pt-2 pb-6 sm:pt-3 sm:pb-8 lg:pt-4 lg:pb-10 flex items-start">
         
         {/* RIGHT FULL-BLEED IMAGE CONTAINER (STRETCHES 100% TO RIGHT SCREEN EDGE) */}
         <div className="absolute top-0 bottom-0 right-0 w-full lg:w-[48%] xl:w-[50%] hidden lg:block overflow-hidden z-10 pointer-events-none">
@@ -155,13 +155,13 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
 
         </div>
 
-        <div className="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-10 py-10 lg:py-14 relative z-20">
+        <div className="max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-10 pt-1 pb-6 sm:pt-2 sm:pb-8 lg:pt-2 lg:pb-8 relative z-20">
           
           {/* LEFT COLUMN: TEXT CONTENT */}
-          <div className="max-w-xl lg:max-w-2xl text-left space-y-5 relative">
+          <div className="max-w-xl lg:max-w-2xl text-left space-y-4 sm:space-y-5 relative">
             
             {/* Background Accent 1: Golden Concentric Circles */}
-            <svg className="absolute top-0 left-0 w-36 h-36 opacity-30 pointer-events-none -translate-x-6 -translate-y-6" viewBox="0 0 100 100" fill="none">
+            <svg className="absolute top-0 left-0 w-28 h-28 sm:w-32 sm:h-32 opacity-30 pointer-events-none -translate-x-5 -translate-y-5" viewBox="0 0 100 100" fill="none">
               <circle cx="20" cy="20" r="20" stroke="#EBB638" strokeWidth="1" />
               <circle cx="20" cy="20" r="35" stroke="#EBB638" strokeWidth="1" />
               <circle cx="20" cy="20" r="50" stroke="#EBB638" strokeWidth="1" />

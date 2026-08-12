@@ -105,7 +105,7 @@ export const HomePage = ({ onOpenConsultation = () => {}, setActiveTab = () => {
       
       {/* 1. HERO SECTION WITH FULL PANORAMIC COVER BG & DIAGONAL CORNER ACCENTS */}
       <section 
-        className="relative w-full overflow-hidden bg-cover bg-center bg-no-repeat border-b border-slate-200/60 pt-8 pb-16 sm:pt-12 sm:pb-20 lg:py-28 min-h-[420px] sm:min-h-[460px] flex items-center"
+        className="relative w-full overflow-hidden bg-cover bg-center bg-no-repeat border-b border-slate-200/60 pt-2 pb-8 sm:pt-3 sm:pb-12 lg:pt-4 lg:pb-14 flex items-start"
         style={{ backgroundImage: `url(${homeBg})` }}
       >
        
