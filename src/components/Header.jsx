@@ -152,14 +152,14 @@ export const Header = ({
                         setActiveTab(item.name);
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className={`relative flex items-center gap-1 transition-colors hover:text-[#700619] cursor-pointer focus:outline-none focus-visible:outline-none ${
+                      className={`relative py-1.5 flex items-center gap-1 transition-colors hover:text-[#700619] cursor-pointer focus:outline-none focus-visible:outline-none ${
                         isActive ? 'text-[#700619] font-bold' : 'text-slate-700'
                       }`}
                     >
                       <span>{item.name}</span>
                       <ChevronDown className={`w-3.5 h-3.5 xl:w-4 xl:h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180 text-[#700619]' : 'text-slate-400'}`} />
                       {isActive && (
-                        <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#700619] rounded-full transition-all duration-300" />
+                        <span className="absolute -bottom-2 left-0 right-0 h-[2.5px] bg-[#700619] rounded-full transition-all duration-300" />
                       )}
                     </button>
 
@@ -209,14 +209,14 @@ export const Header = ({
                     setActiveTab(item.name);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className={`relative py-2 transition-colors hover:text-[#700619] whitespace-nowrap cursor-pointer focus:outline-none focus-visible:outline-none ${
+                  className={`relative py-1.5 transition-colors hover:text-[#700619] whitespace-nowrap cursor-pointer focus:outline-none focus-visible:outline-none ${
                     isActive ? 'text-[#700619] font-bold' : 'text-slate-700'
                   }`}
                 >
                   {item.name}
                   {/* Underline indicator for active state */}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#700619] rounded-full transition-all duration-300" />
+                    <span className="absolute -bottom-2 left-0 right-0 h-[2.5px] bg-[#700619] rounded-full transition-all duration-300" />
                   )}
                 </button>
               );
