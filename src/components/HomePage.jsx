@@ -4,7 +4,6 @@ import aboutHandshakeImg from '../assets/about_handshake.png';
 import loanImg from '../assets/loan.png';
 import insuranceImg from '../assets/insurance.png';
 import propertiesImg from '../assets/properties.png';
-import onlineServicesImg from '../assets/online services.png';
 import { 
   Award, 
   Users, 
@@ -180,7 +179,7 @@ export const HomePage = ({ onOpenConsultation = () => {}, setActiveTab = () => {
 
       {/* 3. PRACTICE SERVICES CARDS GRID */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pb-12 sm:pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           
           {/* Card 1: Loans */}
           <div 
@@ -229,24 +228,6 @@ export const HomePage = ({ onOpenConsultation = () => {}, setActiveTab = () => {
             <h3 className="font-serif-brand font-bold text-xl sm:text-2xl text-[#700619] mb-2 sm:mb-3">Properties</h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5 sm:mb-6 font-medium max-w-[240px] flex-grow">
               Find your dream property or list with us for the right opportunity.
-            </p>
-            <div className="text-[#700619] font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 group-hover:gap-2.5 transition-all">
-              <span>Learn More</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </div>
-          </div>
-
-          {/* Card 4: Online Services */}
-          <div 
-            onClick={onOpenConsultation}
-            className="bg-white p-6 sm:p-7 rounded-2xl border border-rose-100/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
-          >
-            <div className="w-16 h-16 sm:w-20 sm:h-20 mb-4 sm:mb-5 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <img src={onlineServicesImg} alt="Online Services" className="w-full h-full object-contain" />
-            </div>
-            <h3 className="font-serif-brand font-bold text-xl sm:text-2xl text-[#700619] mb-2 sm:mb-3">Online Services</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5 sm:mb-6 font-medium max-w-[240px] flex-grow">
-              Experience convenience with our quick and secure online services.
             </p>
             <div className="text-[#700619] font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 group-hover:gap-2.5 transition-all">
               <span>Learn More</span>
