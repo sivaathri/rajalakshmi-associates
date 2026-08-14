@@ -342,7 +342,7 @@ export const HomePage = ({ onOpenConsultation = () => {}, setActiveTab = () => {
             {/* CTA Button */}
             <div className="pt-2">
               <button 
-                onClick={onOpenConsultation}
+                onClick={() => setActiveTab('About Us')}
                 className="w-full sm:w-auto bg-[#700619] hover:bg-[#500412] text-white px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer uppercase tracking-wider"
               >
                 <span>KNOW MORE ABOUT US</span>
