@@ -137,7 +137,7 @@ export const ContactUsPage = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-brand font-bold text-slate-900 leading-[1.18]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.18]">
               Warm Guidance for Your <br />
               <span className="bg-gradient-to-r from-[#700619] via-[#8C0720] to-[#D97706] bg-clip-text text-transparent">
                 Loans, Properties &amp; Insurance
@@ -196,7 +196,7 @@ export const ContactUsPage = () => {
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#700619]/10 text-[#700619] text-xs font-extrabold uppercase tracking-wider mb-2">
                   Get In Touch
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-slate-900">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
                   We're Here to Help
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-500 mt-1">
@@ -314,7 +314,7 @@ export const ContactUsPage = () => {
             {/* Form Title & Tag */}
             <div className="space-y-2 mb-6 pb-4 border-b border-slate-100">
               <div className="flex items-center justify-between flex-wrap gap-2">
-                <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-slate-900">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
                   Enquiry &amp; Appointment
                 </h2>
                 <span className="text-xs font-semibold px-3 py-1 bg-amber-50 text-[#D97706] border border-amber-200 rounded-full">
@@ -337,7 +337,7 @@ export const ContactUsPage = () => {
                   <span className="text-xs font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
                     Enquiry Received
                   </span>
-                  <h3 className="text-2xl font-serif-brand font-bold text-slate-900 pt-2">
+                  <h3 className="text-2xl font-bold tracking-tight text-slate-900 pt-2">
                     Thank You, {formData.name || 'Valued Customer'}!
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
@@ -886,7 +886,7 @@ export const ContactUsPage = () => {
               <span className="text-xs font-extrabold uppercase tracking-wider text-[#700619] bg-rose-50 px-3 py-1 rounded-full">
                 Our Office Locations
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif-brand font-bold text-slate-900">
+              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
                 Visit Either of Our 2 Puducherry Branches
               </h3>
             </div>
@@ -936,7 +936,7 @@ export const ContactUsPage = () => {
                     Open Now
                   </span>
                 </div>
-                <h4 className="text-2xl font-serif-brand font-bold text-slate-900">
+                <h4 className="text-2xl font-bold tracking-tight text-slate-900">
                   {currentBranch.label}
                 </h4>
               </div>
@@ -982,7 +982,7 @@ export const ContactUsPage = () => {
       {/* 4. OTHER WAYS TO CONNECT GRID */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center space-y-1.5 mb-8">
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-bold text-slate-900">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
             Other Ways to Connect
           </h2>
           <p className="text-xs sm:text-sm text-slate-500">
