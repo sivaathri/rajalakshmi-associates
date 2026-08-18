@@ -53,8 +53,6 @@ export const Header = ({
             <div className="hidden sm:flex items-center gap-1.5 text-amber-100/90 text-[11px] sm:text-xs">
               <Phone className="w-3 h-3 text-rose-200 shrink-0" />
               <a href="tel:+917904634737" className="hover:text-amber-200 transition-colors">+91 79046 34737</a>
-              <span className="text-rose-300/60">|</span>
-              <a href="tel:+919566675322" className="hover:text-amber-200 transition-colors">+91 95666 75322</a>
             </div>
           </div>
 

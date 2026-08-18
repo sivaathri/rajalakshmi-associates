@@ -110,12 +110,9 @@ export const Footer = ({ onOpenConsultation = () => {}, setActiveTab = () => {} 
             </h4>
             <div className="space-y-2.5 text-xs sm:text-sm font-medium text-white/90">
               
-              <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-white shrink-0 mt-0.5" />
-                <div className="flex flex-col gap-0.5">
-                  <a href="tel:+917904634737" className="hover:text-[#EBB638] transition-colors">+91 79046 34737</a>
-                  <a href="tel:+919566675322" className="hover:text-[#EBB638] transition-colors">+91 95666 75322</a>
-                </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-white shrink-0" />
+                <a href="tel:+917904634737" className="hover:text-[#EBB638] transition-colors">+91 79046 34737</a>
               </div>
 
               <div className="flex items-center gap-3">
