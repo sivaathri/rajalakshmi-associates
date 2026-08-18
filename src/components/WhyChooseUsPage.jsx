@@ -190,6 +190,10 @@ export const WhyChooseUsPage = ({ onOpenConsultation = () => {} }) => {
 
               <a 
                 href="#core-pillars"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('core-pillars')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="bg-transparent hover:bg-rose-50 text-[#700619] border-2 border-[#700619] px-6 sm:px-7 py-2.5 sm:py-3 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all cursor-pointer"
               >
                 <span>Our Core Pillars</span>
@@ -218,7 +222,7 @@ export const WhyChooseUsPage = ({ onOpenConsultation = () => {} }) => {
       </section>
 
       {/* 3. 6 CORE PILLARS OF EXCELLENCE GRID */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-8">
+      <section id="core-pillars" className="scroll-mt-24 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-8">
         <div className="text-center space-y-3 mb-12">
           <span className="text-xs sm:text-sm font-extrabold text-[#700619] uppercase tracking-[0.18em]">
             THE RAJALAKSHMY ADVANTAGE
