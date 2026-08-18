@@ -262,15 +262,7 @@ export const WhyChooseUsPage = ({ onOpenConsultation = () => {} }) => {
                   </p>
                 </div>
 
-                <div className="pt-2">
-                  <button 
-                    onClick={onOpenConsultation}
-                    className="text-xs font-bold text-[#700619] hover:text-[#520412] flex items-center gap-1.5 group-hover:gap-2.5 transition-all cursor-pointer"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
+               
               </div>
             );
           })}
@@ -333,6 +325,14 @@ export const WhyChooseUsPage = ({ onOpenConsultation = () => {} }) => {
               {bank}
             </span>
           ))}
+        </div>
+
+        {/* Informative Note for Other Insurers & Banks */}
+        <div className="mt-6 inline-flex items-center justify-center gap-2 bg-amber-50/90 border border-amber-200/80 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 shadow-2xs">
+          <Sparkles className="w-4 h-4 text-[#D97706] shrink-0" />
+          <span>
+            <strong className="text-slate-900 font-bold">Apart from these,</strong> we also assist with policies &amp; loan tie-ups from all other leading banks, NBFCs, and insurance providers across India.
+          </span>
         </div>
       </section>
 
