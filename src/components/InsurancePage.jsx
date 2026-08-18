@@ -392,6 +392,14 @@ export const InsurancePage = ({ onOpenConsultation = () => {} }) => {
             </span>
           ))}
         </div>
+
+        {/* Informative Note for Other Insurers & Banks */}
+        <div className="mt-6 inline-flex items-center justify-center gap-2 bg-amber-50/90 border border-amber-200/80 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 shadow-2xs">
+          <Sparkles className="w-4 h-4 text-[#D97706] shrink-0" />
+          <span>
+            <strong className="text-slate-900 font-bold">Apart from these,</strong> we also assist with policies &amp; loan tie-ups from all other leading banks, NBFCs, and insurance providers across India.
+          </span>
+        </div>
       </section>
 
       {/* 5. FREQUENTLY ASKED QUESTIONS */}

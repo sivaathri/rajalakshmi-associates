@@ -125,16 +125,31 @@ export const Footer = ({ onOpenConsultation = () => {}, setActiveTab = () => {} 
                 </a>
               </div>
 
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-white shrink-0 mt-0.5" />
-                <span className="leading-snug">
-                  1st Floor, No. 151/35, Plot 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry - 605013
-                </span>
+              {/* Branch 1 */}
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#EBB638] shrink-0 mt-0.5" />
+                <div className="space-y-0.5">
+                  <div className="text-[11px] font-bold text-[#EBB638] uppercase tracking-wider">Branch 1 (Head Office):</div>
+                  <span className="leading-snug text-white/85 text-[11px] sm:text-xs">
+                    1st Floor, No. 151/35, Plot 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry - 605013
+                  </span>
+                </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              {/* Branch 2 */}
+              <div className="flex items-start gap-2.5 pt-1">
+                <MapPin className="w-4 h-4 text-[#EBB638] shrink-0 mt-0.5" />
+                <div className="space-y-0.5">
+                  <div className="text-[11px] font-bold text-[#EBB638] uppercase tracking-wider">Branch 2 (Thilaspet):</div>
+                  <span className="leading-snug text-white/85 text-[11px] sm:text-xs">
+                    No. 76B, Iyyanar Kovil Street, Thilaspet, Puducherry - 605009
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 pt-1">
                 <Clock className="w-4 h-4 text-white shrink-0" />
-                <span>Mon - Sat: 9:30 AM - 6:30 PM</span>
+                <span>Mon - Sat: 9:30 AM - 8:00 PM</span>
               </div>
 
             </div>

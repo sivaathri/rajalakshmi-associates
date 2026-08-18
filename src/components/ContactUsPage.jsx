@@ -21,12 +21,14 @@ import {
   PhoneCall,
   Check,
   Award,
-  ChevronRight
+  ChevronRight,
+  MapPinned
 } from 'lucide-react';
 
 export const ContactUsPage = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [activeTab, setActiveTab] = useState('Loans'); // 'Loans' | 'Properties' | 'Insurance'
+  const [selectedMapBranch, setSelectedMapBranch] = useState('gorimedu'); // 'gorimedu' | 'thilaspet'
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -39,10 +41,38 @@ export const ContactUsPage = () => {
     insuranceType: 'Health & Medical Insurance',
     insuranceCoverage: '',
     appointmentType: 'Direct', // 'Direct' | 'Phone Call'
+    preferredBranch: 'Branch 1: Gorimedu (Head Office)',
     preferredDate: '',
     preferredTime: 'Morning (10:00 AM - 01:00 PM)',
     remarks: ''
   });
+
+  const branches = [
+    {
+      id: 'gorimedu',
+      label: 'Branch 1: Gorimedu (Head Office)',
+      shortName: 'Gorimedu Head Office',
+      badge: 'Main Branch',
+      address: '1st Floor, No. 151/35, Plot 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry – 605013',
+      mapSrc: 'https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013&t=&z=15&ie=UTF8&iwloc=&output=embed',
+      directionsUrl: 'https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013',
+      phone: '+91 79046 34737',
+      timing: 'Mon – Sat: 9:30 AM – 6:30 PM'
+    },
+    {
+      id: 'thilaspet',
+      label: 'Branch 2: Thilaspet Branch',
+      shortName: 'Thilaspet Branch',
+      badge: 'Branch 2',
+      address: 'No. 76B, Iyyanar Kovil Street, Thilaspet, Pondicherry – 605009',
+      mapSrc: 'https://maps.google.com/maps?q=76B,+Iyyanar+Kovil+Street,+Thilaspet,+Puducherry+605009&t=&z=15&ie=UTF8&iwloc=&output=embed',
+      directionsUrl: 'https://maps.google.com/maps?q=76B,+Iyyanar+Kovil+Street,+Thilaspet,+Puducherry+605009',
+      phone: '+91 95666 75322',
+      timing: 'Mon – Sat: 9:30 AM – 6:30 PM'
+    }
+  ];
+
+  const currentBranch = branches.find((b) => b.id === selectedMapBranch) || branches[0];
 
   const handleTabChange = (type) => {
     setActiveTab(type);
@@ -88,8 +118,8 @@ export const ContactUsPage = () => {
                 <Award className="w-5 h-5 text-[#EBB638]" />
               </div>
               <div className="text-left">
-                <div className="text-xs font-extrabold text-slate-900">15+ Years Trust</div>
-                <div className="text-[11px] font-medium text-slate-500">Puducherry &amp; Tamil Nadu</div>
+                <div className="text-xs font-extrabold text-slate-900">2 Branch Offices</div>
+                <div className="text-[11px] font-medium text-slate-500">Gorimedu &amp; Thilaspet, Puducherry</div>
               </div>
             </div>
           </div>
@@ -116,7 +146,7 @@ export const ContactUsPage = () => {
 
             {/* Subtitle */}
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
-              Book a peaceful, personalized consultation with our certified advisors in Puducherry. Choose your service category below to receive transparent and prompt guidance.
+              Book a peaceful, personalized consultation with our certified advisors in Puducherry across our Gorimedu &amp; Thilaspet branches.
             </p>
 
             {/* Trust Points */}
@@ -127,7 +157,7 @@ export const ContactUsPage = () => {
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-white/80 backdrop-blur-xs px-3 py-2 rounded-xl border border-amber-900/10 shadow-2xs">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Zero Hidden Fees</span>
+                <span>2 Puducherry Branches</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-white/80 backdrop-blur-xs px-3 py-2 rounded-xl border border-amber-900/10 shadow-2xs">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -170,7 +200,7 @@ export const ContactUsPage = () => {
                   We're Here to Help
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-500 mt-1">
-                  Have a question or prefer speaking directly? Connect with our dedicated advisory team.
+                  Have a question or prefer speaking directly? Connect with our dedicated advisory team at either branch.
                 </p>
               </div>
 
@@ -208,15 +238,34 @@ export const ContactUsPage = () => {
                   </div>
                 </div>
 
-                {/* Office Location */}
+                {/* Branch 1 Location */}
                 <div className="flex items-start gap-4 pt-4">
-                  <div className="w-11 h-11 rounded-2xl bg-slate-50 text-slate-700 flex items-center justify-center shrink-0 shadow-2xs border border-slate-200">
-                    <MapPin className="w-5 h-5 text-slate-600" />
+                  <div className="w-11 h-11 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0 shadow-2xs border border-amber-200/60">
+                    <MapPin className="w-5 h-5 text-amber-700" />
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="font-bold text-[11px] uppercase tracking-wider text-slate-400">Head Office</h4>
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-2">
+                      <h4 className="font-bold text-[11px] uppercase tracking-wider text-slate-900">Branch 1 (Head Office)</h4>
+                      <span className="text-[10px] font-semibold bg-amber-100 text-amber-800 px-2 py-0.2 rounded-full">Gorimedu</span>
+                    </div>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                      1st Floor, No. 151/35, Plot 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry - 605013
+                      1st Floor, No. 151/35, Plot 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry – 605013
+                    </p>
+                  </div>
+                </div>
+
+                {/* Branch 2 Location */}
+                <div className="flex items-start gap-4 pt-4">
+                  <div className="w-11 h-11 rounded-2xl bg-rose-50 text-[#700619] flex items-center justify-center shrink-0 shadow-2xs border border-rose-200/60">
+                    <MapPinned className="w-5 h-5 text-[#700619]" />
+                  </div>
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-2">
+                      <h4 className="font-bold text-[11px] uppercase tracking-wider text-slate-900">Branch 2 (Thilaspet)</h4>
+                      <span className="text-[10px] font-semibold bg-rose-100 text-rose-800 px-2 py-0.2 rounded-full">Puducherry - 09</span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                      No. 76B, Iyyanar Kovil Street, Thilaspet, Pondicherry – 605009
                     </p>
                   </div>
                 </div>
@@ -357,7 +406,7 @@ export const ContactUsPage = () => {
                   <div className="flex justify-between border-b border-slate-100 pb-2">
                     <span className="text-slate-500">Appointment Mode:</span>
                     <span className="font-bold text-emerald-800">
-                      {formData.appointmentType === 'Direct' ? '🏢 Direct Office Meeting' : '📞 Phone Consultation'}
+                      {formData.appointmentType === 'Direct' ? `🏢 Direct Visit (${formData.preferredBranch})` : '📞 Phone Consultation'}
                     </span>
                   </div>
 
@@ -377,7 +426,7 @@ export const ContactUsPage = () => {
                 <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
                   <a
                     href={`https://wa.me/917904634737?text=${encodeURIComponent(
-                      `Hello Rajalakshmy Associates, I have submitted an enquiry for ${formData.enquiryType} (${formData.appointmentType} appointment). My name is ${formData.name}.`
+                      `Hello Rajalakshmy Associates, I have submitted an enquiry for ${formData.enquiryType} (${formData.appointmentType === 'Direct' ? formData.preferredBranch : 'Phone Consultation'}). My name is ${formData.name}.`
                     )}`}
                     target="_blank"
                     rel="noreferrer"
@@ -402,6 +451,7 @@ export const ContactUsPage = () => {
                         insuranceType: 'Health & Medical Insurance',
                         insuranceCoverage: '',
                         appointmentType: 'Direct',
+                        preferredBranch: 'Branch 1: Gorimedu (Head Office)',
                         preferredDate: '',
                         preferredTime: 'Morning (10:00 AM - 01:00 PM)',
                         remarks: ''
@@ -628,29 +678,46 @@ export const ContactUsPage = () => {
                     {/* Direct Visit */}
                     <div 
                       onClick={() => setFormData({ ...formData, appointmentType: 'Direct' })}
-                      className={`p-3.5 rounded-2xl border-2 cursor-pointer transition-all flex items-start gap-3 ${
+                      className={`p-3.5 rounded-2xl border-2 cursor-pointer transition-all flex flex-col justify-between gap-2.5 ${
                         formData.appointmentType === 'Direct'
                           ? 'border-[#700619] bg-rose-50/40 shadow-xs ring-1 ring-[#700619]/20'
                           : 'border-slate-200 bg-white hover:border-slate-300'
                       }`}
                     >
-                      <input 
-                        type="radio" 
-                        name="appointmentType" 
-                        value="Direct"
-                        checked={formData.appointmentType === 'Direct'}
-                        onChange={handleChange}
-                        className="w-4 h-4 mt-0.5 accent-[#700619] cursor-pointer"
-                      />
-                      <div className="space-y-0.5">
-                        <div className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-1.5">
-                          <Building2 className="w-3.5 h-3.5 text-[#700619]" />
-                          <span>Direct Office Visit</span>
+                      <div className="flex items-start gap-3">
+                        <input 
+                          type="radio" 
+                          name="appointmentType" 
+                          value="Direct"
+                          checked={formData.appointmentType === 'Direct'}
+                          onChange={handleChange}
+                          className="w-4 h-4 mt-0.5 accent-[#700619] cursor-pointer"
+                        />
+                        <div className="space-y-0.5">
+                          <div className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-1.5">
+                            <Building2 className="w-3.5 h-3.5 text-[#700619]" />
+                            <span>Direct Office Visit</span>
+                          </div>
+                          <p className="text-[11px] text-slate-500 leading-snug">
+                            Visit our Gorimedu or Thilaspet office in Puducherry.
+                          </p>
                         </div>
-                        <p className="text-[11px] text-slate-500 leading-snug">
-                          Meet at our Gorimedu office in Puducherry for detailed review.
-                        </p>
                       </div>
+
+                      {/* Branch Choice Dropdown if Direct is selected */}
+                      {formData.appointmentType === 'Direct' && (
+                        <div className="pt-1 pl-7">
+                          <select
+                            name="preferredBranch"
+                            value={formData.preferredBranch}
+                            onChange={handleChange}
+                            className="w-full text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-amber-200 bg-white text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#700619]"
+                          >
+                            <option value="Branch 1: Gorimedu (Head Office)">Branch 1: Gorimedu (Head Office)</option>
+                            <option value="Branch 2: Thilaspet Branch">Branch 2: Thilaspet Branch</option>
+                          </select>
+                        </div>
+                      )}
                     </div>
 
                     {/* Phone Call */}
@@ -815,55 +882,100 @@ export const ContactUsPage = () => {
         </div>
       </section>
 
-      {/* 3. INTERACTIVE OFFICE MAP */}
+      {/* 3. INTERACTIVE OFFICE MAP WITH BOTH BRANCHES */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 mt-14 sm:mt-18 mb-16">
         <div className="bg-white rounded-3xl p-6 sm:p-9 shadow-[0_10px_35px_-5px_rgba(0,0,0,0.05)] border border-amber-100/80">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          {/* Section Heading & Branch Switch Tabs */}
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+            <div className="text-left space-y-1">
+              <span className="text-xs font-extrabold uppercase tracking-wider text-[#700619] bg-rose-50 px-3 py-1 rounded-full">
+                Our Office Locations
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-serif-brand font-bold text-slate-900">
+                Visit Either of Our 2 Puducherry Branches
+              </h3>
+            </div>
+
+            {/* Branch Switcher Buttons */}
+            <div className="flex items-center gap-2 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
+              {branches.map((b) => (
+                <button
+                  key={b.id}
+                  onClick={() => setSelectedMapBranch(b.id)}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                    selectedMapBranch === b.id
+                      ? 'bg-[#700619] text-white shadow-xs'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                  }`}
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>{b.shortName}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-6">
             
             {/* Map Embed (7 Cols) */}
-            <div className="lg:col-span-7 rounded-2xl overflow-hidden shadow-inner border border-slate-200 min-h-[320px] relative">
+            <div className="lg:col-span-7 rounded-2xl overflow-hidden shadow-inner border border-slate-200 min-h-[340px] relative">
               <iframe 
-                title="Rajalakshmy Associates Puducherry Office Map"
-                src="https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-full min-h-[320px] border-0"
+                title={`${currentBranch.label} Map`}
+                src={currentBranch.mapSrc}
+                className="w-full h-full min-h-[340px] border-0"
                 allowFullScreen="" 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
 
-            {/* Office Info (5 Cols) */}
+            {/* Selected Branch Info Card (5 Cols) */}
             <div className="lg:col-span-5 text-left space-y-4">
               <div className="space-y-1.5">
-                <span className="text-xs font-extrabold uppercase tracking-wider text-[#700619] bg-rose-50 px-3 py-1 rounded-full">
-                  Visit Our Office
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-serif-brand font-bold text-slate-900">
-                  Gorimedu Branch
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                  Located on Tindivanam Bypass Road with convenient parking and friendly advisory rooms.
-                </p>
-              </div>
-
-              <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-amber-200/60 space-y-1.5">
-                <div className="flex items-center gap-2 font-bold text-slate-900 text-sm font-serif-brand">
-                  <Building2 className="w-4 h-4 text-[#700619]" />
-                  <span>Rajalakshmy Associates</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900">
+                    {currentBranch.badge}
+                  </span>
+                  <span className="text-xs font-medium text-emerald-700 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Open Now
+                  </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                  1st Floor, No. 151/35, Plot 19, Tindivanam Byp Rd, near KBS Travels, Gorimedu, Puducherry – 605013
-                </p>
+                <h4 className="text-2xl font-serif-brand font-bold text-slate-900">
+                  {currentBranch.label}
+                </h4>
               </div>
 
-              <div className="pt-1">
+              <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-amber-200/60 space-y-2">
+                <div className="flex items-start gap-2.5">
+                  <Building2 className="w-4 h-4 text-[#700619] shrink-0 mt-0.5" />
+                  <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    {currentBranch.address}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2.5 text-xs font-bold text-slate-800 pt-1 border-t border-amber-100">
+                  <Phone className="w-3.5 h-3.5 text-[#D97706]" />
+                  <a href={`tel:${currentBranch.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-[#700619]">
+                    {currentBranch.phone}
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-2.5 text-xs text-slate-500 font-medium">
+                  <Clock className="w-3.5 h-3.5 text-slate-400" />
+                  <span>{currentBranch.timing}</span>
+                </div>
+              </div>
+
+              <div className="pt-1 flex flex-wrap gap-2.5">
                 <a 
-                  href="https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013"
+                  href={currentBranch.directionsUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-[#D97706] hover:bg-[#B45309] text-white px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-sm transition cursor-pointer"
                 >
-                  <span>Get Directions on Map</span>
+                  <span>Get Directions on Google Maps</span>
                   <Navigation className="w-4 h-4" />
                 </a>
               </div>
@@ -945,15 +1057,13 @@ export const ContactUsPage = () => {
               <Building2 className="w-5 h-5" />
             </div>
             <div className="space-y-1">
-              <h4 className="font-bold text-slate-900 text-sm">Branch Visit</h4>
-              <p className="text-xs text-slate-500">Gorimedu, Puducherry</p>
+              <h4 className="font-bold text-slate-900 text-sm">2 Branches</h4>
+              <p className="text-xs text-slate-500">Gorimedu &amp; Thilaspet</p>
               <a 
-                href="https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013"
-                target="_blank"
-                rel="noreferrer"
+                href="#enquiry-form-card" 
                 className="text-xs font-bold text-amber-700 hover:underline flex items-center gap-1 pt-0.5"
               >
-                <span>Get Directions</span>
+                <span>View Locations</span>
                 <ChevronRight className="w-3.5 h-3.5" />
               </a>
             </div>
