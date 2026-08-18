@@ -57,7 +57,7 @@ export const ContactUsPage = () => {
       mapSrc: 'https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013&t=&z=15&ie=UTF8&iwloc=&output=embed',
       directionsUrl: 'https://maps.google.com/maps?q=Gorimedu,%20Tindivanam%20Byp%20Rd,%20Puducherry%20605013',
       phone: '+91 79046 34737',
-      timing: 'Mon – Sat: 9:30 AM – 6:30 PM'
+      timing: 'Mon – Sat: 9:30 AM – 8:00 PM (Sunday: Based on Appointment)'
     },
     {
       id: 'thilaspet',
@@ -68,7 +68,7 @@ export const ContactUsPage = () => {
       mapSrc: 'https://maps.google.com/maps?q=76B,+Iyyanar+Kovil+Street,+Thilaspet,+Puducherry+605009&t=&z=15&ie=UTF8&iwloc=&output=embed',
       directionsUrl: 'https://maps.google.com/maps?q=76B,+Iyyanar+Kovil+Street,+Thilaspet,+Puducherry+605009',
       phone: '+91 95666 75322',
-      timing: 'Mon – Sat: 9:30 AM – 6:30 PM'
+      timing: 'Mon – Sat: 9:30 AM – 8:00 PM (Sunday: Based on Appointment)'
     }
   ];
 
@@ -277,8 +277,8 @@ export const ContactUsPage = () => {
                   </div>
                   <div className="space-y-1">
                     <h4 className="font-bold text-[11px] uppercase tracking-wider text-slate-400">Consultation Timings</h4>
-                    <p className="text-xs sm:text-sm font-bold text-slate-800">Mon – Sat: 9:30 AM – 6:30 PM</p>
-                    <p className="text-[11px] text-slate-500 font-medium">Sunday: Open by Appointment</p>
+                    <p className="text-xs sm:text-sm font-bold text-slate-800">Mon – Sat: 9:30 AM – 8:00 PM</p>
+                    <p className="text-[11px] text-[#D97706] font-semibold">Sunday: Based on Appointment</p>
                   </div>
                 </div>
 

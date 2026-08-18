@@ -147,9 +147,12 @@ export const Footer = ({ onOpenConsultation = () => {}, setActiveTab = () => {} 
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 pt-1">
-                <Clock className="w-4 h-4 text-white shrink-0" />
-                <span>Mon - Sat: 9:30 AM - 8:00 PM</span>
+              <div className="flex items-start gap-3 pt-1">
+                <Clock className="w-4 h-4 text-white shrink-0 mt-0.5" />
+                <div className="space-y-0.5 text-xs sm:text-[13px]">
+                  <div>Mon - Sat: 9:30 AM - 8:00 PM</div>
+                  <div className="text-[11px] text-[#EBB638] font-normal">Sunday: Based on Appointment</div>
+                </div>
               </div>
 
             </div>
