@@ -67,7 +67,7 @@ export const ContactUsPage = () => {
       address: 'No. 76B, Iyyanar Kovil Street, Thilaspet, Pondicherry – 605009',
       mapSrc: 'https://maps.google.com/maps?q=76B,+Iyyanar+Kovil+Street,+Thilaspet,+Puducherry+605009&t=&z=15&ie=UTF8&iwloc=&output=embed',
       directionsUrl: 'https://maps.google.com/maps?q=76B,+Iyyanar+Kovil+Street,+Thilaspet,+Puducherry+605009',
-      phone: '+91 95666 75322',
+      phone: '+91 79046 34737',
       timing: 'Mon – Sat: 9:30 AM – 8:00 PM (Sunday: Based on Appointment)'
     }
   ];
@@ -213,15 +213,9 @@ export const ContactUsPage = () => {
                   </div>
                   <div className="space-y-1">
                     <h4 className="font-bold text-[11px] uppercase tracking-wider text-slate-400">Phone Support</h4>
-                    <div className="flex flex-col gap-0.5">
-                      <a href="tel:+917904634737" className="text-sm sm:text-base font-bold text-slate-800 hover:text-[#700619] transition-colors flex items-center gap-1.5">
-                        <span>+91 79046 34737</span>
-                        <span className="text-[10px] font-semibold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">Primary</span>
-                      </a>
-                      <a href="tel:+919566675322" className="text-sm font-semibold text-slate-600 hover:text-[#700619] transition-colors">
-                        +91 95666 75322
-                      </a>
-                    </div>
+                    <a href="tel:+917904634737" className="text-sm sm:text-base font-bold text-slate-800 hover:text-[#700619] transition-colors block">
+                      +91 79046 34737
+                    </a>
                   </div>
                 </div>
 
@@ -1026,10 +1020,10 @@ export const ContactUsPage = () => {
               <h4 className="font-bold text-slate-900 text-sm">Direct Call</h4>
               <p className="text-xs text-slate-500">Speak directly with us</p>
               <a 
-                href="tel:+919566675322" 
+                href="tel:+917904634737" 
                 className="text-xs font-bold text-sky-600 hover:underline block pt-0.5"
               >
-                +91 95666 75322
+                +91 79046 34737
               </a>
             </div>
           </div>
