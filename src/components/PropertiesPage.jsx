@@ -247,13 +247,13 @@ export const PropertiesPage = ({ onOpenConsultation = () => {} }) => {
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <a 
+              {/* <a 
                 href="#property-listings"
                 className="bg-transparent hover:bg-rose-50 text-[#700619] border-2 border-[#700619] px-6 sm:px-7 py-2.5 sm:py-3 rounded-lg font-bold text-xs sm:text-sm flex items-center gap-2 transition-all cursor-pointer"
               >
                 <span>Browse Listings</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </a> */}
             </div>
 
           </div>
