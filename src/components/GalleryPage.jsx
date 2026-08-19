@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import bannerBgImg from '../assets/contactbg.png';
 import aboutHandshakeImg from '../assets/about_handshake.png';
 import officeReceptionImg from '../assets/office_reception.png';
@@ -18,6 +19,8 @@ import {
   Users, 
   CheckCircle2, 
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   Phone
 } from 'lucide-react';
 
@@ -89,6 +92,49 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
   const filteredItems = activeFilter === 'All' 
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeFilter);
+
+  // Lightbox navigation helpers
+  const currentIndex = selectedImage 
+    ? filteredItems.findIndex(item => item.id === selectedImage.id) 
+    : -1;
+
+  const handleNext = () => {
+    if (currentIndex >= 0 && filteredItems.length > 0) {
+      const nextIndex = (currentIndex + 1) % filteredItems.length;
+      setSelectedImage(filteredItems[nextIndex]);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex >= 0 && filteredItems.length > 0) {
+      const prevIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length;
+      setSelectedImage(filteredItems[prevIndex]);
+    }
+  };
+
+  // Keyboard navigation and body scroll locking
+  useEffect(() => {
+    if (selectedImage) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+
+      const handleKeyDown = (e) => {
+        if (e.key === 'Escape') {
+          setSelectedImage(null);
+        } else if (e.key === 'ArrowRight') {
+          handleNext();
+        } else if (e.key === 'ArrowLeft') {
+          handlePrev();
+        }
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [selectedImage, currentIndex, filteredItems]);
 
   return (
     <div className="bg-[#FAF7F4] min-h-screen text-slate-800 font-sans pb-12 select-none overflow-x-hidden">
@@ -242,44 +288,99 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
         </div>
       </section>
 
-      {/* 4. LIGHTBOX MODAL */}
-      {selectedImage && (
+      {/* 4. LIGHTBOX MODAL (RENDERED VIA PORTAL DIRECTLY INTO BODY FOR PERFECT VIEWPORT CENTERING) */}
+      {selectedImage && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[99999] bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-in fade-in duration-200"
           onClick={() => setSelectedImage(null)}
         >
+          {/* Previous Button */}
+          {filteredItems.length > 1 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrev();
+              }}
+              aria-label="Previous Image"
+              className="fixed left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-slate-900/80 hover:bg-[#700619] text-white border border-white/20 flex items-center justify-center transition-all shadow-xl hover:scale-110 cursor-pointer"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+          )}
+
+          {/* Next Button */}
+          {filteredItems.length > 1 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNext();
+              }}
+              aria-label="Next Image"
+              className="fixed right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-slate-900/80 hover:bg-[#700619] text-white border border-white/20 flex items-center justify-center transition-all shadow-xl hover:scale-110 cursor-pointer"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          )}
+
+          {/* Modal Container */}
           <div 
-            className="bg-white rounded-3xl overflow-hidden max-w-3xl w-full shadow-2xl relative border border-slate-100"
+            className="bg-slate-900 text-white rounded-2xl sm:rounded-3xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl relative border border-white/15 my-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <button 
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-slate-900/70 hover:bg-slate-900 text-white flex items-center justify-center transition-colors cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            {/* Top Bar with Count and Close Button */}
+            <div className="flex items-center justify-between px-5 py-3.5 bg-slate-950/80 border-b border-white/10 shrink-0">
+              <div className="flex items-center gap-2.5">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#EBB638] bg-[#EBB638]/10 px-2.5 py-1 rounded-md border border-[#EBB638]/20">
+                  {selectedImage.category}
+                </span>
+                {filteredItems.length > 1 && (
+                  <span className="text-xs text-slate-400 font-medium">
+                    {currentIndex + 1} / {filteredItems.length}
+                  </span>
+                )}
+              </div>
+              <button 
+                onClick={() => setSelectedImage(null)}
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-rose-600 text-white flex items-center justify-center transition-colors cursor-pointer"
+                title="Close (Esc)"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
 
-            <div className="max-h-[65vh] overflow-hidden bg-slate-900">
+            {/* Image Stage */}
+            <div className="flex-1 min-h-0 bg-black/90 flex items-center justify-center p-2 sm:p-4 overflow-hidden">
               <img 
                 src={selectedImage.image} 
                 alt={selectedImage.title} 
-                className="w-full h-full object-contain max-h-[65vh] mx-auto"
+                className="w-auto h-auto max-h-[52vh] sm:max-h-[58vh] max-w-full object-contain rounded-lg mx-auto shadow-lg"
               />
             </div>
 
-            <div className="p-6 text-left space-y-2 bg-white">
-              <span className="text-xs font-bold text-[#700619] uppercase tracking-wider">
-                {selectedImage.category}
-              </span>
-              <h3 className="text-xl sm:text-2xl font-serif-brand font-bold text-slate-900">
-                {selectedImage.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {selectedImage.desc}
-              </p>
+            {/* Footer / Description */}
+            <div className="p-4 sm:p-5 text-left bg-slate-900 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0">
+              <div className="space-y-1">
+                <h3 className="text-base sm:text-lg font-serif-brand font-bold text-white leading-snug">
+                  {selectedImage.title}
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed max-w-2xl">
+                  {selectedImage.desc}
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  setSelectedImage(null);
+                  onOpenConsultation();
+                }}
+                className="shrink-0 bg-[#700619] hover:bg-[#8e0921] text-white px-4 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 justify-center cursor-pointer shadow-md"
+              >
+                <span>Enquire Now</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* 5. CALL TO ACTION */}
