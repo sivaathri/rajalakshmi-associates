@@ -10,17 +10,28 @@ import insuranceImg from '../assets/insurance.png';
 import propertiesImg from '../assets/properties.png';
 import onlineServicesImg from '../assets/online services.png';
 
-// Real Office & Infrastructure, Team, and Client Event Photos
-import executiveCabinImg from '../assets/Office & Infrastructure/ChatGPT Image Sep 3, 2026, 11_32_56 AM.png';
-import anniversaryBannerImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.14 AM.jpeg';
-import anniversaryCakeImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.11 AM.jpeg';
-import teamOfficeImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.07 AM.jpeg';
-import teamMilestoneImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.23 AM.jpeg';
-import clientMementoImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.21.31 AM.jpeg';
-import staffCelebrationImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.32 AM.jpeg';
-import operationsTeamImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.57.25 AM.jpeg';
-import teamDinnerImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.25 AM.jpeg';
-import teamOutingImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.28 AM.jpeg';
+// Dynamically load ALL images from Office & Infrastructure folder (includes all 18 photos and any new ones added)
+const officeImagesModules = import.meta.glob(
+  '../assets/Office & Infrastructure/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}',
+  { eager: true, import: 'default' }
+);
+
+// Sort so that the executive cabin (ChatGPT Image) appears first
+const officeImageEntries = Object.entries(officeImagesModules).sort(([pathA], [pathB]) => {
+  if (pathA.includes('ChatGPT')) return -1;
+  if (pathB.includes('ChatGPT')) return 1;
+  return pathA.localeCompare(pathB);
+});
+
+// Featured Hero Image
+const executiveCabinImg = officeImageEntries.find(([path]) => path.includes('ChatGPT'))?.[1] || officeImageEntries[0]?.[1];
+
+// Generate clean photo gallery items for all Office & Infrastructure images (No title, no category badge, no desc)
+const officeGalleryItems = officeImageEntries.map(([path, imgUrl], idx) => ({
+  id: `office-${idx + 1}`,
+  category: "Office & Infrastructure",
+  image: imgUrl
+}));
 
 import { 
   Camera, 
@@ -41,86 +52,37 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const galleryItems = [
+    ...officeGalleryItems,
     {
-      id: 1,
-      category: "Office & Infrastructure",
-      image: executiveCabinImg
-    },
-    {
-      id: 2,
-      category: "Office & Infrastructure",
-      image: anniversaryBannerImg
-    },
-    {
-      id: 3,
-      category: "Office & Infrastructure",
-      image: teamOfficeImg
-    },
-    {
-      id: 4,
-      category: "Office & Infrastructure",
-      image: operationsTeamImg
-    },
-    {
-      id: 5,
-      category: "Office & Infrastructure",
-      image: anniversaryCakeImg
-    },
-    {
-      id: 6,
-      category: "Office & Infrastructure",
-      image: clientMementoImg
-    },
-    {
-      id: 7,
-      category: "Office & Infrastructure",
-      image: teamMilestoneImg
-    },
-    {
-      id: 8,
-      category: "Office & Infrastructure",
-      image: staffCelebrationImg
-    },
-    {
-      id: 9,
-      category: "Office & Infrastructure",
-      image: teamDinnerImg
-    },
-    {
-      id: 10,
-      category: "Office & Infrastructure",
-      image: teamOutingImg
-    },
-    {
-      id: 11,
+      id: "service-1",
       title: "Client Partnership & Successful Agreement",
       category: "Customer Interaction",
       image: aboutHandshakeImg,
       desc: "Empowering client growth with transparent loan advisory, quick bank approvals, and zero hidden charges."
     },
     {
-      id: 12,
+      id: "service-2",
       title: "Home & Mortgage Loan Processing",
       category: "Financial Services",
       image: loanImg,
       desc: "Customized loan solutions with 25+ associated banks and competitive interest rates for all property needs."
     },
     {
-      id: 13,
+      id: "service-3",
       title: "Comprehensive Insurance Advisory",
       category: "Financial Services",
       image: insuranceImg,
       desc: "Protecting families, health, vehicles, and commercial properties with customized insurance solutions."
     },
     {
-      id: 14,
+      id: "service-4",
       title: "Property & Real Estate Legal Guidance",
       category: "Financial Services",
       image: propertiesImg,
       desc: "Flawless title investigation, encumbrance certificate checking, and statutory land registration assistance."
     },
     {
-      id: 15,
+      id: "service-5",
       title: "Digital Consultation & Online Services",
       category: "Financial Services",
       image: onlineServicesImg,
@@ -128,7 +90,7 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
     }
   ];
 
-  const categories = ["All", "Office & Infrastructure", "Customer Interaction", "Financial Services"];
+  const categories = ["All", "Office & Infrastructure", "Customer Interaction", "Banker Interaction"];
 
   const filteredItems = activeFilter === 'All' 
     ? galleryItems 
