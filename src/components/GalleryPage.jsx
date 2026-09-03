@@ -10,6 +10,18 @@ import insuranceImg from '../assets/insurance.png';
 import propertiesImg from '../assets/properties.png';
 import onlineServicesImg from '../assets/online services.png';
 
+// Real Office & Infrastructure, Team, and Client Event Photos
+import executiveCabinImg from '../assets/Office & Infrastructure/ChatGPT Image Sep 3, 2026, 11_32_56 AM.png';
+import anniversaryBannerImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.14 AM.jpeg';
+import anniversaryCakeImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.11 AM.jpeg';
+import teamOfficeImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.07 AM.jpeg';
+import teamMilestoneImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.23 AM.jpeg';
+import clientMementoImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.21.31 AM.jpeg';
+import staffCelebrationImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.32 AM.jpeg';
+import operationsTeamImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.57.25 AM.jpeg';
+import teamDinnerImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.25 AM.jpeg';
+import teamOutingImg from '../assets/Office & Infrastructure/WhatsApp Image 2026-09-03 at 10.18.28 AM.jpeg';
+
 import { 
   Camera, 
   Image as ImageIcon, 
@@ -31,63 +43,92 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
   const galleryItems = [
     {
       id: 1,
-      title: "Main Headquarters & Legal Reception",
       category: "Office & Infrastructure",
-      image: officeReceptionImg,
-      desc: "Our modern welcoming reception area in Gorimedu, Puducherry."
+      image: executiveCabinImg
     },
     {
       id: 2,
-      title: "Client Partnership & Successful Agreement",
-      category: "Client Success",
-      image: aboutHandshakeImg,
-      desc: "Empowering client growth with transparent loan advisory."
+      category: "Office & Infrastructure",
+      image: anniversaryBannerImg
     },
     {
       id: 3,
-      title: "Corporate Building & Advisory Center",
       category: "Office & Infrastructure",
-      image: buildingHeroImg,
-      desc: "Premier financial consulting offices serving Puducherry & Tamilnadu."
+      image: teamOfficeImg
     },
     {
       id: 4,
-      title: "Home & Mortgage Loan Processing",
-      category: "Financial Services",
-      image: loanImg,
-      desc: "Customized loan solutions with 25+ associated banks."
+      category: "Office & Infrastructure",
+      image: operationsTeamImg
     },
     {
       id: 5,
-      title: "Comprehensive Insurance Advisory",
-      category: "Financial Services",
-      image: insuranceImg,
-      desc: "Protecting lives, health, and commercial property assets."
+      category: "Office & Infrastructure",
+      image: anniversaryCakeImg
     },
     {
       id: 6,
-      title: "Property & Real Estate Legal Guidance",
-      category: "Financial Services",
-      image: propertiesImg,
-      desc: "Flawless title search, encumbrance check, and land registration."
+      category: "Office & Infrastructure",
+      image: clientMementoImg
     },
     {
       id: 7,
-      title: "Digital Consultation & Online Portal",
-      category: "Financial Services",
-      image: onlineServicesImg,
-      desc: "Fast digital application and doorstep documentation."
+      category: "Office & Infrastructure",
+      image: teamMilestoneImg
     },
     {
       id: 8,
-      title: "Executive Business Center & Advisory Lounge",
       category: "Office & Infrastructure",
-      image: homeBgImg,
-      desc: "Dedicated consultation rooms for personalized 1-on-1 financial planning."
+      image: staffCelebrationImg
+    },
+    {
+      id: 9,
+      category: "Office & Infrastructure",
+      image: teamDinnerImg
+    },
+    {
+      id: 10,
+      category: "Office & Infrastructure",
+      image: teamOutingImg
+    },
+    {
+      id: 11,
+      title: "Client Partnership & Successful Agreement",
+      category: "Customer Interaction",
+      image: aboutHandshakeImg,
+      desc: "Empowering client growth with transparent loan advisory, quick bank approvals, and zero hidden charges."
+    },
+    {
+      id: 12,
+      title: "Home & Mortgage Loan Processing",
+      category: "Financial Services",
+      image: loanImg,
+      desc: "Customized loan solutions with 25+ associated banks and competitive interest rates for all property needs."
+    },
+    {
+      id: 13,
+      title: "Comprehensive Insurance Advisory",
+      category: "Financial Services",
+      image: insuranceImg,
+      desc: "Protecting families, health, vehicles, and commercial properties with customized insurance solutions."
+    },
+    {
+      id: 14,
+      title: "Property & Real Estate Legal Guidance",
+      category: "Financial Services",
+      image: propertiesImg,
+      desc: "Flawless title investigation, encumbrance certificate checking, and statutory land registration assistance."
+    },
+    {
+      id: 15,
+      title: "Digital Consultation & Online Services",
+      category: "Financial Services",
+      image: onlineServicesImg,
+      desc: "Doorstep documentation, online status tracking, and fast approvals for working professionals and businesses."
     }
   ];
 
-  const categories = ["All", "Office & Infrastructure", "Financial Services", "Client Success"];
+  const categories = ["All", "Office & Infrastructure", "Customer Interaction", "Financial Services"];
 
   const filteredItems = activeFilter === 'All' 
     ? galleryItems 
@@ -149,8 +190,8 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat shadow-2xl z-20"
             style={{ 
-              backgroundImage: `url(${officeReceptionImg})`,
-              clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 0% 100%)'
+              backgroundImage: `url("${executiveCabinImg}")`,
+                 clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 0% 100%)'
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -250,41 +291,77 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
       {/* 3. GALLERY PHOTO GRID */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedImage(item)}
-              className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col transform hover:-translate-y-1"
-            >
-              {/* Image Container */}
-              <div className="relative h-52 sm:h-56 overflow-hidden bg-slate-100">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-xs font-bold text-amber-200 flex items-center gap-1.5">
-                    <Camera className="w-4 h-4" /> View Image
-                  </span>
-                </div>
-                {/* Category Badge */}
-                <span className="absolute top-3 left-3 bg-[#700619] text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
-                  {item.category}
-                </span>
-              </div>
+          {filteredItems.map((item) => {
+            const isOfficeInfra = item.category === 'Office & Infrastructure';
 
-              {/* Text Info */}
-              <div className="p-5 flex-grow flex flex-col justify-between space-y-2">
-                <h3 className="font-serif-brand font-bold text-base sm:text-lg text-slate-900 group-hover:text-[#700619] transition-colors leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
-                  {item.desc}
-                </p>
+            // Clean pure photo card for Office & Infrastructure (No title, no category, no desc)
+            if (isOfficeInfra) {
+              return (
+                <div
+                  key={item.id}
+                  onClick={() => setSelectedImage(item)}
+                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer bg-slate-100 border border-slate-200/80"
+                >
+                  <img 
+                    src={item.image} 
+                    alt="Rajalakshmy Associates Office & Infrastructure" 
+                    className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-xs font-bold text-amber-200 flex items-center gap-1.5">
+                      <Camera className="w-4 h-4" /> View Photo
+                    </span>
+                  </div>
+                </div>
+              );
+            }
+
+            // Standard card with info for other categories
+            return (
+              <div
+                key={item.id}
+                onClick={() => setSelectedImage(item)}
+                className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col transform hover:-translate-y-1"
+              >
+                {/* Image Container */}
+                <div className="relative h-52 sm:h-56 overflow-hidden bg-slate-100">
+                  <img 
+                    src={item.image} 
+                    alt={item.title || "Gallery"} 
+                    className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-xs font-bold text-amber-200 flex items-center gap-1.5">
+                      <Camera className="w-4 h-4" /> View Image
+                    </span>
+                  </div>
+                  {/* Category Badge */}
+                  {item.category && (
+                    <span className="absolute top-3 left-3 bg-[#700619] text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                      {item.category}
+                    </span>
+                  )}
+                </div>
+
+                {/* Text Info */}
+                {(item.title || item.desc) && (
+                  <div className="p-5 flex-grow flex flex-col justify-between space-y-2">
+                    {item.title && (
+                      <h3 className="font-serif-brand font-bold text-base sm:text-lg text-slate-900 group-hover:text-[#700619] transition-colors leading-snug">
+                        {item.title}
+                      </h3>
+                    )}
+                    {item.desc && (
+                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -330,9 +407,11 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
             {/* Top Bar with Count and Close Button */}
             <div className="flex items-center justify-between px-5 py-3.5 bg-slate-950/80 border-b border-white/10 shrink-0">
               <div className="flex items-center gap-2.5">
-                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#EBB638] bg-[#EBB638]/10 px-2.5 py-1 rounded-md border border-[#EBB638]/20">
-                  {selectedImage.category}
-                </span>
+                {selectedImage.category && selectedImage.category !== 'Office & Infrastructure' && (
+                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#EBB638] bg-[#EBB638]/10 px-2.5 py-1 rounded-md border border-[#EBB638]/20">
+                    {selectedImage.category}
+                  </span>
+                )}
                 {filteredItems.length > 1 && (
                   <span className="text-xs text-slate-400 font-medium">
                     {currentIndex + 1} / {filteredItems.length}
@@ -352,32 +431,51 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
             <div className="flex-1 min-h-0 bg-black/90 flex items-center justify-center p-2 sm:p-4 overflow-hidden">
               <img 
                 src={selectedImage.image} 
-                alt={selectedImage.title} 
-                className="w-auto h-auto max-h-[52vh] sm:max-h-[58vh] max-w-full object-contain rounded-lg mx-auto shadow-lg"
+                alt={selectedImage.title || "Office & Infrastructure"} 
+                className="w-auto h-auto max-h-[64vh] sm:max-h-[70vh] max-w-full object-contain rounded-lg mx-auto shadow-lg"
               />
             </div>
 
             {/* Footer / Description */}
-            <div className="p-4 sm:p-5 text-left bg-slate-900 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0">
-              <div className="space-y-1">
-                <h3 className="text-base sm:text-lg font-serif-brand font-bold text-white leading-snug">
-                  {selectedImage.title}
-                </h3>
-                <p className="text-xs text-slate-300 leading-relaxed max-w-2xl">
-                  {selectedImage.desc}
-                </p>
+            {(selectedImage.title || selectedImage.desc) ? (
+              <div className="p-4 sm:p-5 text-left bg-slate-900 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0">
+                <div className="space-y-1">
+                  {selectedImage.title && (
+                    <h3 className="text-base sm:text-lg font-serif-brand font-bold text-white leading-snug">
+                      {selectedImage.title}
+                    </h3>
+                  )}
+                  {selectedImage.desc && (
+                    <p className="text-xs text-slate-300 leading-relaxed max-w-2xl">
+                      {selectedImage.desc}
+                    </p>
+                  )}
+                </div>
+                <button
+                  onClick={() => {
+                    setSelectedImage(null);
+                    onOpenConsultation();
+                  }}
+                  className="shrink-0 bg-[#700619] hover:bg-[#8e0921] text-white px-4 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 justify-center cursor-pointer shadow-md"
+                >
+                  <span>Enquire Now</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
-              <button
-                onClick={() => {
-                  setSelectedImage(null);
-                  onOpenConsultation();
-                }}
-                className="shrink-0 bg-[#700619] hover:bg-[#8e0921] text-white px-4 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 justify-center cursor-pointer shadow-md"
-              >
-                <span>Enquire Now</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
+            ) : (
+              <div className="px-5 py-3 bg-slate-950/80 border-t border-white/10 flex items-center justify-end">
+                <button
+                  onClick={() => {
+                    setSelectedImage(null);
+                    onOpenConsultation();
+                  }}
+                  className="bg-[#700619] hover:bg-[#8e0921] text-white px-4 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 justify-center cursor-pointer shadow-md"
+                >
+                  <span>Enquire Now</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            )}
           </div>
         </div>,
         document.body
