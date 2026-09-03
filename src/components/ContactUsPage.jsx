@@ -582,12 +582,9 @@ export const ContactUsPage = () => {
                             onChange={handleChange}
                             className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-700/30 focus:border-emerald-700 transition-all bg-white font-medium text-slate-800"
                           >
-                            <option value="Buy Residential / Commercial Property">🏡 Buy Residential / Commercial</option>
-                            <option value="Sell Property / Land Plots">🏷️ Sell Property / Plot</option>
-                            <option value="DTCP & RERA Approved Plots">📐 DTCP &amp; RERA Approved Plots</option>
-                            <option value="Patta & Legal Title Verification">📜 Patta &amp; Legal Title Verification</option>
-                            <option value="Property Registration & Documentation">📑 Registration &amp; Documentation</option>
-                            <option value="Property Valuation Advisory">📊 Valuation &amp; Legal Advisory</option>
+                            <option value="Buy Residential / Commercial Property">🏡 Buy Residential / Commercial / Plot</option>
+                            <option value="Sell Property / Land Plots">🏷️ Sell Property /  Residential / Commercial / Plot</option>
+                           
                           </select>
                         </div>
 
@@ -698,20 +695,7 @@ export const ContactUsPage = () => {
                         </div>
                       </div>
 
-                      {/* Branch Choice Dropdown if Direct is selected */}
-                      {formData.appointmentType === 'Direct' && (
-                        <div className="pt-1 pl-7">
-                          <select
-                            name="preferredBranch"
-                            value={formData.preferredBranch}
-                            onChange={handleChange}
-                            className="w-full text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-amber-200 bg-white text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#700619]"
-                          >
-                            <option value="Branch 1: Gorimedu (Head Office)">Branch 1: Gorimedu (Head Office)</option>
-                            <option value="Branch 2: Thilaspet Branch">Branch 2: Thilaspet Branch</option>
-                          </select>
-                        </div>
-                      )}
+                     
                     </div>
 
                     {/* Phone Call */}

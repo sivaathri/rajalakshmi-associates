@@ -53,12 +53,11 @@ const customerGalleryItems = customerImageEntries.map(([path, imgUrl], idx) => (
   image: imgUrl
 }));
 
-// Dynamically load Banker Interaction images if folder exists
+// Dynamically load ALL images from Banker Interaction folder (14+ photos)
 const bankerImagesModules = import.meta.glob(
   [
-    '../assets/Banker Interaction/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}',
     '../assets/Banker Intraction/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}',
-    '../assets/Banker*/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}'
+    '../assets/Banker Interaction/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}'
   ],
   { eager: true, import: 'default' }
 );
