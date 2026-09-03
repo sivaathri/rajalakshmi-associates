@@ -33,6 +33,46 @@ const officeGalleryItems = officeImageEntries.map(([path, imgUrl], idx) => ({
   image: imgUrl
 }));
 
+// Dynamically load ALL images from Customer Interaction folder (25+ photos)
+const customerImagesModules = import.meta.glob(
+  [
+    '../assets/Customer Intraction/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}',
+    '../assets/Customer Interaction/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}'
+  ],
+  { eager: true, import: 'default' }
+);
+
+const customerImageEntries = Object.entries(customerImagesModules).sort(([pathA], [pathB]) => 
+  pathA.localeCompare(pathB)
+);
+
+// Generate clean photo gallery items for all Customer Interaction images
+const customerGalleryItems = customerImageEntries.map(([path, imgUrl], idx) => ({
+  id: `customer-${idx + 1}`,
+  category: "Customer Interaction",
+  image: imgUrl
+}));
+
+// Dynamically load Banker Interaction images if folder exists
+const bankerImagesModules = import.meta.glob(
+  [
+    '../assets/Banker Interaction/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}',
+    '../assets/Banker Intraction/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}',
+    '../assets/Banker*/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}'
+  ],
+  { eager: true, import: 'default' }
+);
+
+const bankerImageEntries = Object.entries(bankerImagesModules).sort(([pathA], [pathB]) => 
+  pathA.localeCompare(pathB)
+);
+
+const bankerGalleryItems = bankerImageEntries.map(([path, imgUrl], idx) => ({
+  id: `banker-${idx + 1}`,
+  category: "Banker Interaction",
+  image: imgUrl
+}));
+
 import { 
   Camera, 
   Image as ImageIcon, 
@@ -53,41 +93,8 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
 
   const galleryItems = [
     ...officeGalleryItems,
-    {
-      id: "service-1",
-      title: "Client Partnership & Successful Agreement",
-      category: "Customer Interaction",
-      image: aboutHandshakeImg,
-      desc: "Empowering client growth with transparent loan advisory, quick bank approvals, and zero hidden charges."
-    },
-    {
-      id: "service-2",
-      title: "Home & Mortgage Loan Processing",
-      category: "Financial Services",
-      image: loanImg,
-      desc: "Customized loan solutions with 25+ associated banks and competitive interest rates for all property needs."
-    },
-    {
-      id: "service-3",
-      title: "Comprehensive Insurance Advisory",
-      category: "Financial Services",
-      image: insuranceImg,
-      desc: "Protecting families, health, vehicles, and commercial properties with customized insurance solutions."
-    },
-    {
-      id: "service-4",
-      title: "Property & Real Estate Legal Guidance",
-      category: "Financial Services",
-      image: propertiesImg,
-      desc: "Flawless title investigation, encumbrance certificate checking, and statutory land registration assistance."
-    },
-    {
-      id: "service-5",
-      title: "Digital Consultation & Online Services",
-      category: "Financial Services",
-      image: onlineServicesImg,
-      desc: "Doorstep documentation, online status tracking, and fast approvals for working professionals and businesses."
-    }
+    ...customerGalleryItems,
+    ...bankerGalleryItems
   ];
 
   const categories = ["All", "Office & Infrastructure", "Customer Interaction", "Banker Interaction"];
@@ -253,77 +260,91 @@ export const GalleryPage = ({ onOpenConsultation = () => {} }) => {
       {/* 3. GALLERY PHOTO GRID */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredItems.map((item) => {
-            const isOfficeInfra = item.category === 'Office & Infrastructure';
+          {filteredItems.length === 0 ? (
+            <div className="text-center py-16 bg-white rounded-3xl border border-dashed border-slate-200 p-8 col-span-full">
+              <div className="w-14 h-14 bg-rose-50 text-[#700619] rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <Users className="w-7 h-7" />
+              </div>
+              <h3 className="font-serif-brand font-bold text-lg text-slate-800">
+                {activeFilter} Photos Coming Soon
+              </h3>
+              <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
+                Photos under {activeFilter} will be updated here shortly.
+              </p>
+            </div>
+          ) : (
+            filteredItems.map((item) => {
+              const isPurePhoto = !item.title && !item.desc;
 
-            // Clean pure photo card for Office & Infrastructure (No title, no category, no desc)
-            if (isOfficeInfra) {
+              // Clean pure photo card for Office & Infrastructure & Customer Interaction (No title, no category, no desc)
+              if (isPurePhoto) {
+                return (
+                  <div
+                    key={item.id}
+                    onClick={() => setSelectedImage(item)}
+                    className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer bg-slate-100 border border-slate-200/80"
+                  >
+                    <img 
+                      src={item.image} 
+                      alt={item.category || "Rajalakshmy Associates Photo"} 
+                      className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <span className="text-xs font-bold text-amber-200 flex items-center gap-1.5">
+                        <Camera className="w-4 h-4" /> View Photo
+                      </span>
+                    </div>
+                  </div>
+                );
+              }
+
+              // Standard card with info for other categories
               return (
                 <div
                   key={item.id}
                   onClick={() => setSelectedImage(item)}
-                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer bg-slate-100 border border-slate-200/80"
+                  className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col transform hover:-translate-y-1"
                 >
-                  <img 
-                    src={item.image} 
-                    alt="Rajalakshmy Associates Office & Infrastructure" 
-                    className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <span className="text-xs font-bold text-amber-200 flex items-center gap-1.5">
-                      <Camera className="w-4 h-4" /> View Photo
-                    </span>
+                  {/* Image Container */}
+                  <div className="relative h-52 sm:h-56 overflow-hidden bg-slate-100">
+                    <img 
+                      src={item.image} 
+                      alt={item.title || "Gallery"} 
+                      className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <span className="text-xs font-bold text-amber-200 flex items-center gap-1.5">
+                        <Camera className="w-4 h-4" /> View Image
+                      </span>
+                    </div>
+                    {/* Category Badge */}
+                    {item.category && (
+                      <span className="absolute top-3 left-3 bg-[#700619] text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                        {item.category}
+                      </span>
+                    )}
                   </div>
-                </div>
-              );
-            }
 
-            // Standard card with info for other categories
-            return (
-              <div
-                key={item.id}
-                onClick={() => setSelectedImage(item)}
-                className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col transform hover:-translate-y-1"
-              >
-                {/* Image Container */}
-                <div className="relative h-52 sm:h-56 overflow-hidden bg-slate-100">
-                  <img 
-                    src={item.image} 
-                    alt={item.title || "Gallery"} 
-                    className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <span className="text-xs font-bold text-amber-200 flex items-center gap-1.5">
-                      <Camera className="w-4 h-4" /> View Image
-                    </span>
-                  </div>
-                  {/* Category Badge */}
-                  {item.category && (
-                    <span className="absolute top-3 left-3 bg-[#700619] text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
-                      {item.category}
-                    </span>
+                  {/* Text Info */}
+                  {(item.title || item.desc) && (
+                    <div className="p-5 flex-grow flex flex-col justify-between space-y-2">
+                      {item.title && (
+                        <h3 className="font-serif-brand font-bold text-base sm:text-lg text-slate-900 group-hover:text-[#700619] transition-colors leading-snug">
+                          {item.title}
+                        </h3>
+                      )}
+                      {item.desc && (
+                        <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      )}
+                    </div>
                   )}
                 </div>
-
-                {/* Text Info */}
-                {(item.title || item.desc) && (
-                  <div className="p-5 flex-grow flex flex-col justify-between space-y-2">
-                    {item.title && (
-                      <h3 className="font-serif-brand font-bold text-base sm:text-lg text-slate-900 group-hover:text-[#700619] transition-colors leading-snug">
-                        {item.title}
-                      </h3>
-                    )}
-                    {item.desc && (
-                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
-                        {item.desc}
-                      </p>
-                    )}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+              );
+            })
+          )}
         </div>
       </section>
 
