@@ -1,5 +1,6 @@
 import React from 'react';
 import homeBg from '../assets/homebg.png';
+import logoImg from '../assets/logo.png';
 import aboutHandshakeImg from '../assets/about_handshake.png';
 import loanImg from '../assets/loan.png';
 import insuranceImg from '../assets/insurance.png';
@@ -22,7 +23,8 @@ import {
   Star,
   ChevronLeft,
   ChevronRight,
-  PhoneCall
+  PhoneCall,
+  Building2
 } from 'lucide-react';
 
 export const HomePage = ({ onOpenConsultation = () => {}, setActiveTab = () => {} }) => {
@@ -102,43 +104,111 @@ export const HomePage = ({ onOpenConsultation = () => {}, setActiveTab = () => {
   return (
     <div className="bg-[#FBF8F5] min-h-screen text-slate-800 font-sans pb-2 select-none overflow-x-hidden">
       
-      {/* 1. HERO SECTION WITH FULL PANORAMIC COVER BG & DIAGONAL CORNER ACCENTS */}
+      {/* 1. HERO SECTION WITH EXACT REFERENCE DESIGN & 100% CLEAR TEXT OVERLAY */}
       <section 
-        className="relative w-full overflow-hidden bg-cover bg-center bg-no-repeat border-b border-slate-200/60 pt-2 pb-8 sm:pt-3 sm:pb-12 lg:pt-4 lg:pb-14 flex items-start"
+        className="relative w-full overflow-hidden bg-cover bg-[center_right] lg:bg-center bg-no-repeat border-b border-slate-200/60 py-10 sm:py-14 lg:py-16 flex items-center min-h-[580px] lg:min-h-[630px]"
         style={{ backgroundImage: `url(${homeBg})` }}
       >
-       
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-30 w-full">
-          <div className="max-w-2xl text-left space-y-4 sm:space-y-6 animate-float-up">
+        {/* Soft Cream Gradient Overlay on Left Side for 100% Crystal-Clear Text View */}
+        <div 
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{
+            background: 'linear-gradient(90deg, rgba(251, 247, 241, 0.98) 0%, rgba(251, 247, 241, 0.96) 32%, rgba(251, 247, 241, 0.82) 44%, rgba(251, 247, 241, 0.45) 54%, rgba(251, 247, 241, 0) 66%)'
+          }}
+        />
+
+        {/* Top-Left Diagonal Gold Accent with Dot Matrix Pattern */}
+        <div className="absolute top-0 left-0 z-20 pointer-events-none w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 overflow-hidden">
+          <div 
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#EBB638] via-[#D49F28] to-[#996D12]"
+            style={{ clipPath: 'polygon(0 0, 48% 0, 0 48%)' }}
+          />
+          <div 
+            className="absolute top-0 left-0 w-full h-full border-b-[3px] border-r-[3px] border-[#EBB638]"
+            style={{ clipPath: 'polygon(0 0, 50% 0, 0 50%)' }}
+          />
+          <div className="absolute top-3 left-3 sm:top-5 sm:left-5 opacity-40 grid grid-cols-5 gap-1.5 sm:gap-2">
+            {[...Array(15)].map((_, i) => (
+              <div key={i} className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-[#B37F1A]" />
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom-Right Burgundy & Gold Diagonal Accent */}
+        <div className="absolute bottom-0 right-0 z-20 pointer-events-none w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 overflow-hidden">
+          <div 
+            className="absolute bottom-0 right-0 w-full h-full bg-[#EBB638]"
+            style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
+          />
+          <div 
+            className="absolute bottom-0 right-0 w-[88%] h-[88%] bg-[#700619]"
+            style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
+          />
+        </div>
+
+        <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:pl-6 lg:pr-8 xl:pl-8 relative z-30 w-full">
+          <div className="max-w-lg sm:max-w-xl lg:max-w-[530px] xl:max-w-[560px] text-left space-y-4 sm:space-y-5 animate-float-up lg:-translate-x-4 xl:-translate-x-8">
             
-            {/* Category Header */}
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] sm:text-xs md:text-sm font-extrabold text-[#700619] tracking-[0.15em] sm:tracking-[0.18em] uppercase">
+            {/* Category Sub-Tagline */}
+            <div className="pt-1">
+              <span className="text-[11px] sm:text-xs md:text-sm font-extrabold text-[#700619] tracking-[0.18em] uppercase">
                 YOUR TRUSTED LOAN PARTNER
               </span>
             </div>
 
-            {/* Main Headline with Serif Typography & Gold Underline */}
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[56px] font-serif-brand font-bold text-slate-900 leading-[1.15] sm:leading-[1.12]">
+            {/* Main Headline */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[46px] font-serif-brand font-bold text-slate-900 leading-[1.18] tracking-tight">
               Building Trust. <br />
               Empowering Growth. <br />
-              <span className="relative inline-block text-[#700619] pb-1">
-                Creating Financial Success.
-                {/* Brush stroke underline */}
-                <span className="absolute bottom-0 left-0 w-full h-[3px] sm:h-[3.5px] bg-gradient-to-r from-[#EBB638] via-[#EBB638] to-amber-300 rounded-full"></span>
-              </span>
+              <span className="text-[#700619]">Creating Financial Success.</span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-xs sm:text-sm md:text-base text-slate-700 font-medium leading-relaxed max-w-xl">
-              At Rajalakshimi Associates, we provide ethical, transparent and result-oriented financial solutions to help you achieve your dreams.
+            {/* Subtitle Paragraph */}
+            <p className="text-xs sm:text-sm md:text-[14px] text-slate-700 font-medium leading-relaxed max-w-lg">
+              At Rajalakshmi Associates, we provide ethical, transparent and result-oriented financial solutions to help you achieve your dreams.
             </p>
 
+            {/* 3 Value Proposition Pills */}
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
+              {/* Pill 1: Instant Assistance */}
+              <div className="bg-white/95 backdrop-blur-xs rounded-2xl py-2 px-3.5 border border-slate-200/80 shadow-xs flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-full bg-rose-50 text-[#700619] flex items-center justify-center shrink-0">
+                  <Users className="w-4 h-4" />
+                </div>
+                <div className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight text-left">
+                  <div>Instant</div>
+                  <div className="text-slate-600 font-semibold">Assistance</div>
+                </div>
+              </div>
+
+              {/* Pill 2: Puducherry Branches */}
+              <div className="bg-white/95 backdrop-blur-xs rounded-2xl py-2 px-3.5 border border-slate-200/80 shadow-xs flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-full bg-rose-50 text-[#700619] flex items-center justify-center shrink-0">
+                  <Building2 className="w-4 h-4" />
+                </div>
+                <div className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight text-left">
+                  <div>Puducherry</div>
+                  <div className="text-slate-600 font-semibold">Branches</div>
+                </div>
+              </div>
+
+              {/* Pill 3: 100% Confidential */}
+              <div className="bg-white/95 backdrop-blur-xs rounded-2xl py-2 px-3.5 border border-slate-200/80 shadow-xs flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-full bg-rose-50 text-[#700619] flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-4 h-4" />
+                </div>
+                <div className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight text-left">
+                  <div>100%</div>
+                  <div className="text-slate-600 font-semibold">Confidential</div>
+                </div>
+              </div>
+            </div>
+
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
               <button 
                 onClick={onOpenConsultation}
-                className="bg-[#700619] hover:bg-[#570413] text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-2xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-[#700619]/25 hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-0.5"
+                className="bg-[#700619] hover:bg-[#520412] text-white px-7 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
               >
                 <span>Get Free Consultation</span>
                 <ArrowRight className="w-4 h-4" />
@@ -146,9 +216,9 @@ export const HomePage = ({ onOpenConsultation = () => {}, setActiveTab = () => {
 
               <button 
                 onClick={() => setActiveTab('Loans')}
-                className="bg-[#FFFDF7] hover:bg-[#FFF8E6] text-[#700619] border border-[#EBB638] px-6 sm:px-7 py-3 sm:py-3.5 rounded-2xl font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-xs text-center"
+                className="bg-white hover:bg-rose-50 text-[#700619] border-2 border-[#700619] px-7 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-xs text-center"
               >
-                Explore Loans
+                <span>Explore Loans</span>
               </button>
             </div>
 
