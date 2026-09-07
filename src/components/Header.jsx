@@ -42,13 +42,13 @@ export const Header = ({
     <header className="w-full bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
       {/* 1. TOP ANNOUNCEMENT / INFO BAR - RESPONSIVE ALL SCREENS */}
       <div className="bg-[#700619] text-white py-1.5 sm:py-2 px-2.5 sm:px-4 lg:px-8 border-b border-[#880820]">
-        <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-1.5 sm:gap-2 text-[11px] sm:text-xs md:text-sm">
+        <div className="max-w-7xl mx-auto relative flex items-center justify-between gap-1.5 sm:gap-2 text-[11px] sm:text-xs md:text-sm min-h-[24px]">
           
           {/* Left: Location & Phone Numbers */}
-          <div className="flex items-center gap-2 sm:gap-4 font-medium tracking-wide shrink-0">
+          <div className="flex items-center gap-2 sm:gap-4 font-medium tracking-wide shrink-0 z-10">
             <div className="flex items-center gap-1 sm:gap-1.5">
               <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-200 shrink-0" />
-              <span>Puducherry & Tamilnadu</span>
+              <span>Puducherry<span className="hidden sm:inline"> & Tamilnadu</span></span>
             </div>
             <div className="hidden sm:flex items-center gap-1.5 text-amber-100/90 text-[11px] sm:text-xs">
               <Phone className="w-3 h-3 text-rose-200 shrink-0" />
@@ -57,11 +57,9 @@ export const Header = ({
           </div>
 
           {/* Center: Tamil Regional Tagline */}
-          <div className="font-tamil font-semibold text-[11px] sm:text-xs md:text-sm lg:text-base tracking-wider text-amber-100 flex items-center justify-center text-center flex-1 mx-2">
+          <div className="absolute left-1/2 -translate-x-1/2 font-tamil font-semibold text-[11px] sm:text-xs md:text-sm lg:text-base tracking-wider text-amber-100 flex items-center justify-center text-center pointer-events-none whitespace-nowrap">
             <span>இராஜலட்சுமி இணை</span>
           </div>
-
-        
 
         </div>
       </div>
